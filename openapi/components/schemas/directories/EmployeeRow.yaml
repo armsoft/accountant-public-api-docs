@@ -1,0 +1,138 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  fullName:
+    type: string
+    description: "hy-AM: Ազգանուն, անուն, հայրանուն | en-US: Full name | ru-RU: Фамилия, имя, отчество"
+    nullable: true
+  departmentCode:
+    type: string
+    description: "hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение"
+    nullable: true
+  departmentName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  positionCode:
+    type: string
+    description: "hy-AM: Պաշտոն | en-US: Position | ru-RU: Должность"
+    nullable: true
+  positionName:
+    type: string
+    description: "hy-AM: Պաշտոն | en-US: Position | ru-RU: Должность"
+    nullable: true
+  positionStartDate:
+    type: string
+    description: "hy-AM: Պաշտոնի սկիզբ | en-US: Position start | ru-RU: Принят на должность с"
+    format: date
+    nullable: true
+  defaultTimeSheet:
+    type: string
+    description: "hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график"
+    nullable: true
+  contractTypeCode:
+    type: string
+    description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"
+    nullable: true
+  contractTypeName:
+    type: string
+    description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"
+    nullable: true
+  employmentStartDate:
+    type: string
+    description: "hy-AM: Ընդունման ամսաթիվ | en-US: Employment start date | ru-RU: Дата приема на работу"
+    format: date
+    nullable: true
+  dateOfDismissal:
+    type: string
+    description: "hy-AM: Ազատման ամսաթիվ | en-US: Date of dismissal | ru-RU: Дата увольнения"
+    format: date
+    nullable: true
+  birthDate:
+    type: string
+    description: "hy-AM: Ծննդյան ամսաթիվ | en-US: Birth date | ru-RU: Дата рождения"
+    format: date
+    nullable: true
+  genderCode:
+    type: string
+    description: "hy-AM: Սեռ | en-US: Gender | ru-RU: Пол"
+    nullable: true
+  genderName:
+    type: string
+    description: "hy-AM: Սեռ | en-US: Gender | ru-RU: Пол"
+    nullable: true
+  phone:
+    type: string
+    description: "hy-AM: Հեռախոս | en-US: Phone | ru-RU: Телефон"
+    nullable: true
+  passport:
+    type: string
+    description: "hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта"
+    nullable: true
+  bankAccount:
+    type: string
+    description: "hy-AM: Աշխատակցի հաշիվը բանկում | en-US: Employee bank account | ru-RU: Банковский счет сотрудника"
+    nullable: true
+  professionCode:
+    type: string
+    description: "hy-AM: Մասնագիտություն | en-US: Profession | ru-RU: Профессия"
+    nullable: true
+  professionName:
+    type: string
+    description: "hy-AM: Մասնագիտություն | en-US: Profession | ru-RU: Профессия"
+    nullable: true
+  raCitizen:
+    type: boolean
+  calculateIncomeTax:
+    type: boolean
+    description: "hy-AM: Եկամտային հարկը պահվում է | en-US: Calculate income tax | ru-RU: Облагается подоходным налогом"
+  stampFeeType:
+    type: string
+    description: "hy-AM: Դրոշմանիշային վճար | en-US: Stamp fee | ru-RU: Гербовый сбор"
+    nullable: true
+  insuranceFeeType:
+    type: string
+    description: "hy-AM: Ապահովագրավճար | en-US: Insurance fee | ru-RU: Страховая плата"
+    nullable: true
+  insuranceFeeDate:
+    type: string
+    description: "hy-AM: Կարգավիճակի սկիզբ | en-US: Status start date | ru-RU: Дата начала статуса"
+    format: date
+    nullable: true
+  salaryAccount:
+    type: string
+    description: "hy-AM: Աշխատավարձի գծով հաշվարկների հաշիվ | en-US: Salary payable | ru-RU: Счет расчета по оплате труда"
+    nullable: true
+  partnerCode:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  partnerName:
+    type: string
+    description: "hy-AM: Գործընկերոջ անվանում | en-US: Partner name | ru-RU: Наименование партнера"
+    nullable: true
+  tradeUnionDuesPercent:
+    type: number
+    description: "hy-AM: Արհմիութենական անդամավճարի տոկոս | en-US: Trade union dues percent | ru-RU: Процент профсоюзного взноса"
+    format: double
+  participationStatus:
+    type: string
+    description: "hy-AM: Մասնակցության կարգավիճակ | en-US: Participation Status | ru-RU: Статус участия"
+    nullable: true
+  lastModifierName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  lastModifyDate:
+    type: string
+    description: "hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение"
+    format: date-time
+    nullable: true
+additionalProperties: false

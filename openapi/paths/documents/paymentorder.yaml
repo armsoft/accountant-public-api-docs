@@ -1,0 +1,18 @@
+/documents/paymentorder:
+  post:
+    tags: [PaymentOrder]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/PaymentOrder.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/PaymentOrder.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

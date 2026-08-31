@@ -1,0 +1,54 @@
+/directories/services/{code}:
+  get:
+    tags: [Services]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/Service.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+  put:
+    tags: [Services]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/directories/Service.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/Service.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+  delete:
+    tags: [Services]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

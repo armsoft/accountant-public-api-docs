@@ -1,0 +1,118 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  storageOutput:
+    type: string
+    description: "hy-AM: Պահեստ ելքի | en-US: Storage output | ru-RU: Из склада"
+    nullable: true
+  storageInput:
+    type: string
+    description: "hy-AM: Պահեստ մուտքի | en-US: Storage input | ru-RU: В склад"
+    nullable: true
+  printSalePriceType:
+    type: string
+    description: "hy-AM: Տպել վաճառքի գներով | en-US: Print the sale prices | ru-RU: Печатать по продажным ценам"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  chiefAccountant:
+    type: string
+    description: "hy-AM: Գլխավոր հաշվապահ | en-US: Chief accountant | ru-RU: Главный бухгалтер"
+    nullable: true
+  mediator:
+    type: string
+    description: "hy-AM: Միջնորդ | en-US: Mediator | ru-RU: Посредник"
+    nullable: true
+  allowed:
+    type: string
+    description: "hy-AM: Թույլատրեց | en-US: Allowed | ru-RU: Разрешил"
+    nullable: true
+  bookNumber:
+    type: string
+    description: "hy-AM: Առաքողի գրանցման գրքի N | en-US: Distributor entries book N | ru-RU: N книги регистрации отправителя"
+    nullable: true
+  bookPage:
+    type: integer
+    description: "hy-AM: էջի N | en-US: page N | ru-RU: N страницы"
+    format: int32
+  bookLine:
+    type: integer
+    description: "hy-AM: Տողի N | en-US: line N | ru-RU: N строки"
+    format: int32
+  taxExportType:
+    type: string
+    description: "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки"
+    nullable: true
+  taxInvoiceSeries:
+    type: string
+    description: "hy-AM: Սերիա | en-US: Serial | ru-RU: Серия"
+    nullable: true
+  taxInvoiceNumber:
+    type: string
+    description: "hy-AM: Համար | en-US: Number | ru-RU: Номер"
+    nullable: true
+  submissionDate:
+    type: string
+    description: "hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От"
+    format: date
+    nullable: true
+  transportationMethod:
+    type: string
+    description: "hy-AM: Տեղափոխման եղանակ | en-US: Transportation method | ru-RU: Метод переноса"
+    nullable: true
+  vehicle:
+    type: boolean
+    description: "hy-AM: Ավտոտրանսպորտային միջոց | en-US: Vehicle | ru-RU: Транспортное средство"
+  brand:
+    type: string
+    description: "hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка"
+    nullable: true
+  licensePlate:
+    type: string
+    description: "hy-AM: Պետհամարանիշ | en-US: License plate | ru-RU: Гос номер"
+    nullable: true
+  contract:
+    type: string
+    description: "hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор"
+    nullable: true
+  contractDate:
+    type: string
+    description: "hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора"
+    format: date
+    nullable: true
+  additionalData:
+    type: string
+    description: "hy-AM: Լրացուցիչ տվյալներ | en-US: Additional data | ru-RU: Дополнительная информация"
+    nullable: true
+  materialsList:
+    type: array
+    items:
+      $ref: "#/components/schemas/MaterialsMovementSpecificationRow"
+    description: "hy-AM: Նյութական արժեքների ցուցակ | en-US: Materials list | ru-RU: Список ТМЦ"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,118 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  fullName:
+    type: string
+    description: "hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование"
+    nullable: true
+  taxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  group:
+    type: string
+    description: "hy-AM: Խումբ | en-US: Group | ru-RU: Группа"
+    nullable: true
+  groupName:
+    type: string
+    description: "hy-AM: Խմբի անվանում | en-US: Group name | ru-RU: Наименование группы"
+    nullable: true
+  vatPayer:
+    type: boolean
+  legalAddress:
+    type: string
+    description: "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес"
+    nullable: true
+  businessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  managerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  managerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  accountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  accountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  stateRegisterNumber:
+    type: string
+    description: "hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП"
+    nullable: true
+  idDocumentType:
+    type: string
+    description: "hy-AM: Անձը հաստատող փաստաթղթի տեսակ | en-US: ID document type | ru-RU: Документ, удостоверяющий личность"
+    nullable: true
+  passportNumber:
+    type: string
+    description: "hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта"
+    nullable: true
+  socialCardNumber:
+    type: string
+    description: "hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты"
+    nullable: true
+  paymentMainAim:
+    type: string
+    description: "hy-AM: Վճարման հիմնական նպատակ | en-US: Payment main aim | ru-RU: Основное назначение платежа"
+    nullable: true
+  phoneNumber:
+    type: string
+    description: "hy-AM: Հեռախոսահամար | en-US: Phone number | ru-RU: Номер телефона"
+    nullable: true
+  email:
+    type: string
+    description: "hy-AM: Էլ. փոստ | en-US: E-Mail | ru-RU: Эл. почта"
+    nullable: true
+  contract:
+    type: string
+    description: "hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор"
+    nullable: true
+  contractDate:
+    type: string
+    description: "hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора"
+    format: date
+    nullable: true
+  salesDiscountPercent:
+    type: number
+    description: "hy-AM: Վաճառքի զեղչի տոկոս | en-US: Sales discount percent | ru-RU: Процент скидки при продаже"
+    format: double
+  status:
+    type: string
+    description: "hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус"
+    nullable: true
+  settlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  userName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  lastChange:
+    type: string
+    description: "hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение"
+    format: date-time
+    nullable: true
+  isClosed:
+    type: boolean
+    description: "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто"
+additionalProperties: false

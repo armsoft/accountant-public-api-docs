@@ -1,0 +1,14 @@
+type: object
+properties:
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  default:
+    type: boolean
+    description: "hy-AM: Հիմնական | en-US: Default | ru-RU: Основной"
+additionalProperties: false

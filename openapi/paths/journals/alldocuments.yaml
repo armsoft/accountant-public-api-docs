@@ -1,0 +1,36 @@
+/journals/alldocuments:
+  post:
+    tags: [Journals]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/journals/AllDocumentsJournalParam.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/journals/AllDocumentsJournalDataRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+/journals/alldocuments/nextpage:
+  post:
+    tags: [Journals]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/_shared/NextPageRequest.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/journals/AllDocumentsJournalDataRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

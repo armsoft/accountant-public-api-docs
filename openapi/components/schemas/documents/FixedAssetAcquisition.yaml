@@ -1,0 +1,205 @@
+type: object
+properties:
+  isn:
+    type: string
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: uuid
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  inventoryNumber:
+    type: string
+    description: "hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  fullName:
+    type: string
+    description: "hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование"
+    nullable: true
+  inputDate:
+    type: string
+    description: "hy-AM: Մուտքի ամսաթիվ | en-US: Input date | ru-RU: Дата поступления"
+    format: date
+    nullable: true
+  exploitationDate:
+    type: string
+    description: "hy-AM: Շահագործման ամսաթիվ | en-US: Exploitation date | ru-RU: Дата эксплуатации"
+    format: date
+    nullable: true
+  fixedAssetType:
+    type: string
+    description: "hy-AM: ՀՄ տեսակ | en-US: Type of fixed asset | ru-RU: Вид ОС"
+    nullable: true
+  profitTaxLawGroup:
+    type: string
+    description: "hy-AM: ՀՄ խումբ շահութահարկի օրենքով | en-US: FA group by Profit tax law | ru-RU: Группа ОС по закону о налоге на прибыль"
+    nullable: true
+  purchaseMode:
+    type: string
+    description: "hy-AM: ՀՄ ձեռքբերման եղանակ | en-US: FA purchase mode | ru-RU: Способ приобретения ОС"
+    nullable: true
+  location:
+    type: string
+    description: "hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение"
+    nullable: true
+  responsiblePerson:
+    type: string
+    description: "hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ"
+    nullable: true
+  inventoryCard:
+    type: string
+    description: "hy-AM: Գույքային քարտ | en-US: Inventory card | ru-RU: Инвентарная карточка"
+    nullable: true
+  supplierCode:
+    type: string
+    description: "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик"
+    nullable: true
+  supplierAccount:
+    type: string
+    description: "hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  taxExportType:
+    type: string
+    description: "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки"
+    nullable: true
+  purchaseDocumentNumber:
+    type: string
+    description: "hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения"
+    nullable: true
+  purchaseDocumentDate:
+    type: string
+    description: "hy-AM: ա/թ. | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  vatCalculationType:
+    type: string
+    description: "hy-AM: ԱԱՀ-ի հաշվարկի ձև | en-US: VAT calculation type | ru-RU: Тип расчета НДС"
+    nullable: true
+  includeVATInCost:
+    type: boolean
+    description: "hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость"
+  vatInclusionMethod:
+    type: string
+    description: "hy-AM: ԱԱՀ-ի արտացոլման ձև | en-US: Include/Exclude VAT | ru-RU: Вид отражения НДС"
+    nullable: true
+  financialUsefulLife:
+    type: integer
+    description: "hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)"
+    format: int32
+  financialCost:
+    type: number
+    description: "hy-AM: Սկզբնական արժեք | en-US: Cost | ru-RU: Первоначальная стоимость"
+    format: double
+  financialCalculatedDepreciation:
+    type: number
+    description: "hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ"
+    format: double
+  financialDisposalValue:
+    type: number
+    description: "hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость"
+    format: double
+  financialIsDepreciated:
+    type: boolean
+    description: "hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ"
+    nullable: true
+  taxUsefulLife:
+    type: integer
+    description: "hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)"
+    format: int32
+  taxCost:
+    type: number
+    description: "hy-AM: Սկզբնական արժեք | en-US: Cost | ru-RU: Первоначальная стоимость"
+    format: double
+  taxCalculatedDepreciation:
+    type: number
+    description: "hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ"
+    format: double
+  taxDisposalValue:
+    type: number
+    description: "hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость"
+    format: double
+  taxIsDepreciated:
+    type: boolean
+    description: "hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ"
+    nullable: true
+  deferredIncomeUsefulLife:
+    type: integer
+    description: "hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)"
+    format: int32
+  deferredIncomeAmount:
+    type: number
+    description: "hy-AM: Հետաձգված հասույթ | en-US: Deferred income | ru-RU: Отложенный доход"
+    format: double
+  deferredIncomeCalculatedDepreciation:
+    type: number
+    description: "hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ"
+    format: double
+  deferredIncomeIsDepreciated:
+    type: boolean
+    description: "hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ"
+    nullable: true
+  grossCarryingAmountAccount:
+    type: string
+    description: "hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС"
+    nullable: true
+  depreciationAccount:
+    type: string
+    description: "hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов"
+    nullable: true
+  deferredIncomeAccount:
+    type: string
+    description: "hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода"
+    nullable: true
+  deferredIncomeCurrentAccount:
+    type: string
+    description: "hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов"
+    nullable: true
+  incomeAccount:
+    type: string
+    description: "hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов"
+    nullable: true
+  commissionDate:
+    type: integer
+    description: "hy-AM: Թողարկման տարեթիվ | en-US: Date of commission | ru-RU: Дата выпуска"
+    format: int32
+  serialNumber:
+    type: string
+    description: "hy-AM: Գործարանային համար | en-US: Serial number | ru-RU: Заводской номер"
+    nullable: true
+  technicalCertificate:
+    type: string
+    description: "hy-AM: Տեխնիկական անձնագիր | en-US: Technical certificate | ru-RU: Тех. паспорт"
+    nullable: true
+  brand:
+    type: string
+    description: "hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка"
+    nullable: true
+  briefDescription:
+    type: string
+    description: "hy-AM: Համառոտ բնութագիր | en-US: Brief description | ru-RU: Краткое описание"
+    nullable: true
+  producer:
+    type: string
+    description: "hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель"
+    nullable: true
+additionalProperties: false

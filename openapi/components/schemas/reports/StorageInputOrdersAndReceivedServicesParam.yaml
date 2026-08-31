@@ -1,0 +1,28 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  documentType:
+    type: string
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    nullable: true
+  itemCode:
+    type: string
+    description: "hy-AM: Նյութական արժեք կամ ծառայություն | en-US: Material or service | ru-RU: ТМЦ или услуга"
+    nullable: true
+  documentState:
+    type: string
+    description: "hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа"
+    nullable: true
+additionalProperties: false

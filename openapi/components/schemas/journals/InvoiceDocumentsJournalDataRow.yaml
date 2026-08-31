@@ -1,0 +1,89 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  type:
+    type: integer
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    format: int32
+  typeName:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  submissionDate:
+    type: string
+    description: "hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От"
+    format: date
+    nullable: true
+  taxSerialNumber:
+    type: string
+    description: "hy-AM: Սերիա և համար | en-US: Tax serial number | ru-RU: Серия и номер"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  amount:
+    type: number
+    description: "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма"
+    format: double
+  vatType:
+    type: string
+    nullable: true
+  vatTypeName:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа"
+    format: int32
+  stateName:
+    type: string
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    nullable: true
+  partnerId:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  partnerCode:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  partnerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  partnerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  partnerStatus:
+    type: string
+    description: "hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус"
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  taxExportType:
+    type: string
+    description: "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки"
+    nullable: true
+  userName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  lastChange:
+    type: string
+    description: "hy-AM: Վերջին խմբագրման ամսաթիվ | en-US: Last modification date | ru-RU: Дата последнего изменения"
+    format: date-time
+additionalProperties: false

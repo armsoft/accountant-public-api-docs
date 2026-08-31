@@ -1,0 +1,18 @@
+/documents/transferinvoice:
+  post:
+    tags: [TransferInvoice]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/TransferInvoice.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/TransferInvoice.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

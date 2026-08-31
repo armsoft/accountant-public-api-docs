@@ -1,0 +1,13 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  hasMore:
+    type: boolean
+  data:
+    type: array
+    items:
+      $ref: "#/components/schemas/MaterialsOperationsDataRow"
+    nullable: true
+additionalProperties: false

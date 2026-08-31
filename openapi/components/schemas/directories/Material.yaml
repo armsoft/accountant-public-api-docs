@@ -1,0 +1,124 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  fullName:
+    type: string
+    description: "hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование"
+    nullable: true
+  unitMeasure:
+    type: string
+    description: "hy-AM: Չափման միավոր | en-US: Unit of measure | ru-RU: Единица измерения"
+    nullable: true
+  unitMeasureName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  unitMeasureAbbreviation:
+    type: string
+    description: "hy-AM: Չափման միավոր | en-US: Unit of measure | ru-RU: Единица измерения"
+    nullable: true
+  group:
+    type: string
+    description: "hy-AM: Խումբ | en-US: Group | ru-RU: Группа"
+    nullable: true
+  cpaClassifier:
+    type: string
+    nullable: true
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  wholePrice:
+    type: number
+    description: "hy-AM: Մեծածախ գին դրամով | en-US: Whole price in drams | ru-RU: Оптовая цена в драмах"
+    format: double
+    nullable: true
+  retailPrice:
+    type: number
+    description: "hy-AM: Մանրածախ գին դրամով | en-US: Retail price in drams | ru-RU: Розничная цена в драмах"
+    format: double
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արտարժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  currencyPrice:
+    type: number
+    description: "hy-AM: Մեծածախ գին արտարժութային | en-US: Whole price in currency | ru-RU: Оптовая цена в валюте"
+    format: double
+    nullable: true
+  specification:
+    type: string
+    description: "hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика"
+    nullable: true
+  barcode:
+    type: string
+    description: "hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод"
+    nullable: true
+  externalCode:
+    type: string
+    description: "hy-AM: Արտաքին կոդ | en-US: External code | ru-RU: Внешний код"
+    nullable: true
+  costingMethod:
+    type: string
+    description: "hy-AM: Հաշվառման մեթոդ | en-US: Costing  method | ru-RU: Метод списания"
+    nullable: true
+  aoeCoefficient:
+    type: number
+    format: double
+    nullable: true
+  discountPercent:
+    type: number
+    description: "hy-AM: Զեղչ | en-US: Discount | ru-RU: Скидка"
+    format: double
+    nullable: true
+  environmentalFeePercent:
+    type: number
+    description: "hy-AM: Բնապահպանական հարկի % | en-US: Environmental fee (%) | ru-RU: % экологического налога"
+    format: double
+    nullable: true
+  minimumQuantity:
+    type: number
+    description: "hy-AM: Նվազագույն քանակ (min) | en-US: Minimum quantity | ru-RU: Минимальное количество (min)"
+    format: double
+    nullable: true
+  maximumQuantity:
+    type: number
+    description: "hy-AM: Առավելագույն քանակ (max) | en-US: Maximal quantity (max) | ru-RU: Максимальное количество (max)"
+    format: double
+    nullable: true
+  vat:
+    type: boolean
+    nullable: true
+  revenueAccount:
+    type: string
+    description: "hy-AM: Վաճառքից հասույթի հաշիվ | en-US: Revenue account | ru-RU: Счет доходов при опт. продаже"
+    nullable: true
+  retailRevenueAccount:
+    type: string
+    description: "hy-AM: Մանրածախ վաճառքից հասույթի հաշիվ | en-US: Retail revenue account | ru-RU: Счет доходов при розничной продаже"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Վաճառքից ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов при опт. продаже"
+    nullable: true
+  revenueAdjustmentAccount:
+    type: string
+    description: "hy-AM: ՆԱ վաճառքից վերադարձի հասույթի ճշգրտում | en-US: Adjustment of income from materials sales returns | ru-RU: Корректировка выручки реализации при возврате ТМЦ"
+    nullable: true
+  isClosed:
+    type: boolean
+    description: "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто"
+    nullable: true
+additionalProperties: false

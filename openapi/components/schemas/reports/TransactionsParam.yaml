@@ -1,0 +1,86 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  debitAccount:
+    type: string
+    description: "hy-AM: Դեբետ | en-US: Debit | ru-RU: Дебет"
+    nullable: true
+  creditAccount:
+    type: string
+    description: "hy-AM: Կրեդիտ | en-US: Credit | ru-RU: Кредит"
+    nullable: true
+  accountsANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitPartner:
+    type: string
+    description: "hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн."
+    nullable: true
+  creditPartner:
+    type: string
+    description: "hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн."
+    nullable: true
+  partnersANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitAnalytic1:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  creditAnalytic1:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  analytics1ANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitAnalytic2:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  creditAnalytic2:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  analytics2ANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitCurrency:
+    type: string
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    nullable: true
+  creditCurrency:
+    type: string
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    nullable: true
+  currenciesANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  documentTypes:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    nullable: true
+  showPartners:
+    type: boolean
+    description: "hy-AM: Ցույց տալ գործընկերներին | en-US: Show the partners | ru-RU: Показать данные по партнерам"
+  showAnalytics1:
+    type: boolean
+    description: "hy-AM: Ցույց տալ անալիտիկ խումբ 1 | en-US: Show the analytical dim. 1 | ru-RU: Показать аналитическая группа 1"
+  showAnalytics2:
+    type: boolean
+    description: "hy-AM: Ցույց տալ անալիտիկ խումբ 2 | en-US: Show the analytical dim. 2 | ru-RU: Показать аналитическая группа 2"
+additionalProperties: false

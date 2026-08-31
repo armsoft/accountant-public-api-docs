@@ -1,0 +1,224 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  ecrCheckNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  customer:
+    type: string
+    description: "hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель"
+    nullable: true
+  printExpenseConfirmingCheck:
+    type: boolean
+    description: "hy-AM: Տպել ծախս հիմնավորող ՀԴՄԿ | en-US: Print expense confirming check | ru-RU: Печать чека ККМ подтвер. расходы"
+  contract:
+    type: string
+    description: "hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор"
+    nullable: true
+  contractDate:
+    type: string
+    description: "hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора"
+    format: date
+    nullable: true
+  cashDesk:
+    type: string
+    description: "hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса"
+    nullable: true
+  customerAccount:
+    type: string
+    description: "hy-AM: Գնորդի հաշիվ | en-US: Customer account | ru-RU: Счет покупателя"
+    nullable: true
+  receivedPrepaymentAccount:
+    type: string
+    description: "hy-AM: Ստացված կանխավճարի հաշիվ | en-US: Received prepayment account | ru-RU: Счет авансов полученных"
+    nullable: true
+  vatAccount:
+    type: string
+    nullable: true
+  environmentalFeeAccount:
+    type: string
+    description: "hy-AM: Բնապահ. հարկի կրեդիտային հաշիվ | en-US: Environmental fees' credit account | ru-RU: Кредитовый счет эко. налога"
+    nullable: true
+  nonCashTransactionAccount:
+    type: string
+    description: "hy-AM: Անկանխիկ գործարքների հաշիվ | en-US: Non-cash transaction’s account | ru-RU: Счет безналичных расчетов"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  taxExportType:
+    type: string
+    description: "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки"
+    nullable: true
+  taxInvoiceSeries:
+    type: string
+    description: "hy-AM: Սերիա | en-US: Serial | ru-RU: Серия"
+    nullable: true
+  taxInvoiceNumber:
+    type: string
+    description: "hy-AM: Համար | en-US: Number | ru-RU: Номер"
+    nullable: true
+  submissionDate:
+    type: string
+    description: "hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От"
+    format: date
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  vatCalculationType:
+    type: string
+    nullable: true
+  dealType:
+    type: string
+    description: "hy-AM: Գործարքի տեսակ | en-US: Deal type | ru-RU: Тип сделки"
+    nullable: true
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  discountPercent:
+    type: number
+    description: "hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки"
+    format: double
+  nonCashAmount:
+    type: number
+    description: "hy-AM: Անկանխիկ գումար | en-US: Non-cash amount | ru-RU: Безналичная сумма"
+    format: double
+  useECRPos:
+    type: boolean
+    description: "hy-AM: Օգտագործել ՀԴՄ-ի POS-ը | en-US: Use ECR POS | ru-RU: Использовать POS ККМ"
+  prepaymentAmount:
+    type: number
+    description: "hy-AM: Կանխավճարի օգտագործում | en-US: Use of prepayment | ru-RU: Использование аванса"
+    format: double
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    description: "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма"
+    format: double
+  supplierSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  supplierManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  supplierManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  supplierAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  supplierAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  customerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  customerLegalAddress:
+    type: string
+    description: "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес"
+    nullable: true
+  customerBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  customerSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  customerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  customerManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  customerManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  customerAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  customerAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  stateRegisterNumber:
+    type: string
+    description: "hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП"
+    nullable: true
+  idDocumentType:
+    type: string
+    description: "hy-AM: Անձը հաստատող փաստաթուղթ | en-US: Identification document | ru-RU: Документ, удостоверяющий личность"
+    nullable: true
+  passportNumber:
+    type: string
+    description: "hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта"
+    nullable: true
+  socialCardNumber:
+    type: string
+    description: "hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты"
+    nullable: true
+  citizenOfRA:
+    type: boolean
+    description: "hy-AM: Սոցիալական ծախս կատարած ՀՀ քաղաքացի | en-US: Citizen of RA, who carried made expenses | ru-RU: Гражданин РА, осуществивший социальные расходы"
+  socialExpensesType:
+    type: string
+    description: "hy-AM: Սոցիալական ծախսի տեսակ | en-US: Type of social expenses | ru-RU: Тип социальных расходов"
+    nullable: true
+  socialExpenseSocialCard:
+    type: string
+    description: "hy-AM: ՀԾՀ/ՀԾՀ չունենալու վերաբերյալ տեղեկանք | en-US: Soc. card/certificate of absence of soc. card | ru-RU: Соц. карта/свидетельство об отсутствии соц. карты"
+    nullable: true
+  socialExpenseCitizenName:
+    type: string
+    description: "hy-AM: Անուն, ազգանուն | en-US: First name, last name | ru-RU: Имя, фамилия"
+    nullable: true
+  socialExpenseIdentityDocument:
+    type: string
+    description: "hy-AM: Անձը հաստատող փաստաթուղթ | en-US: Identification document | ru-RU: Документ, удостоверяющий личность"
+    nullable: true
+  socialExpenseSerialNumber:
+    type: string
+    description: "hy-AM: Սերիա և/կամ համար | en-US: Series and/or number | ru-RU: Серия и/или номер"
+    nullable: true
+  itemList:
+    type: array
+    items:
+      $ref: "#/components/schemas/RetailSaleSpecificationRow"
+    description: "hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг"
+    nullable: true
+additionalProperties: false

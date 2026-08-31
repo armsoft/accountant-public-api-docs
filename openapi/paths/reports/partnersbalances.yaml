@@ -1,0 +1,36 @@
+/reports/partnersbalances:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/reports/PartnersBalancesParam.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/reports/PartnersBalancesDataRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+/reports/partnersbalances/nextpage:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/_shared/NextPageRequest.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/reports/PartnersBalancesDataRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

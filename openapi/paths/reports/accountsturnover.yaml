@@ -1,0 +1,36 @@
+/reports/accountsturnover:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/reports/AccountsTurnoverParam.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/reports/AccountsTurnoverDataRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+/reports/accountsturnover/nextpage:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/_shared/NextPageRequest.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/reports/AccountsTurnoverDataRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

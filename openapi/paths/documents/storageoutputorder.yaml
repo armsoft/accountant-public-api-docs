@@ -1,0 +1,18 @@
+/documents/storageoutputorder:
+  post:
+    tags: [StorageOutputOrder]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/StorageOutputOrder.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/StorageOutputOrder.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

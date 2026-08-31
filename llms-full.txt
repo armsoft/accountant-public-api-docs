@@ -1,0 +1,280 @@
+# ArmSoft SME Accountant Public API — Full Reference for LLMs
+
+> This file is intended for AI language models and crawlers.
+> It contains the full inline content of this documentation repository.
+> Structured index: ./llms.txt
+
+---
+
+## Overview
+
+The ArmSoft SME Accountant Public API is a RESTful API for managing accounting operations in the ArmSoft SME Accountant ERP system. It is built on ASP.NET Core 10 / C# 13 and supports Armenian, English, and Russian locales.
+
+- **Base URL:** `https://api.armsoft.am/accountant/v1`
+- **Swagger UI:** `https://api.armsoft.am/accountant/swagger/index.html`
+- **OpenAPI spec:** `./swagger.json` (full), `./openapi/openapi.yaml` (curated)
+- **Authentication:** API Key in `apiKey` request header
+- **Localization:** `Accept-Language` header (`hy-AM`, `en-US`, `ru-RU`)
+
+---
+
+## Authentication
+
+All requests require an `apiKey` header:
+
+```http
+apiKey: your-api-key-here
+Accept-Language: en-US
+```
+
+### API Key Types
+
+**Full Access** — Complete CRUD on all resources. For internal/trusted integrations.
+
+**Limited Access** — Read-only: directory list/get, single document reads by ISN, journals and reports. For analytics, BI and reporting integrations.
+
+### Error Responses
+
+| Status | Meaning |
+|--------|---------|
+| 401 `{ "message": "Missing API Key" }` | API key header missing |
+| 401 | API key invalid (message comes from the authorization service) |
+| 403 `{ "message": "Public API access is not available for this API Key" }` | Public API not enabled for the key |
+| 403 `{ "message": "Access denied. This API Key has limited access and cannot perform this operation." }` | Insufficient permissions |
+
+---
+
+## Error Response Format
+
+All errors return:
+
+```json
+{
+  "message": "Human-readable description (localized)",
+  "fieldName": "field-that-caused-error",
+  "errorCode": "MACHINE_READABLE_CODE"
+}
+```
+
+`fieldName` and `errorCode` are optional.
+
+---
+
+## Pagination
+
+List endpoints support optional pagination via `pageSize` in the request body.
+
+- `pageSize: 0` (default) — returns all rows
+- `pageSize: N` — minimum effective value is 5000
+
+Paginated responses include:
+- `id` (UUID) — pagination context identifier
+- `hasMore` (boolean) — whether more pages exist
+
+To fetch the next page, POST to the matching next-page route — `/list/nextpage` for directories,
+`/nextpage` for journals and reports:
+
+```json
+{ "id": "uuid-from-previous-response", "close": false }
+```
+
+To stop paginating early:
+
+```json
+{ "id": "uuid-from-previous-response", "close": true }
+```
+
+`GET /directories/storages` returns its full array and is not paginated.
+
+---
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| 200 | OK — successful GET, PUT, DELETE |
+| 201 | Created — resource created (POST) |
+| 400 | Bad Request — validation error |
+| 401 | Unauthorized — missing/invalid API key |
+| 403 | Forbidden — Public API disabled for the key, or the key has limited access |
+| 404 | Not Found — resource does not exist |
+| 405 | Method Not Allowed |
+| 409 | Conflict — duplicate code or resource in use |
+| 429 | Too Many Requests — rate limit exceeded |
+| 500 | Internal Server Error |
+| 503 | Service Unavailable |
+
+---
+
+## Directories
+
+Partners, Materials, Services and Employees share the same six operations. Replace
+`{directory}` with `partners`, `materials`, `services` or `employees`.
+
+### List
+`POST /accountant/v1/directories/{directory}/list`
+
+Request body is the directory's filter object. All filters are optional:
+
+```json
+{
+  "codes": ["1001", "1002"],
+  "group": "01",
+  "lastModifiedDate": "2026-01-01T00:00:00Z",
+  "showAlsoClosed": false,
+  "pageSize": 5000
+}
+```
+
+`group` applies to materials and partners; `showAlsoClosed` applies to materials, partners and
+services; employees accept only `codes`, `lastModifiedDate` and `pageSize`.
+
+Response:
+
+```json
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "hasMore": false,
+  "data": [
+    { "id": 100001, "code": "1001", "name": "Material name" }
+  ]
+}
+```
+
+### List — Next Page
+`POST /accountant/v1/directories/{directory}/list/nextpage`
+
+### Get by Code
+`GET /accountant/v1/directories/{directory}/{code}`
+
+### Create
+`POST /accountant/v1/directories/{directory}` → `201 Created`
+
+### Update
+`PUT /accountant/v1/directories/{directory}/{code}`
+
+### Delete
+`DELETE /accountant/v1/directories/{directory}/{code}`
+
+### Storages
+
+Storages are the exception — the full list comes from a plain GET:
+
+- `GET /accountant/v1/directories/storages?showAlsoClosed=false` → array of `Storage`
+- `GET /accountant/v1/directories/storages/{code}`
+- `POST /accountant/v1/directories/storages`
+- `PUT /accountant/v1/directories/storages/{code}`
+- `DELETE /accountant/v1/directories/storages/{code}`
+
+---
+
+## Documents
+
+Each document type exposes four calls. `{document}` is one of `invoice`, `retailsale`,
+`transferinvoice`, `memorialorder`, `paymentorder`, `storageinputorder`, `storageoutputorder`,
+`materialsmovement`, `materialskitting`, `overheadexpenseallocation`. Five more —
+`receivedservice`, `fixedassetacquisition`, `fixedassetdisposalact`, `cashinputorder` and
+`cashoutputorder` — are implemented in the service but are not in the published `swagger.json`
+yet; they will appear there after the next service release.
+
+- `POST /accountant/v1/documents/{document}` — create, returns `201 Created` with the `isn`
+- `GET /accountant/v1/documents/{document}/{isn}` — read
+- `PUT /accountant/v1/documents/{document}/{isn}` — update
+- `DELETE /accountant/v1/documents/{document}/{isn}` — delete
+
+`isn` is the internal serial number (UUID) assigned on create. Rows live in a list property whose
+name depends on the document: `itemList` (invoice, retail sale, transfer invoice),
+`materialsList` (storage input/output order, materials movement, overhead expense allocation),
+`kitComponents` (materials kitting), `transactionsList` (memorial order),
+`servicesList` (received service), `inventoriesList` (fixed asset disposal act). Payment orders,
+cash input/output orders and fixed asset acquisition have no row list.
+
+Create example (memorial order):
+
+```json
+{
+  "date": "2026-01-15",
+  "amount": 10000,
+  "currency": "AMD",
+  "transactionsList": [
+    { "debitAccount": "2110", "creditAccount": "5210", "amount": 10000 }
+  ]
+}
+```
+
+---
+
+## Journals
+
+- `POST /accountant/v1/journals/alldocuments` (+ `/nextpage`)
+- `POST /accountant/v1/journals/invoices` (+ `/nextpage`)
+- `POST /accountant/v1/journals/ecrchecks` (+ `/nextpage`)
+
+`startDate` and `endDate` are required on the invoices journal; every journal accepts a period
+plus optional filters such as `documentTypes`, `partner`, `currency`, `documentState`,
+`cashDesk`, and `pageSize`.
+
+```json
+{ "startDate": "2026-01-01", "endDate": "2026-01-31", "pageSize": 5000 }
+```
+
+---
+
+## Reports
+
+Every report is a POST with a parameter object, and every report has a `/nextpage` call.
+
+| Report | Route | Period or date |
+|--------|-------|----------------|
+| Accounts Balances | `/reports/accountsbalances` | `date` |
+| Accounts Turnover | `/reports/accountsturnover` | `startDate`, `endDate` |
+| Transactions | `/reports/transactions` | `startDate`, `endDate` |
+| Partners Balances | `/reports/partnersbalances` | `date` |
+| Partners Transactions | `/reports/partnerstransactions` | `startDate`, `endDate` |
+| Materials Balances | `/reports/materialsbalances` | `date` |
+| Materials Operations Journal | `/reports/materialsoperationsjournal` | `startDate`, `endDate` |
+| Storage Input Orders and Received Services | `/reports/storageinputordersandreceivedservices` | `startDate`, `endDate` |
+
+---
+
+## System
+
+`GET /accountant/api/Version` returns the API version string and requires no API key. It is not
+versioned and does not sit under `/v1`.
+
+---
+
+## Localization
+
+| Header Value | Language |
+|---|---|
+| `hy-AM` | Armenian (default) |
+| `en-US` | English |
+| `ru-RU` | Russian |
+
+Localization affects error messages, validation messages, and localized display fields (e.g.
+`typeName`, `stateName`). Code and identifier fields are locale-independent. Every property in
+`swagger.json` documents its three labels in the form
+`hy-AM: Կոդ | en-US: Code | ru-RU: Код`.
+
+---
+
+## C# Example
+
+```csharp
+var client = new HttpClient { BaseAddress = new Uri("https://api.armsoft.am/accountant/v1") };
+client.DefaultRequestHeaders.Add("apiKey", "your-api-key-here");
+client.DefaultRequestHeaders.Add("Accept-Language", "en-US");
+
+var response = await client.GetAsync("directories/materials/1001");
+```
+
+---
+
+## About
+
+ArmSoft (Armenian Software) is a leading ERP provider for businesses in Armenia. The Accountant
+system targets small and medium enterprises for accounting operations management.
+
+- Website: https://armsoft.am
+- Support: support@armsoft.am

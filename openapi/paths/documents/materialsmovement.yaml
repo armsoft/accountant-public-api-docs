@@ -1,0 +1,18 @@
+/documents/materialsmovement:
+  post:
+    tags: [MaterialsMovement]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/MaterialsMovement.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/MaterialsMovement.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

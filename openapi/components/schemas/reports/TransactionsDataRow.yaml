@@ -1,0 +1,129 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  type:
+    type: integer
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    format: int32
+  typeName:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  debitAccount:
+    type: string
+    description: "hy-AM: Դեբետ | en-US: Debit | ru-RU: Дебет"
+    nullable: true
+  debitAccountType:
+    type: string
+    description: "hy-AM: Հաշվի տեսակ | en-US: Invoice type | ru-RU: Вид счета"
+    nullable: true
+  debitCurrency:
+    type: string
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    nullable: true
+  debitPartner:
+    type: string
+    description: "hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн."
+    nullable: true
+  debitPartnerName:
+    type: string
+    description: "hy-AM: Դեբետ-անվանում | en-US: Debit-name | ru-RU: Дебет-наименование"
+    nullable: true
+  debitPartnerGroup:
+    type: string
+    description: "hy-AM: Դեբետ-խումբ | en-US: Debit-group | ru-RU: Дебет-группа"
+    nullable: true
+  debitPartnerTaxCode:
+    type: string
+    description: "hy-AM: Դեբետ-ՀՎՀՀ | en-US: Debit - Taxpayer’s ID | ru-RU: Дебет-ИНН"
+    nullable: true
+  debitAnalytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  debitAnalytic1Name:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  debitAnalytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  debitAnalytic2Name:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  creditAccount:
+    type: string
+    description: "hy-AM: Կրեդիտ | en-US: Credit | ru-RU: Кредит"
+    nullable: true
+  creditAccountType:
+    type: string
+    description: "hy-AM: Հաշվի տեսակ | en-US: Invoice type | ru-RU: Вид счета"
+    nullable: true
+  creditCurrency:
+    type: string
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    nullable: true
+  creditPartner:
+    type: string
+    description: "hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн."
+    nullable: true
+  creditPartnerName:
+    type: string
+    description: "hy-AM: Կրեդիտ-անվանում | en-US: Credit-name | ru-RU: Кредит-наименование"
+    nullable: true
+  creditPartnerGroup:
+    type: string
+    description: "hy-AM: Կրեդիտ-խումբ | en-US: Credit-group | ru-RU: Кредит-группа"
+    nullable: true
+  creditPartnerTaxCode:
+    type: string
+    description: "hy-AM: Կրեդիտ-ՀՎՀՀ | en-US: Credit - Taxpayer’s ID | ru-RU: Кредит-ИНН"
+    nullable: true
+  creditAnalytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  creditAnalytic1Name:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  creditAnalytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  creditAnalytic2Name:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  amount:
+    type: number
+    description: "hy-AM: Գումար դրամով | en-US: Amount in Dram | ru-RU: Сумма в драмах"
+    format: double
+  currencyAmount:
+    type: number
+    description: "hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте"
+    format: double
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  userName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  systemGenerated:
+    type: boolean
+    description: "hy-AM: Համակարգային | en-US: System | ru-RU: Системный"
+additionalProperties: false

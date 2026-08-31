@@ -1,0 +1,57 @@
+/documents/fixedassetacquisition/{isn}:
+  get:
+    tags: [FixedAssetAcquisition]
+    parameters:
+      - name: isn
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/FixedAssetAcquisition.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+  put:
+    tags: [FixedAssetAcquisition]
+    parameters:
+      - name: isn
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/FixedAssetAcquisition.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/FixedAssetAcquisition.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+  delete:
+    tags: [FixedAssetAcquisition]
+    parameters:
+      - name: isn
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

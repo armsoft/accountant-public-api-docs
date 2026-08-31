@@ -1,0 +1,56 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  materialGroup:
+    type: string
+    description: "hy-AM: Նյութական արժեքների խումբ | en-US: Materials group | ru-RU: Группа ТМЦ"
+    nullable: true
+  material:
+    type: string
+    description: "hy-AM: Նյութական արժեք | en-US: Material | ru-RU: Товарно-материальная ценность"
+    nullable: true
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  partner:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  operationTypes:
+    type: string
+    description: "hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции"
+    nullable: true
+  showParties:
+    type: boolean
+    description: "hy-AM: Ըստ տարբեր խմբաքանակների | en-US: By different batches | ru-RU: Детализировать по партиям"
+  currency:
+    type: string
+    description: "hy-AM: Արտարժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  showCurrencies:
+    type: boolean
+    description: "hy-AM: Ցույց տալ արտարժույթները | en-US: Show currencies | ru-RU: Показать валюты"
+  showSalePrice:
+    type: boolean
+    description: "hy-AM: Ցույց տալ վաճառքի գինը | en-US: Show sale price | ru-RU: Показать цена продажи"
+  showVATAmounts:
+    type: boolean
+    description: "hy-AM: Ցույց տալ ԱԱՀ-ի գումարները | en-US: Show VAT amounts | ru-RU: Показать суммы НДС"
+additionalProperties: false

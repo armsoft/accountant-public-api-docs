@@ -1,0 +1,35 @@
+type: object
+properties:
+  inventoryNumber:
+    type: string
+    description: "hy-AM: Գույքահամար | en-US: Inventory | ru-RU: Инвентарный номер"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  grossCarryingAmountAccount:
+    type: string
+    description: "hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС"
+    nullable: true
+  depreciationAccount:
+    type: string
+    description: "hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов"
+    nullable: true
+  deferredIncomeAccount:
+    type: string
+    description: "hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода"
+    nullable: true
+  deferredIncomeCurrentAccount:
+    type: string
+    description: "hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов"
+    nullable: true
+  incomeAccount:
+    type: string
+    description: "hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,105 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  type:
+    type: integer
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    format: int32
+  typeName:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  debitPartnerGroup:
+    type: string
+    description: "hy-AM: Դեբետ-խումբ | en-US: Debit-group | ru-RU: Дебет-группа"
+    nullable: true
+  debitPartnerGroupName:
+    type: string
+    description: "hy-AM: Դեբետ-խմբի անվանում | en-US: Debit group name | ru-RU: Дебет-группа наименование"
+    nullable: true
+  debitPartner:
+    type: string
+    description: "hy-AM: Դեբետ-կոդ | en-US: Debit-code | ru-RU: Дебет-код"
+    nullable: true
+  debitPartnerName:
+    type: string
+    description: "hy-AM: Դեբետ-անվանում | en-US: Debit-name | ru-RU: Дебет-наименование"
+    nullable: true
+  debitPartnerTaxCode:
+    type: string
+    description: "hy-AM: Դեբետ-ՀՎՀՀ | en-US: Debit - Taxpayer’s ID | ru-RU: Дебет-ИНН"
+    nullable: true
+  debitAccount:
+    type: string
+    description: "hy-AM: Դեբետ-հաշիվ | en-US: Debit-account | ru-RU: Дебет-счет"
+    nullable: true
+  debitAccountType:
+    type: string
+    description: "hy-AM: Հաշվի տեսակ | en-US: Invoice type | ru-RU: Вид счета"
+    nullable: true
+  debitCurrency:
+    type: string
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    nullable: true
+  creditPartnerGroup:
+    type: string
+    description: "hy-AM: Կրեդիտ-խումբ | en-US: Credit-group | ru-RU: Кредит-группа"
+    nullable: true
+  creditPartnerGroupName:
+    type: string
+    description: "hy-AM: Կրեդիտ-խմբի անվանում | en-US: Crebit group name | ru-RU: Наименования кредит-группа"
+    nullable: true
+  creditPartner:
+    type: string
+    description: "hy-AM: Կրեդիտ-կոդ | en-US: Credit-code | ru-RU: Кредит-код"
+    nullable: true
+  creditPartnerName:
+    type: string
+    description: "hy-AM: Կրեդիտ-անվանում | en-US: Credit-name | ru-RU: Кредит-наименование"
+    nullable: true
+  creditPartnerTaxCode:
+    type: string
+    description: "hy-AM: Կրեդիտ-ՀՎՀՀ | en-US: Credit - Taxpayer’s ID | ru-RU: Кредит-ИНН"
+    nullable: true
+  creditAccount:
+    type: string
+    description: "hy-AM: Կրեդիտ-հաշիվ | en-US: Credit-account | ru-RU: Кредит-счет"
+    nullable: true
+  creditAccountType:
+    type: string
+    description: "hy-AM: Հաշվի տեսակ | en-US: Invoice type | ru-RU: Вид счета"
+    nullable: true
+  creditCurrency:
+    type: string
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    nullable: true
+  amount:
+    type: number
+    description: "hy-AM: Գումար դրամով | en-US: Amount in Dram | ru-RU: Сумма в драмах"
+    format: double
+  currencyAmount:
+    type: number
+    description: "hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте"
+    format: double
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  userName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  systemGenerated:
+    type: boolean
+    description: "hy-AM: Համակարգային | en-US: System | ru-RU: Системный"
+additionalProperties: false

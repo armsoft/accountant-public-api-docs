@@ -1,0 +1,23 @@
+type: object
+properties:
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  stockkeeper:
+    type: string
+    description: "hy-AM: Պահեստապետ | en-US: Stockkeeper | ru-RU: Заведующий складом"
+    nullable: true
+  address:
+    type: string
+    description: "hy-AM: Հասցե | en-US: Address | ru-RU: Адрес"
+    nullable: true
+  isClosed:
+    type: boolean
+    description: "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто"
+    nullable: true
+additionalProperties: false

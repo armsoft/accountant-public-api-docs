@@ -1,0 +1,51 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  group:
+    type: string
+    description: "hy-AM: Նյութական արժեքների խումբ | en-US: Materials group | ru-RU: Группа ТМЦ"
+    nullable: true
+  material:
+    type: string
+    description: "hy-AM: Նյութական արժեք | en-US: Material | ru-RU: Товарно-материальная ценность"
+    nullable: true
+  showByDifferentAccounts:
+    type: boolean
+    description: "hy-AM: Ըստ տարբեր հաշիվների | en-US: By different accounts | ru-RU: Детализировать по счетам"
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  showByDifferentParties:
+    type: boolean
+    description: "hy-AM: Ըստ տարբեր խմբաքանակների | en-US: By different batches | ru-RU: Детализировать по партиям"
+  minimumQuantities:
+    type: string
+    description: "hy-AM: Նվազագույն քանակներ | en-US: Minimum quantities | ru-RU: Минимальные количества"
+    nullable: true
+  salePrices:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Ցույց տալ վաճառքի գինը | en-US: Show sale price | ru-RU: Показать цена продажи"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արտարժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  showZeroRows:
+    type: boolean
+    description: "hy-AM: Ցույց տալ զրոյական տողերը | en-US: Show zero rows | ru-RU: Показать нулевые строки"
+additionalProperties: false

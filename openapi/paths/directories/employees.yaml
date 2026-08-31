@@ -1,0 +1,54 @@
+/directories/employees/list:
+  post:
+    tags: [Employees]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/directories/EmployeeFilters.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/EmployeeRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+/directories/employees/list/nextpage:
+  post:
+    tags: [Employees]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/_shared/NextPageRequest.yaml"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/EmployeeRowApiResponse.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+/directories/employees:
+  post:
+    tags: [Employees]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/directories/Employee.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/Employee.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

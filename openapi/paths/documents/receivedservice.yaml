@@ -1,0 +1,18 @@
+/documents/receivedservice:
+  post:
+    tags: [ReceivedService]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/ReceivedService.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/ReceivedService.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

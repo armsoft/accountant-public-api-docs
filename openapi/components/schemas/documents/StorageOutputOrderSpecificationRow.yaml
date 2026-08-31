@@ -1,0 +1,31 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  unitAbbreviation:
+    type: string
+    description: "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица"
+    nullable: true
+  quantity:
+    type: number
+    description: "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество"
+    format: double
+  amount:
+    type: number
+    description: "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма"
+    format: double
+  rowId:
+    type: integer
+    description: "hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии"
+    format: int32
+additionalProperties: false

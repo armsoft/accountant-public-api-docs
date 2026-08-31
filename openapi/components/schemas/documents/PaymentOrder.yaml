@@ -1,0 +1,131 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  transactionDate:
+    type: string
+    description: "hy-AM: Ձևակերպման ամսաթիվ | en-US: Transaction date | ru-RU: Дата проводки "
+    format: date
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  currencyAmount:
+    type: number
+    description: "hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте"
+    format: double
+  amount:
+    type: number
+    description: "hy-AM: Գումար դրամով | en-US: Amount in Dram | ru-RU: Сумма в драмах"
+    format: double
+  paymentAim:
+    type: string
+    description: "hy-AM: Վճարման նպատակ  | en-US: Payment aim | ru-RU: Назначение платежа"
+    nullable: true
+  payerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  payerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  taxAreaCode:
+    type: string
+    description: "hy-AM: Հարկային տարածքի կոդ | en-US: Tax area code | ru-RU: Код региональной налоговой службы"
+    nullable: true
+  payerBankAccount:
+    type: string
+    description: "hy-AM: հաշիվ.N  | en-US: Account N | ru-RU: Сч. N"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  partnerCode:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  receiverName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  receiverTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  receiverLegalStatus:
+    type: string
+    description: "hy-AM: Իրավ. կարգավիճակ | en-US: Legal status | ru-RU: Юр. статус"
+    nullable: true
+  receiverBankAccount:
+    type: string
+    description: "hy-AM: հաշիվ.N  | en-US: Account N | ru-RU: Сч. N"
+    nullable: true
+  correspondentAccount:
+    type: string
+    description: "hy-AM: Թղթակցող հաշիվ | en-US: Corr. account | ru-RU: Корр. счет"
+    nullable: true
+  cashOutFlowAccount:
+    type: string
+    description: "hy-AM: Դրամ. արտ. հաշիվ | en-US: Cash out. acc. | ru-RU: Счет выб. ДС"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  forOtherPartner:
+    type: boolean
+    description: "hy-AM: Այլ հաճախորդ | en-US: Third party | ru-RU: Другой клиент"
+  otherPartnerCode:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  otherPartnerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  otherPartnerResidence:
+    type: string
+    description: "hy-AM: Ռեզիդենտություն | en-US: Residence | ru-RU: Резидентность"
+    nullable: true
+  otherPartnerLegalStatus:
+    type: string
+    description: "hy-AM: Իրավ. կարգավիճակ | en-US: Legal status | ru-RU: Юр. статус"
+    nullable: true
+  otherPartnerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  otherPartnerPassportData:
+    type: string
+    description: "hy-AM: Անձնագրի տեսակ | en-US: Passport Data | ru-RU: Тип паспорта"
+    nullable: true
+  otherPartnerPassportNumber:
+    type: string
+    description: "hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта"
+    nullable: true
+  otherPartnerSocialCard:
+    type: string
+    description: "hy-AM: Սոցիալական քարտ | en-US: Social card | ru-RU: Социальная карта"
+    nullable: true
+  otherPartnerAddress:
+    type: string
+    description: "hy-AM: Հասցե | en-US: Address | ru-RU: Адрес"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,43 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  reportCurrency:
+    type: string
+    description: "hy-AM: Հաշվետվության արժույթ | en-US: Report currency | ru-RU: Валюта отчета"
+    nullable: true
+  accountsSection:
+    type: string
+    description: "hy-AM: Հաշվի պատկանելիության բաժին | en-US: Accounts section | ru-RU: Раздел счета"
+    nullable: true
+  showOnlyLastLevels:
+    type: boolean
+    description: "hy-AM: Ցույց տալ միայն վերջին մակարդակի հաշիվները | en-US: Show only last levels accounts | ru-RU: Показать счета последнего уровня"
+  showPartners:
+    type: boolean
+    description: "hy-AM: Ցույց տալ գործընկերներին | en-US: Show the partners | ru-RU: Показать данные по партнерам"
+  showAnalytics1:
+    type: boolean
+    description: "hy-AM: Ցույց տալ անալիտիկ խումբ 1 | en-US: Show the analytical dim. 1 | ru-RU: Показать аналитическая группа 1"
+  showAnalytics2:
+    type: boolean
+    description: "hy-AM: Ցույց տալ անալիտիկ խումբ 2 | en-US: Show the analytical dim. 2 | ru-RU: Показать аналитическая группа 2"
+  showZeroRows:
+    type: boolean
+    description: "hy-AM: Ցույց տալ զրոյական տողերը | en-US: Show zero rows | ru-RU: Показать нулевые строки"
+additionalProperties: false

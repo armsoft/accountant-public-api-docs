@@ -1,0 +1,55 @@
+type: object
+properties:
+  debitAccount:
+    type: string
+    description: "hy-AM: Դեբետ | en-US: Debit | ru-RU: Дебет"
+    nullable: true
+  debitPartner:
+    type: string
+    description: "hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн."
+    nullable: true
+  debitAnalytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  debitAnalytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  debitCurrency:
+    type: string
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    nullable: true
+  creditAccount:
+    type: string
+    description: "hy-AM: Կրեդիտ | en-US: Credit | ru-RU: Кредит"
+    nullable: true
+  creditPartner:
+    type: string
+    description: "hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн."
+    nullable: true
+  creditAnalytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  creditAnalytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  creditCurrency:
+    type: string
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    nullable: true
+  currencyAmount:
+    type: number
+    description: "hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте"
+    format: double
+  amount:
+    type: number
+    description: "hy-AM: Գումար դրամով | en-US: Amount in Dram | ru-RU: Сумма в драмах"
+    format: double
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+additionalProperties: false

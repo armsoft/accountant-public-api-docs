@@ -1,0 +1,163 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  unitMeasure:
+    type: string
+    description: "hy-AM: Չափման միավոր | en-US: Unit of measure | ru-RU: Единица измерения"
+    nullable: true
+  unitMeasureAbbreviation:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  storageName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  quantity:
+    type: number
+    description: "hy-AM: Մնացորդ | en-US: Balance | ru-RU: Остаток"
+    format: double
+  cost:
+    type: number
+    description: "hy-AM: Գին դրամով | en-US: Price in drams | ru-RU: Цена в драмах"
+    format: double
+  costAmount:
+    type: number
+    description: "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма"
+    format: double
+  unitVAT:
+    type: number
+    description: "hy-AM: Միավորի ԱԱՀ | en-US: Unit VAT | ru-RU: НДС единицы"
+    format: double
+  vatAmount:
+    type: number
+    format: double
+  group:
+    type: string
+    description: "hy-AM: Խումբ | en-US: Group | ru-RU: Группа"
+    nullable: true
+  groupName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  salePrice:
+    type: number
+    description: "hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи"
+    format: double
+  saleAmount:
+    type: number
+    description: "hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи"
+    format: double
+  retailPrice:
+    type: number
+    description: "hy-AM: Մանրածախ վաճառքի գին | en-US: Retail price | ru-RU: Розничная цена"
+    format: double
+  retailAmount:
+    type: number
+    description: "hy-AM: Մանրածախ վաճառքի գումար | en-US: Retail amount | ru-RU: Розничная цена"
+    format: double
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  currencyPrice:
+    type: number
+    description: "hy-AM: Վաճառքի գին արժ. | en-US: Sale price in curr. | ru-RU: Цена продажи вал."
+    format: double
+  currencyAmount:
+    type: number
+    description: "hy-AM: Վաճառքի գումար արժ. | en-US: Sale amount in curr. | ru-RU: Сумма продажи вал."
+    format: double
+  minimumQuantity:
+    type: number
+    description: "hy-AM: Նվազագույն քանակ (min) | en-US: Minimum quantity | ru-RU: Минимальное количество (min)"
+    format: double
+  variance:
+    type: number
+    description: "hy-AM: Շեղում | en-US: Variance | ru-RU: Отклонение"
+    format: double
+  maximumQuantity:
+    type: number
+    description: "hy-AM: Առավելագույն քանակ (max) | en-US: Maximal quantity (max) | ru-RU: Максимальное количество (max)"
+    format: double
+  orderQuantity:
+    type: number
+    description: "hy-AM: Պատվիրման քանակ | en-US: Order quantity | ru-RU: Количество заказа"
+    format: double
+  orderComment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  incomeDate:
+    type: string
+    description: "hy-AM: Մուտքի ա/թ | en-US: Income date | ru-RU: Дата прихода"
+    format: date
+    nullable: true
+  partySupplierId:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  partySupplierCode:
+    type: string
+    description: "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик"
+    nullable: true
+  partySupplierName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  partySupplierTaxCode:
+    type: string
+    description: "hy-AM: Մատակարարի ՀՎՀՀ | en-US: Supplier tax code | ru-RU: ИНН код поставщика"
+    nullable: true
+  purchasingPrice:
+    type: number
+    description: "hy-AM: Ձեռքբերման գին | en-US: Purchasing price | ru-RU: Цена покупки"
+    format: double
+  purchasingPriceWithoutVAT:
+    type: number
+    description: "hy-AM: Ձեռքբերման գին | en-US: Purchasing price | ru-RU: Цена покупки"
+    format: double
+  partyDocumentType:
+    type: string
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    nullable: true
+  partyDocumentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  partyBase:
+    type: string
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: uuid
+  partyRow:
+    type: integer
+    description: "hy-AM: Տողի N | en-US: line N | ru-RU: N строки"
+    format: int32
+  costingMethod:
+    type: string
+    description: "hy-AM: Հաշվառման մեթոդ | en-US: Costing  method | ru-RU: Метод списания"
+    nullable: true
+  specification:
+    type: string
+    description: "hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика"
+    nullable: true
+additionalProperties: false

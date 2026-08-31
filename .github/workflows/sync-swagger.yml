@@ -1,0 +1,67 @@
+name: Sync API Documentation
+
+on:
+  workflow_dispatch:  # Manual trigger only - run from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-swagger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install widdershins
+        run: npm install -g widdershins
+
+      - name: Fetch live swagger.json
+        run: |
+          curl -s https://api.armsoft.am/accountant/swagger/v1/swagger.json -o swagger-new.json
+          # If auth is ever needed in the future, uncomment and add API_TOKEN secret:
+          # curl -s -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+          #   https://api.armsoft.am/accountant/swagger/v1/swagger.json -o swagger-new.json
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if cmp -s swagger.json swagger-new.json; then
+            echo "No changes detected in swagger.json"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in swagger.json"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            mv swagger-new.json swagger.json
+          fi
+
+      - name: Generate API reference documentation
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          widdershins --summary --omitHeader swagger.json -o docs/api-reference.md
+          echo "✅ Generated docs/api-reference.md from updated swagger.json"
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs: auto-sync API reference from live swagger [${{ github.run_id }}]'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          file_pattern: 'swagger.json docs/api-reference.md'
+
+      - name: Summary
+        run: |
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ API documentation synced successfully"
+          else
+            echo "✅ No changes - API documentation is already up to date"
+          fi

@@ -1,0 +1,432 @@
+openapi: 3.0.3
+info:
+  title: ArmSoft SME Accountant Public API
+  description: REST API for managing partners, materials, services, employees, accounting documents, journals and reports in the ArmSoft SME Accountant system
+  version: "1"
+  contact:
+    name: ArmSoft Support
+    email: support@armsoft.am
+    url: https://armsoft.am
+
+servers:
+  - url: https://api.armsoft.am/accountant/v1
+    description: Production
+
+security:
+  - apiKeyAuth: []
+
+tags:
+  - name: Employees
+    description: Employee directory endpoints
+  - name: Materials
+    description: Material directory endpoints
+  - name: Partners
+    description: Partner directory endpoints
+  - name: Services
+    description: Service directory endpoints
+  - name: Storages
+    description: Storage directory endpoints
+  - name: Invoice
+    description: Invoice document endpoints
+  - name: RetailSale
+    description: Retail sale document endpoints
+  - name: TransferInvoice
+    description: Transfer invoice document endpoints
+  - name: MemorialOrder
+    description: Memorial order document endpoints
+  - name: PaymentOrder
+    description: Payment order document endpoints
+  - name: StorageInputOrder
+    description: Storage input order document endpoints
+  - name: StorageOutputOrder
+    description: Storage output order document endpoints
+  - name: MaterialsMovement
+    description: Materials movement document endpoints
+  - name: MaterialsKitting
+    description: Materials kitting document endpoints
+  - name: OverheadExpenseAllocation
+    description: Overhead expense allocation document endpoints
+  - name: ReceivedService
+    description: Received service document endpoints (not published yet)
+  - name: FixedAssetAcquisition
+    description: Fixed asset acquisition document endpoints (not published yet)
+  - name: FixedAssetDisposalAct
+    description: Fixed asset disposal act document endpoints (not published yet)
+  - name: CashInputOrder
+    description: Cash input order document endpoints (not published yet)
+  - name: CashOutputOrder
+    description: Cash output order document endpoints (not published yet)
+  - name: Journals
+    description: Document journal endpoints
+  - name: Reports
+    description: Report endpoints
+  - name: Version
+    description: API version endpoint
+
+paths:
+  # Directories - Employees
+  /directories/employees:
+    $ref: ./paths/directories/employees.yaml#/~1directories~1employees
+  /directories/employees/list:
+    $ref: ./paths/directories/employees.yaml#/~1directories~1employees~1list
+  /directories/employees/list/nextpage:
+    $ref: ./paths/directories/employees.yaml#/~1directories~1employees~1list~1nextpage
+  /directories/employees/{code}:
+    $ref: ./paths/directories/employees_{code}.yaml#/~1directories~1employees~1{code}
+  # Directories - Materials
+  /directories/materials:
+    $ref: ./paths/directories/materials.yaml#/~1directories~1materials
+  /directories/materials/list:
+    $ref: ./paths/directories/materials.yaml#/~1directories~1materials~1list
+  /directories/materials/list/nextpage:
+    $ref: ./paths/directories/materials.yaml#/~1directories~1materials~1list~1nextpage
+  /directories/materials/{code}:
+    $ref: ./paths/directories/materials_{code}.yaml#/~1directories~1materials~1{code}
+  # Directories - Partners
+  /directories/partners:
+    $ref: ./paths/directories/partners.yaml#/~1directories~1partners
+  /directories/partners/list:
+    $ref: ./paths/directories/partners.yaml#/~1directories~1partners~1list
+  /directories/partners/list/nextpage:
+    $ref: ./paths/directories/partners.yaml#/~1directories~1partners~1list~1nextpage
+  /directories/partners/{code}:
+    $ref: ./paths/directories/partners_{code}.yaml#/~1directories~1partners~1{code}
+  # Directories - Services
+  /directories/services:
+    $ref: ./paths/directories/services.yaml#/~1directories~1services
+  /directories/services/list:
+    $ref: ./paths/directories/services.yaml#/~1directories~1services~1list
+  /directories/services/list/nextpage:
+    $ref: ./paths/directories/services.yaml#/~1directories~1services~1list~1nextpage
+  /directories/services/{code}:
+    $ref: ./paths/directories/services_{code}.yaml#/~1directories~1services~1{code}
+  # Directories - Storages
+  /directories/storages:
+    $ref: ./paths/directories/storages.yaml#/~1directories~1storages
+  /directories/storages/{code}:
+    $ref: ./paths/directories/storages_{code}.yaml#/~1directories~1storages~1{code}
+  # Documents - Invoice
+  /documents/invoice:
+    $ref: ./paths/documents/invoice.yaml#/~1documents~1invoice
+  /documents/invoice/{isn}:
+    $ref: ./paths/documents/invoice_{isn}.yaml#/~1documents~1invoice~1{isn}
+  # Documents - Retail Sale
+  /documents/retailsale:
+    $ref: ./paths/documents/retailsale.yaml#/~1documents~1retailsale
+  /documents/retailsale/{isn}:
+    $ref: ./paths/documents/retailsale_{isn}.yaml#/~1documents~1retailsale~1{isn}
+  # Documents - Transfer Invoice
+  /documents/transferinvoice:
+    $ref: ./paths/documents/transferinvoice.yaml#/~1documents~1transferinvoice
+  /documents/transferinvoice/{isn}:
+    $ref: ./paths/documents/transferinvoice_{isn}.yaml#/~1documents~1transferinvoice~1{isn}
+  # Documents - Memorial Order
+  /documents/memorialorder:
+    $ref: ./paths/documents/memorialorder.yaml#/~1documents~1memorialorder
+  /documents/memorialorder/{isn}:
+    $ref: ./paths/documents/memorialorder_{isn}.yaml#/~1documents~1memorialorder~1{isn}
+  # Documents - Payment Order
+  /documents/paymentorder:
+    $ref: ./paths/documents/paymentorder.yaml#/~1documents~1paymentorder
+  /documents/paymentorder/{isn}:
+    $ref: ./paths/documents/paymentorder_{isn}.yaml#/~1documents~1paymentorder~1{isn}
+  # Documents - Storage Input Order
+  /documents/storageinputorder:
+    $ref: ./paths/documents/storageinputorder.yaml#/~1documents~1storageinputorder
+  /documents/storageinputorder/{isn}:
+    $ref: ./paths/documents/storageinputorder_{isn}.yaml#/~1documents~1storageinputorder~1{isn}
+  # Documents - Storage Output Order
+  /documents/storageoutputorder:
+    $ref: ./paths/documents/storageoutputorder.yaml#/~1documents~1storageoutputorder
+  /documents/storageoutputorder/{isn}:
+    $ref: ./paths/documents/storageoutputorder_{isn}.yaml#/~1documents~1storageoutputorder~1{isn}
+  # Documents - Materials Movement
+  /documents/materialsmovement:
+    $ref: ./paths/documents/materialsmovement.yaml#/~1documents~1materialsmovement
+  /documents/materialsmovement/{isn}:
+    $ref: ./paths/documents/materialsmovement_{isn}.yaml#/~1documents~1materialsmovement~1{isn}
+  # Documents - Materials Kitting
+  /documents/materialskitting:
+    $ref: ./paths/documents/materialskitting.yaml#/~1documents~1materialskitting
+  /documents/materialskitting/{isn}:
+    $ref: ./paths/documents/materialskitting_{isn}.yaml#/~1documents~1materialskitting~1{isn}
+  # Documents - Overhead Expense Allocation
+  /documents/overheadexpenseallocation:
+    $ref: ./paths/documents/overheadexpenseallocation.yaml#/~1documents~1overheadexpenseallocation
+  /documents/overheadexpenseallocation/{isn}:
+    $ref: ./paths/documents/overheadexpenseallocation_{isn}.yaml#/~1documents~1overheadexpenseallocation~1{isn}
+  # Documents - Received Service (not published yet)
+  /documents/receivedservice:
+    $ref: ./paths/documents/receivedservice.yaml#/~1documents~1receivedservice
+  /documents/receivedservice/{isn}:
+    $ref: ./paths/documents/receivedservice_{isn}.yaml#/~1documents~1receivedservice~1{isn}
+  # Documents - Fixed Asset Acquisition (not published yet)
+  /documents/fixedassetacquisition:
+    $ref: ./paths/documents/fixedassetacquisition.yaml#/~1documents~1fixedassetacquisition
+  /documents/fixedassetacquisition/{isn}:
+    $ref: ./paths/documents/fixedassetacquisition_{isn}.yaml#/~1documents~1fixedassetacquisition~1{isn}
+  # Documents - Fixed Asset Disposal Act (not published yet)
+  /documents/fixedassetdisposalact:
+    $ref: ./paths/documents/fixedassetdisposalact.yaml#/~1documents~1fixedassetdisposalact
+  /documents/fixedassetdisposalact/{isn}:
+    $ref: ./paths/documents/fixedassetdisposalact_{isn}.yaml#/~1documents~1fixedassetdisposalact~1{isn}
+  # Documents - Cash Input Order (not published yet)
+  /documents/cashinputorder:
+    $ref: ./paths/documents/cashinputorder.yaml#/~1documents~1cashinputorder
+  /documents/cashinputorder/{isn}:
+    $ref: ./paths/documents/cashinputorder_{isn}.yaml#/~1documents~1cashinputorder~1{isn}
+  # Documents - Cash Output Order (not published yet)
+  /documents/cashoutputorder:
+    $ref: ./paths/documents/cashoutputorder.yaml#/~1documents~1cashoutputorder
+  /documents/cashoutputorder/{isn}:
+    $ref: ./paths/documents/cashoutputorder_{isn}.yaml#/~1documents~1cashoutputorder~1{isn}
+  # Journals
+  /journals/alldocuments:
+    $ref: ./paths/journals/alldocuments.yaml#/~1journals~1alldocuments
+  /journals/alldocuments/nextpage:
+    $ref: ./paths/journals/alldocuments.yaml#/~1journals~1alldocuments~1nextpage
+  /journals/invoices:
+    $ref: ./paths/journals/invoices.yaml#/~1journals~1invoices
+  /journals/invoices/nextpage:
+    $ref: ./paths/journals/invoices.yaml#/~1journals~1invoices~1nextpage
+  /journals/ecrchecks:
+    $ref: ./paths/journals/ecrchecks.yaml#/~1journals~1ecrchecks
+  /journals/ecrchecks/nextpage:
+    $ref: ./paths/journals/ecrchecks.yaml#/~1journals~1ecrchecks~1nextpage
+  # Reports
+  /reports/accountsbalances:
+    $ref: ./paths/reports/accountsbalances.yaml#/~1reports~1accountsbalances
+  /reports/accountsbalances/nextpage:
+    $ref: ./paths/reports/accountsbalances.yaml#/~1reports~1accountsbalances~1nextpage
+  /reports/accountsturnover:
+    $ref: ./paths/reports/accountsturnover.yaml#/~1reports~1accountsturnover
+  /reports/accountsturnover/nextpage:
+    $ref: ./paths/reports/accountsturnover.yaml#/~1reports~1accountsturnover~1nextpage
+  /reports/transactions:
+    $ref: ./paths/reports/transactions.yaml#/~1reports~1transactions
+  /reports/transactions/nextpage:
+    $ref: ./paths/reports/transactions.yaml#/~1reports~1transactions~1nextpage
+  /reports/partnersbalances:
+    $ref: ./paths/reports/partnersbalances.yaml#/~1reports~1partnersbalances
+  /reports/partnersbalances/nextpage:
+    $ref: ./paths/reports/partnersbalances.yaml#/~1reports~1partnersbalances~1nextpage
+  /reports/partnerstransactions:
+    $ref: ./paths/reports/partnerstransactions.yaml#/~1reports~1partnerstransactions
+  /reports/partnerstransactions/nextpage:
+    $ref: ./paths/reports/partnerstransactions.yaml#/~1reports~1partnerstransactions~1nextpage
+  /reports/materialsbalances:
+    $ref: ./paths/reports/materialsbalances.yaml#/~1reports~1materialsbalances
+  /reports/materialsbalances/nextpage:
+    $ref: ./paths/reports/materialsbalances.yaml#/~1reports~1materialsbalances~1nextpage
+  /reports/materialsoperationsjournal:
+    $ref: ./paths/reports/materialsoperationsjournal.yaml#/~1reports~1materialsoperationsjournal
+  /reports/materialsoperationsjournal/nextpage:
+    $ref: ./paths/reports/materialsoperationsjournal.yaml#/~1reports~1materialsoperationsjournal~1nextpage
+  /reports/storageinputordersandreceivedservices:
+    $ref: ./paths/reports/storageinputordersandreceivedservices.yaml#/~1reports~1storageinputordersandreceivedservices
+  /reports/storageinputordersandreceivedservices/nextpage:
+    $ref: ./paths/reports/storageinputordersandreceivedservices.yaml#/~1reports~1storageinputordersandreceivedservices~1nextpage
+  # System
+  /api/Version:
+    $ref: ./paths/version.yaml#/~1api~1Version
+
+components:
+  securitySchemes:
+    apiKeyAuth:
+      $ref: ./components/securitySchemes/api-key.yaml
+
+  schemas:
+    # Shared
+    ApiResponse:
+      $ref: ./components/schemas/_shared/ApiResponse.yaml
+    NextPageRequest:
+      $ref: ./components/schemas/_shared/NextPageRequest.yaml
+    Error:
+      $ref: ./components/schemas/_shared/Error.yaml
+    # Directories - Employees
+    Employee:
+      $ref: ./components/schemas/directories/Employee.yaml
+    EmployeeFeeHoldRow:
+      $ref: ./components/schemas/directories/EmployeeFeeHoldRow.yaml
+    EmployeeFilters:
+      $ref: ./components/schemas/directories/EmployeeFilters.yaml
+    EmployeeRow:
+      $ref: ./components/schemas/directories/EmployeeRow.yaml
+    EmployeeRowApiResponse:
+      $ref: ./components/schemas/directories/EmployeeRowApiResponse.yaml
+    # Directories - Materials
+    Material:
+      $ref: ./components/schemas/directories/Material.yaml
+    MaterialFilters:
+      $ref: ./components/schemas/directories/MaterialFilters.yaml
+    MaterialRow:
+      $ref: ./components/schemas/directories/MaterialRow.yaml
+    MaterialRowApiResponse:
+      $ref: ./components/schemas/directories/MaterialRowApiResponse.yaml
+    # Directories - Partners
+    Partner:
+      $ref: ./components/schemas/directories/Partner.yaml
+    PartnerBusinessAddressRow:
+      $ref: ./components/schemas/directories/PartnerBusinessAddressRow.yaml
+    PartnerFilters:
+      $ref: ./components/schemas/directories/PartnerFilters.yaml
+    PartnerRow:
+      $ref: ./components/schemas/directories/PartnerRow.yaml
+    PartnerRowApiResponse:
+      $ref: ./components/schemas/directories/PartnerRowApiResponse.yaml
+    PartnerSettlementAccountRow:
+      $ref: ./components/schemas/directories/PartnerSettlementAccountRow.yaml
+    # Directories - Services
+    Service:
+      $ref: ./components/schemas/directories/Service.yaml
+    ServiceFilters:
+      $ref: ./components/schemas/directories/ServiceFilters.yaml
+    ServiceRow:
+      $ref: ./components/schemas/directories/ServiceRow.yaml
+    ServiceRowApiResponse:
+      $ref: ./components/schemas/directories/ServiceRowApiResponse.yaml
+    # Directories - Storages
+    Storage:
+      $ref: ./components/schemas/directories/Storage.yaml
+    # Documents
+    Invoice:
+      $ref: ./components/schemas/documents/Invoice.yaml
+    InvoiceSpecificationRow:
+      $ref: ./components/schemas/documents/InvoiceSpecificationRow.yaml
+    RetailSale:
+      $ref: ./components/schemas/documents/RetailSale.yaml
+    RetailSaleSpecificationRow:
+      $ref: ./components/schemas/documents/RetailSaleSpecificationRow.yaml
+    TransferInvoice:
+      $ref: ./components/schemas/documents/TransferInvoice.yaml
+    TransferInvoiceSpecificationRow:
+      $ref: ./components/schemas/documents/TransferInvoiceSpecificationRow.yaml
+    MemorialOrder:
+      $ref: ./components/schemas/documents/MemorialOrder.yaml
+    MemorialOrderSpecificationRow:
+      $ref: ./components/schemas/documents/MemorialOrderSpecificationRow.yaml
+    PaymentOrder:
+      $ref: ./components/schemas/documents/PaymentOrder.yaml
+    StorageInputOrder:
+      $ref: ./components/schemas/documents/StorageInputOrder.yaml
+    StorageInputOrderSpecificationRow:
+      $ref: ./components/schemas/documents/StorageInputOrderSpecificationRow.yaml
+    StorageOutputOrder:
+      $ref: ./components/schemas/documents/StorageOutputOrder.yaml
+    StorageOutputOrderSpecificationRow:
+      $ref: ./components/schemas/documents/StorageOutputOrderSpecificationRow.yaml
+    MaterialsMovement:
+      $ref: ./components/schemas/documents/MaterialsMovement.yaml
+    MaterialsMovementSpecificationRow:
+      $ref: ./components/schemas/documents/MaterialsMovementSpecificationRow.yaml
+    MaterialsKitting:
+      $ref: ./components/schemas/documents/MaterialsKitting.yaml
+    MaterialsKittingSpecificationRow:
+      $ref: ./components/schemas/documents/MaterialsKittingSpecificationRow.yaml
+    OverheadExpenseAllocation:
+      $ref: ./components/schemas/documents/OverheadExpenseAllocation.yaml
+    OverheadExpenseAllocationSpecificationRow:
+      $ref: ./components/schemas/documents/OverheadExpenseAllocationSpecificationRow.yaml
+    # Documents - not published yet
+    ReceivedService:
+      $ref: ./components/schemas/documents/ReceivedService.yaml
+    ReceivedServiceSpecificationRow:
+      $ref: ./components/schemas/documents/ReceivedServiceSpecificationRow.yaml
+    FixedAssetAcquisition:
+      $ref: ./components/schemas/documents/FixedAssetAcquisition.yaml
+    FixedAssetDisposalAct:
+      $ref: ./components/schemas/documents/FixedAssetDisposalAct.yaml
+    FixedAssetDisposalActSpecificationRow:
+      $ref: ./components/schemas/documents/FixedAssetDisposalActSpecificationRow.yaml
+    CashInputOrder:
+      $ref: ./components/schemas/documents/CashInputOrder.yaml
+    CashOutputOrder:
+      $ref: ./components/schemas/documents/CashOutputOrder.yaml
+    # Journals
+    AllDocumentsJournalParam:
+      $ref: ./components/schemas/journals/AllDocumentsJournalParam.yaml
+    AllDocumentsJournalDataRow:
+      $ref: ./components/schemas/journals/AllDocumentsJournalDataRow.yaml
+    AllDocumentsJournalDataRowApiResponse:
+      $ref: ./components/schemas/journals/AllDocumentsJournalDataRowApiResponse.yaml
+    InvoiceDocumentsJournalParam:
+      $ref: ./components/schemas/journals/InvoiceDocumentsJournalParam.yaml
+    InvoiceDocumentsJournalDataRow:
+      $ref: ./components/schemas/journals/InvoiceDocumentsJournalDataRow.yaml
+    InvoiceDocumentsJournalDataRowApiResponse:
+      $ref: ./components/schemas/journals/InvoiceDocumentsJournalDataRowApiResponse.yaml
+    ECRChecksJournalParam:
+      $ref: ./components/schemas/journals/ECRChecksJournalParam.yaml
+    ECRChecksJournalDataRow:
+      $ref: ./components/schemas/journals/ECRChecksJournalDataRow.yaml
+    ECRChecksJournalDataRowApiResponse:
+      $ref: ./components/schemas/journals/ECRChecksJournalDataRowApiResponse.yaml
+    # Reports
+    AccountBalancesParam:
+      $ref: ./components/schemas/reports/AccountBalancesParam.yaml
+    AccountsBalancesDataRow:
+      $ref: ./components/schemas/reports/AccountsBalancesDataRow.yaml
+    AccountsBalancesDataRowApiResponse:
+      $ref: ./components/schemas/reports/AccountsBalancesDataRowApiResponse.yaml
+    AccountsTurnoverParam:
+      $ref: ./components/schemas/reports/AccountsTurnoverParam.yaml
+    AccountsTurnoverDataRow:
+      $ref: ./components/schemas/reports/AccountsTurnoverDataRow.yaml
+    AccountsTurnoverDataRowApiResponse:
+      $ref: ./components/schemas/reports/AccountsTurnoverDataRowApiResponse.yaml
+    TransactionsParam:
+      $ref: ./components/schemas/reports/TransactionsParam.yaml
+    TransactionsDataRow:
+      $ref: ./components/schemas/reports/TransactionsDataRow.yaml
+    TransactionsDataRowApiResponse:
+      $ref: ./components/schemas/reports/TransactionsDataRowApiResponse.yaml
+    PartnersBalancesParam:
+      $ref: ./components/schemas/reports/PartnersBalancesParam.yaml
+    PartnersBalancesDataRow:
+      $ref: ./components/schemas/reports/PartnersBalancesDataRow.yaml
+    PartnersBalancesDataRowApiResponse:
+      $ref: ./components/schemas/reports/PartnersBalancesDataRowApiResponse.yaml
+    PartnersTransactionsParam:
+      $ref: ./components/schemas/reports/PartnersTransactionsParam.yaml
+    PartnersTransactionsDataRow:
+      $ref: ./components/schemas/reports/PartnersTransactionsDataRow.yaml
+    PartnersTransactionsDataRowApiResponse:
+      $ref: ./components/schemas/reports/PartnersTransactionsDataRowApiResponse.yaml
+    MaterialsBalancesParam:
+      $ref: ./components/schemas/reports/MaterialsBalancesParam.yaml
+    MaterialsBalancesDataRow:
+      $ref: ./components/schemas/reports/MaterialsBalancesDataRow.yaml
+    MaterialsBalancesDataRowApiResponse:
+      $ref: ./components/schemas/reports/MaterialsBalancesDataRowApiResponse.yaml
+    MaterialsOperationsParam:
+      $ref: ./components/schemas/reports/MaterialsOperationsParam.yaml
+    MaterialsOperationsDataRow:
+      $ref: ./components/schemas/reports/MaterialsOperationsDataRow.yaml
+    MaterialsOperationsDataRowApiResponse:
+      $ref: ./components/schemas/reports/MaterialsOperationsDataRowApiResponse.yaml
+    StorageInputOrdersAndReceivedServicesParam:
+      $ref: ./components/schemas/reports/StorageInputOrdersAndReceivedServicesParam.yaml
+    StorageInputOrdersAndReceivedServicesDataRow:
+      $ref: ./components/schemas/reports/StorageInputOrdersAndReceivedServicesDataRow.yaml
+    StorageInputOrdersAndReceivedServicesDataRowApiResponse:
+      $ref: ./components/schemas/reports/StorageInputOrdersAndReceivedServicesDataRowApiResponse.yaml
+
+  responses:
+    BadRequest:
+      $ref: ./components/responses/BadRequest.yaml
+    Unauthorized:
+      $ref: ./components/responses/Unauthorized.yaml
+    Forbidden:
+      $ref: ./components/responses/Forbidden.yaml
+    MethodNotAllowed:
+      $ref: ./components/responses/MethodNotAllowed.yaml
+    NotFound:
+      $ref: ./components/responses/NotFound.yaml
+    Conflict:
+      $ref: ./components/responses/Conflict.yaml
+    InternalError:
+      $ref: ./components/responses/InternalError.yaml
+    TooManyRequests:
+      $ref: ./components/responses/TooManyRequests.yaml
+    ServiceUnavailable:
+      $ref: ./components/responses/ServiceUnavailable.yaml

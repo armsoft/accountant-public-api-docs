@@ -1,0 +1,10 @@
+type: object
+properties:
+  name:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  default:
+    type: boolean
+    description: "hy-AM: Հիմնական | en-US: Default | ru-RU: Основной"
+additionalProperties: false

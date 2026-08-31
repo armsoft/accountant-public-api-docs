@@ -1,0 +1,16 @@
+type: object
+description: Generic paginated response wrapper
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Pagination identifier for fetching the next page
+  hasMore:
+    type: boolean
+    description: Whether there are more pages available
+  data:
+    type: array
+    items: {}
+    nullable: true
+    description: The list of returned items
+additionalProperties: false

@@ -1,0 +1,18 @@
+/documents/cashinputorder:
+  post:
+    tags: [CashInputOrder]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/CashInputOrder.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/CashInputOrder.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

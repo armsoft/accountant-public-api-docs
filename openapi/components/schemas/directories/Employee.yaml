@@ -1,0 +1,333 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  fullName:
+    type: string
+    description: "hy-AM: Ազգանուն, անուն, հայրանուն | en-US: Full name | ru-RU: Фамилия, имя, отчество"
+    nullable: true
+  departmentCode:
+    type: string
+    description: "hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение"
+    nullable: true
+  positionCode:
+    type: string
+    description: "hy-AM: Պաշտոն | en-US: Position | ru-RU: Должность"
+    nullable: true
+  positionStartDate:
+    type: string
+    description: "hy-AM: Պաշտոնի սկիզբ | en-US: Position start | ru-RU: Принят на должность с"
+    format: date
+    nullable: true
+  professionCode:
+    type: string
+    description: "hy-AM: Մասնագիտություն | en-US: Profession | ru-RU: Профессия"
+    nullable: true
+  genderCode:
+    type: string
+    description: "hy-AM: Սեռ | en-US: Gender | ru-RU: Пол"
+    nullable: true
+  birthDate:
+    type: string
+    description: "hy-AM: Ծննդյան ամսաթիվ | en-US: Birth date | ru-RU: Дата рождения"
+    format: date
+    nullable: true
+  contractTypeCode:
+    type: string
+    description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"
+    nullable: true
+  defaultAccrual:
+    type: string
+    description: "hy-AM: Հիմնական հավելում | en-US: Default accrual | ru-RU: Основное начисление"
+    nullable: true
+  defaultTimeSheet:
+    type: string
+    description: "hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график"
+    nullable: true
+  employmentStartDate:
+    type: string
+    description: "hy-AM: Ընդունման ամսաթիվ | en-US: Employment start date | ru-RU: Дата приема на работу"
+    format: date
+    nullable: true
+  employmentOrderNumber:
+    type: string
+    description: "hy-AM: Աշխ. ընդունման հրամանի N | en-US: N of employment order | ru-RU: Номер приказа о приеме на работу"
+    nullable: true
+  dateOfDismissal:
+    type: string
+    description: "hy-AM: Ազատման ամսաթիվ | en-US: Date of dismissal | ru-RU: Дата увольнения"
+    format: date
+    nullable: true
+  dismissalOrderNumber:
+    type: string
+    description: "hy-AM: Աշխ. ազատման հրամանի N | en-US: N of dismissal order | ru-RU: Номер приказа на увольнение"
+    nullable: true
+  raCitizen:
+    type: boolean
+    nullable: true
+  calculateIncomeTax:
+    type: boolean
+    description: "hy-AM: Եկամտային հարկը պահվում է | en-US: Calculate income tax | ru-RU: Облагается подоходным налогом"
+    nullable: true
+  reducePensionFromIncomeTax:
+    type: boolean
+    description: "hy-AM: Նվազեցնել կուտակայինի գումարը եկամտային հարկից | en-US: Deduct employee's funded pension amount from the income tax. | ru-RU: Уменьшить подоход. налог на сумму накоп. пенс. взноса "
+    nullable: true
+  salaryAccount:
+    type: string
+    description: "hy-AM: Աշխատավարձի գծով հաշվարկների հաշիվ | en-US: Salary payable | ru-RU: Счет расчета по оплате труда"
+    nullable: true
+  partnerCode:
+    type: string
+    description: "hy-AM: Ֆիզ. անձ (գործընկեր) | en-US: Individual (partner) | ru-RU: Физическое лицо(партнер)"
+    nullable: true
+  tradeUnionDuesPercent:
+    type: number
+    description: "hy-AM: Արհմիութենական անդամավճարի տոկոս | en-US: Trade union dues percent | ru-RU: Процент профсоюзного взноса"
+    format: double
+    nullable: true
+  participationStatus:
+    type: string
+    description: "hy-AM: Մասնակցության կարգավիճակ | en-US: Participation Status | ru-RU: Статус участия"
+    nullable: true
+  employerPercent:
+    type: number
+    description: "hy-AM: Գործատուի կողմից վճարվող տոկոս/գումար | en-US: Employer paid percent/summa | ru-RU: Процент/сумма уплачиваемая работодателем"
+    format: double
+    nullable: true
+  employerAmount:
+    type: number
+    description: "hy-AM: Գործատուի կողմից վճարվող տոկոս/գումար | en-US: Employer paid percent/summa | ru-RU: Процент/сумма уплачиваемая работодателем"
+    format: double
+    nullable: true
+  stampFeeType:
+    type: string
+    description: "hy-AM: Դրոշմանիշային վճար | en-US: Stamp fee | ru-RU: Гербовый сбор"
+    nullable: true
+  insuranceFeeType:
+    type: string
+    description: "hy-AM: Ապահովագրավճար | en-US: Insurance fee | ru-RU: Страховая плата"
+    nullable: true
+  insuranceFeeDate:
+    type: string
+    description: "hy-AM: Կարգավիճակի սկիզբ | en-US: Status start date | ru-RU: Дата начала статуса"
+    format: date
+    nullable: true
+  registrationPlaceRA:
+    type: boolean
+    description: "hy-AM: Հաշվառման վայրը ՀՀ | en-US: Place of registration in RA | ru-RU: Адрес регистрации РА"
+    nullable: true
+  registrationRegion:
+    type: string
+    description: "hy-AM: Մարզ | en-US: Region | ru-RU: Регион"
+    nullable: true
+  registrationCommunity:
+    type: string
+    description: "hy-AM: Համայնք | en-US: Community | ru-RU: Район"
+    nullable: true
+  registrationCity:
+    type: string
+    description: "hy-AM: Քաղաք, ավան, գյուղ | en-US: City, village | ru-RU: Город, поселение, село"
+    nullable: true
+  registrationStreet:
+    type: string
+    description: "hy-AM: Փողոց, տուն/շենք, բնակարան | en-US: Street, house/building, apartment | ru-RU: Улица, дом/здание, квартира"
+    nullable: true
+  registrationHouse:
+    type: string
+    description: "hy-AM: Փողոց, տուն/շենք, բնակարան | en-US: Street, house/building, apartment | ru-RU: Улица, дом/здание, квартира"
+    nullable: true
+  registrationApartment:
+    type: string
+    description: "hy-AM: Փողոց, տուն/շենք, բնակարան | en-US: Street, house/building, apartment | ru-RU: Улица, дом/здание, квартира"
+    nullable: true
+  registrationSameAsResidence:
+    type: boolean
+    description: "hy-AM: Բն. վայրը նույնն է հաշվ. վայրի հետ | en-US: Place of residence is the same with registration place | ru-RU: Регистрация по месту жительства"
+    nullable: true
+  placeResidenceRA:
+    type: boolean
+    description: "hy-AM: Բնակության վայրը ՀՀ | en-US: Place of residence is RA | ru-RU: Место проживания РА"
+    nullable: true
+  residenceRegion:
+    type: string
+    description: "hy-AM: Մարզ | en-US: Region | ru-RU: Регион"
+    nullable: true
+  residenceCommunity:
+    type: string
+    description: "hy-AM: Համայնք | en-US: Community | ru-RU: Район"
+    nullable: true
+  residenceLocation:
+    type: string
+    description: "hy-AM: Բնակավայր | en-US: Location | ru-RU: Населенный пункт"
+    nullable: true
+  residenceCity:
+    type: string
+    description: "hy-AM: Քաղաք, ավան, գյուղ | en-US: City, village | ru-RU: Город, поселение, село"
+    nullable: true
+  residenceStreet:
+    type: string
+    description: "hy-AM: Փողոց, տուն/շենք, բնակարան | en-US: Street, house/building, apartment | ru-RU: Улица, дом/здание, квартира"
+    nullable: true
+  residenceHouse:
+    type: string
+    description: "hy-AM: Փողոց, տուն/շենք, բնակարան | en-US: Street, house/building, apartment | ru-RU: Улица, дом/здание, квартира"
+    nullable: true
+  residenceApartment:
+    type: string
+    description: "hy-AM: Փողոց, տուն/շենք, բնակարան | en-US: Street, house/building, apartment | ru-RU: Улица, дом/здание, квартира"
+    nullable: true
+  residenceCountry:
+    type: string
+    description: "hy-AM: Երկիր | en-US: Country | ru-RU: Страна"
+    nullable: true
+  addressLine1:
+    type: string
+    description: "hy-AM: Հասցեատող 1,2,3 | en-US: AddressLine 1,2,3 | ru-RU: Адрес 1,2,3"
+    nullable: true
+  addressLine2:
+    type: string
+    description: "hy-AM: Հասցեատող 1,2,3 | en-US: AddressLine 1,2,3 | ru-RU: Адрес 1,2,3"
+    nullable: true
+  addressLine3:
+    type: string
+    description: "hy-AM: Հասցեատող 1,2,3 | en-US: AddressLine 1,2,3 | ru-RU: Адрес 1,2,3"
+    nullable: true
+  postalCode:
+    type: string
+    description: "hy-AM: Փոստի N | en-US: Postal N | ru-RU: Номер почты"
+    nullable: true
+  bankAccount:
+    type: string
+    description: "hy-AM: Աշխատակցի հաշիվը բանկում | en-US: Employee bank account | ru-RU: Банковский счет сотрудника"
+    nullable: true
+  socialCardNumber:
+    type: string
+    description: "hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты"
+    nullable: true
+  identificationDocumentType:
+    type: string
+    description: "hy-AM: Անձը հաստատող փաստաթուղթ | en-US: Identification document | ru-RU: Документ, удостоверяющий личность"
+    nullable: true
+  passport:
+    type: string
+    description: "hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта"
+    nullable: true
+  passportIssueDate:
+    type: string
+    description: "hy-AM: Տրման ամսաթիվ | en-US: Date issued | ru-RU: Дата выдачи"
+    format: date
+    nullable: true
+  passportIssuedBy:
+    type: string
+    description: "hy-AM: Ում կողմից է տրվել | en-US: Authority | ru-RU: Кем выдан (код подразд.)"
+    nullable: true
+  nationality:
+    type: string
+    description: "hy-AM: Ազգություն | en-US: Nationality | ru-RU: Национальность"
+    nullable: true
+  otherDocumentNumber:
+    type: string
+    description: "hy-AM: Այլ փաստաթղթի համար | en-US: Other document N | ru-RU: Номер прочего документа"
+    nullable: true
+  phone:
+    type: string
+    description: "hy-AM: Հեռախոս | en-US: Phone | ru-RU: Телефон"
+    nullable: true
+  mobilePhone:
+    type: string
+    description: "hy-AM: Բջջային հեռախոս | en-US: Mobile phone | ru-RU: Сотовый телефон"
+    nullable: true
+  email:
+    type: string
+    description: "hy-AM: Էլ. փոստ | en-US: E-Mail | ru-RU: Эл. почта"
+    nullable: true
+  languages:
+    type: string
+    description: "hy-AM: Օտար լեզուներ | en-US: Foreign languages | ru-RU: Иностранные языки"
+    nullable: true
+  maritalStatus:
+    type: string
+    description: "hy-AM: Ընտանեկան դրությունը | en-US: Marital status | ru-RU: Семейное положение"
+    nullable: true
+  education:
+    type: string
+    description: "hy-AM: Կրթություն | en-US: Education | ru-RU: Образование"
+    nullable: true
+  institute:
+    type: string
+    description: "hy-AM: Ուս. հաստատություն | en-US: Educational institution | ru-RU: Учебн. заведение"
+    nullable: true
+  educationStartDate:
+    type: string
+    description: "hy-AM: Ընդունվելու տարին | en-US: Admiss. year | ru-RU: Дата поступления"
+    format: date
+    nullable: true
+  educationEndDate:
+    type: string
+    description: "hy-AM: Ավարտելու կամ հեռանալու տարին | en-US: Graduation year | ru-RU: Год окончания или ухода"
+    format: date
+    nullable: true
+  educationCertificateNumber:
+    type: string
+    description: "hy-AM: Դիպլոմի կամ վկայականի համարը | en-US: Diploma or Certificate number | ru-RU: Номер диплома или сертификата"
+    nullable: true
+  militaryServiceDescription:
+    type: string
+    description: "hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание"
+    nullable: true
+  militaryServiceStartDate:
+    type: string
+    description: "hy-AM: Սկիզբ | en-US: Start | ru-RU: Начало"
+    format: date
+    nullable: true
+  militaryServiceEndDate:
+    type: string
+    description: "hy-AM: Ավարտ | en-US: End | ru-RU: Конец"
+    format: date
+    nullable: true
+  familyMember1Type:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember1FullName:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember2Type:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember2FullName:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember3Type:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember3FullName:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember4Type:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  familyMember4FullName:
+    type: string
+    description: "hy-AM: Ընտանիքի անդամ | en-US: Family member | ru-RU: Член семьи"
+    nullable: true
+  accrualsDeductions:
+    type: array
+    items:
+      $ref: "#/components/schemas/EmployeeFeeHoldRow"
+    description: "hy-AM: Հավելում/պահումներ | en-US: Accrual/deductions | ru-RU: Начисления/удержания"
+    nullable: true
+additionalProperties: false

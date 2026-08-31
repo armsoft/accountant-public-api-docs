@@ -1,0 +1,14 @@
+description: "Conflict - Resource conflict (e.g., duplicate code)"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string

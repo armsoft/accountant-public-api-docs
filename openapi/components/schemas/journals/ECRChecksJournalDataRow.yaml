@@ -1,0 +1,85 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  ecrCheckNumber:
+    type: string
+    nullable: true
+  type:
+    type: integer
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    format: int32
+  typeName:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  amount:
+    type: number
+    description: "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма"
+    format: double
+  cashAmount:
+    type: number
+    description: "hy-AM: Կանխիկ | en-US: Cash | ru-RU: Наличные"
+    format: double
+  nonCashAmount:
+    type: number
+    description: "hy-AM: Անկանխիկ | en-US: Non-cash | ru-RU: Безнал."
+    format: double
+  prepaymentAmount:
+    type: number
+    description: "hy-AM: Կանխավճարով մարում | en-US: Prepayment | ru-RU: Оплата авансом"
+    format: double
+  receivablesAmount:
+    type: number
+    description: "hy-AM: Դեբիտորական պարտք | en-US: Receivables | ru-RU: Дебиторская задолженность"
+    format: double
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  stateName:
+    type: string
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    nullable: true
+  cashDesk:
+    type: string
+    description: "hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса"
+    nullable: true
+  partnerId:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  partnerCode:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  partnerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  partnerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  userName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  lastChange:
+    type: string
+    description: "hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение"
+    format: date-time
+additionalProperties: false

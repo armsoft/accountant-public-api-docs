@@ -1,0 +1,45 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  unitAbbreviation:
+    type: string
+    description: "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица"
+    nullable: true
+  quantity:
+    type: number
+    description: "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество"
+    format: double
+  inputOrderAmount:
+    type: number
+    description: "hy-AM: ՊՄՕ գումար դրամով | en-US: Input order amount | ru-RU: Сумма ПСО в драмах "
+    format: double
+  allocatedAmount:
+    type: number
+    description: "hy-AM: Բաշխված գումար դրամով | en-US: Allocated amount | ru-RU: Распределенная сумма в драмах"
+    format: double
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  includeInDistribution:
+    type: boolean
+  coefficient:
+    type: number
+    description: "hy-AM: ՀԾԲ գործակից | en-US: AOE coefficient | ru-RU: Коэфф. распределения доп. расходов"
+    format: double
+  rowId:
+    type: integer
+    description: "hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии"
+    format: int32
+additionalProperties: false

@@ -1,0 +1,26 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  codes:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  lastModifiedDate:
+    type: string
+    description: "hy-AM: Վերջին խմբագրման ամսաթիվ | en-US: Last modification date | ru-RU: Дата последнего изменения"
+    format: date-time
+    nullable: true
+  group:
+    type: string
+    description: "hy-AM: Խումբ | en-US: Group | ru-RU: Группа"
+    nullable: true
+  showAlsoClosed:
+    type: boolean
+    description: "hy-AM: Ցույց տալ նաև փակվածները | en-US: Show also closed | ru-RU: Показать также закрытые"
+additionalProperties: false

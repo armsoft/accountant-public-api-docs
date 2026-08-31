@@ -1,0 +1,140 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  customer:
+    type: string
+    description: "hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  currencyExchangeRate:
+    type: number
+    description: "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты"
+    format: double
+  currencyExchangeBase:
+    type: number
+    description: "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты"
+    format: double
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  contract:
+    type: string
+    description: "hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор"
+    nullable: true
+  contractDate:
+    type: string
+    description: "hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора"
+    format: date
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  vatCalculationType:
+    type: string
+    nullable: true
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  discountPercent:
+    type: number
+    description: "hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки"
+    format: double
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    description: "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма"
+    format: double
+  supplierBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  supplierSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  supplierManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  supplierManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  supplierAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  supplierAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  customerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  customerLegalAddress:
+    type: string
+    description: "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес"
+    nullable: true
+  customerBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  customerSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  customerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  customerManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  customerManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  customerAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  customerAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  stateRegisterNumber:
+    type: string
+    description: "hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП"
+    nullable: true
+  passportNumber:
+    type: string
+    description: "hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта"
+    nullable: true
+  itemList:
+    type: array
+    items:
+      $ref: "#/components/schemas/TransferInvoiceSpecificationRow"
+    description: "hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг"
+    nullable: true
+additionalProperties: false

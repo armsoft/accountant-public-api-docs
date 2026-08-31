@@ -1,0 +1,92 @@
+type: object
+properties:
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  nameRU:
+    type: string
+    description: "hy-AM: Անվանում (ռուսերեն) | en-US: Name (russian) | ru-RU: Наименование (русский)"
+    nullable: true
+  debitCurrencyAmount:
+    type: number
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    format: double
+    nullable: true
+  creditCurrencyAmount:
+    type: number
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    format: double
+    nullable: true
+  debitAmount:
+    type: number
+    description: "hy-AM: Դեբետ դրամով | en-US: Debit in Dram | ru-RU: Дебет в драмах"
+    format: double
+  creditAmount:
+    type: number
+    description: "hy-AM: Կրեդիտ դրամով | en-US: Credit in Dram | ru-RU: Кредит в драмах"
+    format: double
+  outOfBalance:
+    type: boolean
+    description: "hy-AM: Արտահաշվ. | en-US: Out of bal. | ru-RU: Забалан."
+  accountType:
+    type: string
+    description: "hy-AM: Հաշվի տեսակ | en-US: Invoice type | ru-RU: Вид счета"
+    nullable: true
+  leaf:
+    type: boolean
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+  isPartnerAccount:
+    type: boolean
+    description: "hy-AM: Գործընկ. | en-US: Partner | ru-RU: Партн."
+  isAnalytic1:
+    type: boolean
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+  isAnalytic2:
+    type: boolean
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+  path:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  parent:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  partnerId:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  partnerCode:
+    type: string
+    description: "hy-AM: Գործընկ. | en-US: Partner | ru-RU: Партн."
+    nullable: true
+  partnerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  analytic1Code:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  analytic1Name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  analytic2Code:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  analytic2Name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,12 @@
+# MkDocs build output
+site/
+
+# swagger.json copied into docs/ by the MkDocs hook during builds
+docs/swagger.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+node_modules/

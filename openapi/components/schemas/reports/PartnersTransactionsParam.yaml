@@ -1,0 +1,66 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  debitPartnerGroup:
+    type: string
+    description: "hy-AM: Դեբետ-խումբ | en-US: Debit-group | ru-RU: Дебет-группа"
+    nullable: true
+  creditPartnerGroup:
+    type: string
+    description: "hy-AM: Կրեդիտ-խումբ | en-US: Credit-group | ru-RU: Кредит-группа"
+    nullable: true
+  partnersGroupANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitPartner:
+    type: string
+    description: "hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн."
+    nullable: true
+  creditPartner:
+    type: string
+    description: "hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн."
+    nullable: true
+  partnersANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitAccount:
+    type: string
+    description: "hy-AM: Դեբետ-հաշիվ | en-US: Debit-account | ru-RU: Дебет-счет"
+    nullable: true
+  creditAccount:
+    type: string
+    description: "hy-AM: Կրեդիտ-հաշիվ | en-US: Credit-account | ru-RU: Кредит-счет"
+    nullable: true
+  accountsANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  debitCurrency:
+    type: string
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    nullable: true
+  creditCurrency:
+    type: string
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    nullable: true
+  currenciesANDCondition:
+    type: boolean
+    description: "hy-AM: և | en-US: and | ru-RU: и"
+  documentTypes:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,18 @@
+/documents/retailsale:
+  post:
+    tags: [RetailSale]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/RetailSale.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/RetailSale.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

@@ -1,0 +1,70 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  status:
+    type: string
+    description: "hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус"
+    nullable: true
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  accountName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  analytic1Code:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  analytic1Name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  analytic2Code:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  analytic2Name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  debitCurrency:
+    type: number
+    description: "hy-AM: Դեբետ արժ. | en-US: Debit curr. | ru-RU: Дебет валюта"
+    format: double
+  creditCurrency:
+    type: number
+    description: "hy-AM: Կրեդիտ արժ. | en-US: Credit curr. | ru-RU: Кредит валюта"
+    format: double
+  debitNCC:
+    type: number
+    description: "hy-AM: Դեբետ դրամով | en-US: Debit in Dram | ru-RU: Дебет в драмах"
+    format: double
+  creditNCC:
+    type: number
+    description: "hy-AM: Կրեդիտ դրամով | en-US: Credit in Dram | ru-RU: Кредит в драмах"
+    format: double
+  outOfBalance:
+    type: boolean
+    description: "hy-AM: Արտահաշվ. | en-US: Out of bal. | ru-RU: Забалан."
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+additionalProperties: false

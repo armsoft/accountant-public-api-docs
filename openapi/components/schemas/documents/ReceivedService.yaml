@@ -1,0 +1,136 @@
+type: object
+properties:
+  isn:
+    type: string
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  currencyExchangeRate:
+    type: number
+    description: "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты"
+    format: double
+  currencyExchangeBase:
+    type: number
+    description: "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты"
+    format: double
+  previousDayExchangeRate:
+    type: boolean
+    description: "hy-AM: Նախորդ օրվա փոխարժեքը | en-US: Previous day exchange rate | ru-RU: Курс валюты предыдущего дня"
+  supplierCode:
+    type: string
+    description: "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик"
+    nullable: true
+  supplierAccount:
+    type: string
+    description: "hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика"
+    nullable: true
+  prepaymentAccount:
+    type: string
+    description: "hy-AM: Տրված կանխավճարի հաշիվ | en-US: Prepayment account | ru-RU: Счет авансов выданных"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  selfInvoice:
+    type: boolean
+    description: "hy-AM: Ինքնահաշիվ | en-US: Self-invoice | ru-RU: Счет самому себе"
+  taxExportType:
+    type: string
+    description: "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки"
+    nullable: true
+  purchaseDocumentNumber:
+    type: string
+    description: "hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения"
+    nullable: true
+  submissionDate:
+    type: string
+    description: "hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От"
+    format: date
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  purchasingType:
+    type: string
+    description: "hy-AM: Ծառայության ձեռք բերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги"
+    nullable: true
+  vatCalculationType:
+    type: string
+    description: "hy-AM: ԱԱՀ-ի հաշվարկի ձև | en-US: VAT calculation type | ru-RU: Тип расчета НДС"
+    nullable: true
+  includeVATInExpense:
+    type: boolean
+    description: "hy-AM: Ներառել ԱԱՀ-ն ծախսի մեջ | en-US: Include VAT in expense | ru-RU: НДС включить в расходы"
+  vatInclusionMethod:
+    type: string
+    description: "hy-AM: ԱԱՀ-ի արտացոլման ձև | en-US: Include/Exclude VAT | ru-RU: Вид отражения НДС"
+    nullable: true
+  vatAmount:
+    type: number
+    description: "hy-AM: Գումար ԱԱՀ | en-US: VAT amount | ru-RU: Сумма НДС"
+    format: double
+  totalAmount:
+    type: number
+    description: "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма"
+    format: double
+  supplierLegalAddress:
+    type: string
+    description: "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес"
+    nullable: true
+  supplierBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес"
+    nullable: true
+  supplierSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  supplierTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код"
+    nullable: true
+  supplierManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  supplierManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  supplierAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  supplierAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  servicesList:
+    type: array
+    description: "hy-AM: Ծառայություններ | en-US: Services | ru-RU: Услуги"
+    items:
+      $ref: "#/components/schemas/ReceivedServiceSpecificationRow"
+    nullable: true
+additionalProperties: false

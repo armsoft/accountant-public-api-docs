@@ -1,0 +1,127 @@
+# ArmSoft SME Accountant Public API Docs
+
+> REST API for managing accounting operations (partners, materials, services, employees, documents, journals, reports) in the ArmSoft SME Accountant ERP system.
+> Base URL: https://api.armsoft.am/accountant/v1
+> Authentication: API Key via `apiKey` request header
+> Languages: Armenian (hy-AM), English (en-US), Russian (ru-RU)
+
+## Canonical Docs
+- README: ./README.md
+- Full inline reference (for LLMs): ./llms-full.txt
+- Docs index: ./docs/index.md
+- Getting Started: ./docs/getting-started.md
+- Authentication: ./docs/authentication.md
+- Error Handling: ./docs/error-handling.md
+- Pagination: ./docs/pagination.md
+- Localization: ./docs/localization.md
+- API reference: ./docs/api/README.md
+- Generated reference: ./docs/api-reference.md
+- Directories API: ./docs/api/directories/README.md
+- Documents API: ./docs/api/documents/README.md
+- Journals API: ./docs/api/journals/README.md
+- Reports API: ./docs/api/reports/README.md
+- Changelog: ./CHANGELOG.md
+
+## OpenAPI Specs
+- Full spec (auto-generated, all endpoints): ./swagger.json
+- Curated spec (modular YAML): ./openapi/openapi.yaml
+
+## Authentication
+- Header: `apiKey`
+- Optional locale header: `Accept-Language` (`hy-AM`, `en-US`, `ru-RU`)
+- Full Access keys: complete CRUD on all resources
+- Limited Access keys: read-only directories, single-document reads, journals and reports
+- 401 when the key is missing or invalid; 403 when Public API is disabled for the key or the key has limited access
+
+## Endpoints (v1)
+
+### Partners
+- POST /accountant/v1/directories/partners/list
+- POST /accountant/v1/directories/partners/list/nextpage
+- GET /accountant/v1/directories/partners/{code}
+- POST /accountant/v1/directories/partners
+- PUT /accountant/v1/directories/partners/{code}
+- DELETE /accountant/v1/directories/partners/{code}
+
+### Materials
+- POST /accountant/v1/directories/materials/list
+- POST /accountant/v1/directories/materials/list/nextpage
+- GET /accountant/v1/directories/materials/{code}
+- POST /accountant/v1/directories/materials
+- PUT /accountant/v1/directories/materials/{code}
+- DELETE /accountant/v1/directories/materials/{code}
+
+### Services
+- POST /accountant/v1/directories/services/list
+- POST /accountant/v1/directories/services/list/nextpage
+- GET /accountant/v1/directories/services/{code}
+- POST /accountant/v1/directories/services
+- PUT /accountant/v1/directories/services/{code}
+- DELETE /accountant/v1/directories/services/{code}
+
+### Employees
+- POST /accountant/v1/directories/employees/list
+- POST /accountant/v1/directories/employees/list/nextpage
+- GET /accountant/v1/directories/employees/{code}
+- POST /accountant/v1/directories/employees
+- PUT /accountant/v1/directories/employees/{code}
+- DELETE /accountant/v1/directories/employees/{code}
+
+### Storages
+- GET /accountant/v1/directories/storages (optional query showAlsoClosed, default true)
+- GET /accountant/v1/directories/storages/{code}
+- POST /accountant/v1/directories/storages
+- PUT /accountant/v1/directories/storages/{code}
+- DELETE /accountant/v1/directories/storages/{code}
+
+### Documents (POST create, GET/PUT/DELETE by {isn})
+- /accountant/v1/documents/invoice
+- /accountant/v1/documents/retailsale
+- /accountant/v1/documents/transferinvoice
+- /accountant/v1/documents/memorialorder
+- /accountant/v1/documents/paymentorder
+- /accountant/v1/documents/storageinputorder
+- /accountant/v1/documents/storageoutputorder
+- /accountant/v1/documents/materialsmovement
+- /accountant/v1/documents/materialskitting
+- /accountant/v1/documents/overheadexpenseallocation
+
+Implemented in the service, not in the published swagger yet:
+- /accountant/v1/documents/receivedservice
+- /accountant/v1/documents/fixedassetacquisition
+- /accountant/v1/documents/fixedassetdisposalact
+- /accountant/v1/documents/cashinputorder
+- /accountant/v1/documents/cashoutputorder
+
+### Journals (POST, each with a /nextpage call)
+- /accountant/v1/journals/alldocuments
+- /accountant/v1/journals/invoices
+- /accountant/v1/journals/ecrchecks
+
+### Reports (POST, each with a /nextpage call)
+- /accountant/v1/reports/accountsbalances
+- /accountant/v1/reports/accountsturnover
+- /accountant/v1/reports/transactions
+- /accountant/v1/reports/partnersbalances
+- /accountant/v1/reports/partnerstransactions
+- /accountant/v1/reports/materialsbalances
+- /accountant/v1/reports/materialsoperationsjournal
+- /accountant/v1/reports/storageinputordersandreceivedservices
+
+### System
+- GET /accountant/api/Version (no API key required)
+
+## Pagination
+- Controlled via `pageSize` in request body (0 = all rows)
+- Minimum page size: 5000 rows
+- Responses include `id` (UUID) and `hasMore` fields
+- Fetch next page: POST to `/nextpage` (directories use `/list/nextpage`) with `{ "id": "...", "close": false }`
+- Close context early: POST with `{ "id": "...", "close": true }`
+- `GET /directories/storages` is not paginated
+
+## Key Concepts
+- Directory records are identified by a string `code`; documents are identified by an `isn` (UUID) returned on create
+- Directory list calls are POST with a filter object; Storages is the only GET list
+- Every schema property carries its hy-AM / en-US / ru-RU label in its OpenAPI `description`
+- Error responses: `{ "message": "...", "fieldName": "...", "errorCode": "..." }`
+- Swagger UI: https://api.armsoft.am/accountant/swagger/index.html

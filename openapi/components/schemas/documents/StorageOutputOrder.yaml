@@ -1,0 +1,73 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  letterOfAttorney:
+    type: string
+    description: "hy-AM: Լիազորագիր | en-US: Letter of attorney | ru-RU: Доверенность"
+    nullable: true
+  mediator:
+    type: string
+    description: "hy-AM: Միջնորդ | en-US: Mediator | ru-RU: Посредник"
+    nullable: true
+  vehicle:
+    type: string
+    description: "hy-AM: Ավտ/Բեռնարկղ | en-US: Vehicle | ru-RU: Авт/Контейнер"
+    nullable: true
+  chiefAccountant:
+    type: string
+    description: "hy-AM: Գլխավոր հաշվապահ | en-US: Chief accountant | ru-RU: Главный бухгалтер"
+    nullable: true
+  allowed:
+    type: string
+    description: "hy-AM: Թույլատրեց | en-US: Allowed | ru-RU: Разрешил"
+    nullable: true
+  requested:
+    type: string
+    description: "hy-AM: Պահանջել է | en-US: Requested | ru-RU: По требованию"
+    nullable: true
+  totalAmount:
+    type: number
+    description: "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма"
+    format: double
+  materialsList:
+    type: array
+    items:
+      $ref: "#/components/schemas/StorageOutputOrderSpecificationRow"
+    description: "hy-AM: Նյութական արժեքների ցուցակ | en-US: Materials list | ru-RU: Список ТМЦ"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,46 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  partnerGroup:
+    type: string
+    description: "hy-AM: Գործընկերների խումբ | en-US: Partners group | ru-RU: Группа партнеров"
+    nullable: true
+  partner:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  reportCurrency:
+    type: string
+    description: "hy-AM: Հաշվետվության արժույթ | en-US: Report currency | ru-RU: Валюта отчета"
+    nullable: true
+  accountsSection:
+    type: string
+    description: "hy-AM: Հաշվի պատկանելիության բաժին | en-US: Accounts section | ru-RU: Раздел счета"
+    nullable: true
+  showZeroRows:
+    type: boolean
+    description: "hy-AM: Ցույց տալ զրոյական տողերը | en-US: Show zero rows | ru-RU: Показать нулевые строки"
+  openedByDate:
+    type: boolean
+    description: "hy-AM: Ցույց տալ բացված ըստ ամսաթվերի | en-US: Opened by date | ru-RU: Показать открытые по датам"
+  subtotals:
+    type: string
+    description: "hy-AM: Նշված տողեր | en-US: Selected rows | ru-RU: Помеченные строки"
+    nullable: true
+additionalProperties: false

@@ -1,0 +1,38 @@
+/directories/storages:
+  get:
+    tags: [Storages]
+    parameters:
+      - name: showAlsoClosed
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../components/schemas/directories/Storage.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+  post:
+    tags: [Storages]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/directories/Storage.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/Storage.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

@@ -1,0 +1,40 @@
+required:
+  - endDate
+  - startDate
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  documentTypes:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  partner:
+    type: string
+    description: "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер"
+    nullable: true
+  showOutputAmountsAsNegatives:
+    type: boolean
+    description: "hy-AM: Ցույց տալ ելքերի գումարները բացասական | en-US: Show output amounts as negatives | ru-RU: Показывать суммы расходов негативными"
+  documentState:
+    type: string
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    nullable: true
+additionalProperties: false

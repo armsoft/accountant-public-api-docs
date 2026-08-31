@@ -1,0 +1,128 @@
+type: object
+properties:
+  account:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  nameRU:
+    type: string
+    description: "hy-AM: Անվանում (ռուսերեն) | en-US: Name (russian) | ru-RU: Наименование (русский)"
+    nullable: true
+  partnerId:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  partnerCode:
+    type: string
+    description: "hy-AM: Գործընկ. | en-US: Partner | ru-RU: Партн."
+    nullable: true
+  partnerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  analytic1Code:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  analytic1Name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  analytic2Code:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  analytic2Name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  startDebitCurrencyAmount:
+    type: number
+    description: "hy-AM: Սկզբ. մն. դեբետ արժ. | en-US: Starting Db. bal. in Curr. | ru-RU: Нач. остаток дебетовый вал."
+    format: double
+    nullable: true
+  startCreditCurrencyAmount:
+    type: number
+    description: "hy-AM: Սկզբ. մն. կրեդիտ արժ. | en-US: Starting Cr. bal. in Curr. | ru-RU: Нач. остаток кредитовый вал."
+    format: double
+    nullable: true
+  startDebitAmount:
+    type: number
+    description: "hy-AM: Սկզբ. մն. դեբետ դրամով | en-US: Beginning Db. bal. in Dram | ru-RU: Нач. остаток дебетовый драм."
+    format: double
+  startCreditAmount:
+    type: number
+    description: "hy-AM: Սկզբ. մն. կրեդիտ դրամով | en-US: Beginning Cr. bal. in Dram | ru-RU: Нач. остаток кредитовый драм."
+    format: double
+  turnoverDebitCurrencyAmount:
+    type: number
+    description: "hy-AM: Շրջ. դեբետ արժ. | en-US: Turnover Db. in Curr. | ru-RU: Оборот дебетовый вал."
+    format: double
+    nullable: true
+  turnoverCreditCurrencyAmount:
+    type: number
+    description: "hy-AM: Շրջ. կրեդիտ արժ. | en-US: Turnover Cr. in Curr. | ru-RU: Оборот кредитовый вал."
+    format: double
+    nullable: true
+  turnoverDebitAmount:
+    type: number
+    description: "hy-AM: Շրջ. դեբետ դրամով | en-US: Turnover Db. in Dram | ru-RU: Оборот дебетовый драм."
+    format: double
+  turnoverCreditAmount:
+    type: number
+    description: "hy-AM: Շրջ. կրեդիտ դրամով | en-US: Turnover Cr. in Dram | ru-RU: Оборот кредитовый драм."
+    format: double
+  endDebitCurrencyAmount:
+    type: number
+    description: "hy-AM: Վերջ. մն. դեբետ արժ. | en-US: Ending Db. bal. in Curr. | ru-RU: Конечн. остаток дебетовый вал."
+    format: double
+    nullable: true
+  endCreditCurrencyAmount:
+    type: number
+    description: "hy-AM: Վերջ. մն. կրեդիտ արժ. | en-US: Ending Cr. bal. in Curr. | ru-RU: Конечн. остаток кредитовый вал."
+    format: double
+    nullable: true
+  endDebitAmount:
+    type: number
+    description: "hy-AM: Վերջ. մն. դեբետ դրամով | en-US: Ending Db. bal. in Dram | ru-RU: Конечн. остаток дебетовый драм."
+    format: double
+  endCreditAmount:
+    type: number
+    description: "hy-AM: Վերջ. մն. կրեդիտ դրամով | en-US: Ending Cr. bal. in Dram | ru-RU: Конечн. остаток кредитовый драм."
+    format: double
+  outOfBalance:
+    type: boolean
+    description: "hy-AM: Արտահաշվ. | en-US: Out of bal. | ru-RU: Забалан."
+  accountType:
+    type: string
+    description: "hy-AM: Հաշվի տեսակ | en-US: Invoice type | ru-RU: Вид счета"
+    nullable: true
+  leaf:
+    type: boolean
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+  isPartnerAccount:
+    type: boolean
+    description: "hy-AM: Գործընկ. | en-US: Partner | ru-RU: Партн."
+  isAnalytic1:
+    type: boolean
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+  isAnalytic2:
+    type: boolean
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+  path:
+    type: string
+    description: "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет"
+    nullable: true
+  parent:
+    type: string
+    description: "hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель"
+    nullable: true
+additionalProperties: false

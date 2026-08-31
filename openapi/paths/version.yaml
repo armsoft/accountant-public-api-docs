@@ -1,0 +1,19 @@
+/api/Version:
+  # Not versioned and not under /v1, so it overrides the global server.
+  servers:
+    - url: https://api.armsoft.am/accountant
+      description: Production
+  get:
+    tags: [Version]
+    # Public endpoint - no apiKey required.
+    security: []
+    responses:
+      '200':
+        description: OK
+        content:
+          text/plain:
+            schema:
+              type: string
+          application/json:
+            schema:
+              type: string

@@ -1,0 +1,61 @@
+type: object
+properties:
+  type:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  unitAbbreviation:
+    type: string
+    description: "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица"
+    nullable: true
+  quantity:
+    type: number
+    description: "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество"
+    format: double
+  price:
+    type: number
+    description: "hy-AM: Գին | en-US: Price | ru-RU: Цена"
+    format: double
+  discountPercent:
+    type: number
+    description: "hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки"
+    format: double
+    nullable: true
+  discountedPrice:
+    type: number
+    description: "hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой"
+    format: double
+    nullable: true
+  amount:
+    type: number
+    description: "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма"
+    format: double
+    nullable: true
+  vat:
+    type: boolean
+    nullable: true
+  rowNumber:
+    type: integer
+    description: "hy-AM: Տողի N | en-US: line N | ru-RU: N строки"
+    format: int32
+  rowId:
+    type: integer
+    description: "hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии"
+    format: int32
+additionalProperties: false

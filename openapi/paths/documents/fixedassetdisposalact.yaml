@@ -1,0 +1,18 @@
+/documents/fixedassetdisposalact:
+  post:
+    tags: [FixedAssetDisposalAct]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/FixedAssetDisposalAct.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/FixedAssetDisposalAct.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

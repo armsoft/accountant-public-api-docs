@@ -1,0 +1,14 @@
+description: Forbidden - Insufficient permissions
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
