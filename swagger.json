@@ -15,6 +15,438 @@
     }
   ],
   "paths": {
+    "/v1/documents/cashinputorder/{isn}": {
+      "get": {
+        "tags": [
+          "CashInputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CashInputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashInputOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashInputOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashInputOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CashInputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/cashinputorder": {
+      "post": {
+        "tags": [
+          "CashInputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashInputOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashInputOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashInputOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashInputOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/cashoutputorder/{isn}": {
+      "get": {
+        "tags": [
+          "CashOutputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CashOutputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutputOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutputOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutputOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CashOutputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/cashoutputorder": {
+      "post": {
+        "tags": [
+          "CashOutputOrder"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutputOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutputOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutputOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOutputOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/v1/directories/employees/list": {
       "post": {
         "tags": [
@@ -342,6 +774,438 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Employee"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/fixedassetacquisition/{isn}": {
+      "get": {
+        "tags": [
+          "FixedAssetAcquisition"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "FixedAssetAcquisition"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetAcquisition"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetAcquisition"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetAcquisition"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "FixedAssetAcquisition"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/fixedassetacquisition": {
+      "post": {
+        "tags": [
+          "FixedAssetAcquisition"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetAcquisition"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetAcquisition"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetAcquisition"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetAcquisition"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/fixedassetdisposalact/{isn}": {
+      "get": {
+        "tags": [
+          "FixedAssetDisposalAct"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "FixedAssetDisposalAct"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDisposalAct"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDisposalAct"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDisposalAct"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "FixedAssetDisposalAct"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/fixedassetdisposalact": {
+      "post": {
+        "tags": [
+          "FixedAssetDisposalAct"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDisposalAct"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDisposalAct"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FixedAssetDisposalAct"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FixedAssetDisposalAct"
                 }
               }
             }
@@ -2694,6 +3558,222 @@
         }
       }
     },
+    "/v1/documents/receivedservice/{isn}": {
+      "get": {
+        "tags": [
+          "ReceivedService"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ReceivedService"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceivedService"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceivedService"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceivedService"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ReceivedService"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/receivedservice": {
+      "post": {
+        "tags": [
+          "ReceivedService"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceivedService"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceivedService"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceivedService"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceivedService"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/v1/reports/partnersbalances": {
       "post": {
         "tags": [
@@ -3676,6 +4756,130 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/StorageInputOrdersAndReceivedServicesDataRowApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/reports/calculateddata": {
+      "post": {
+        "tags": [
+          "Reports"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculatedDataParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculatedDataParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculatedDataParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedDataRowApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedDataRowApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedDataRowApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/reports/calculateddata/nextpage": {
+      "post": {
+        "tags": [
+          "Reports"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NextPageRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NextPageRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NextPageRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedDataRowApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedDataRowApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedDataRowApiResponse"
                 }
               }
             }
@@ -5805,6 +7009,583 @@
         },
         "additionalProperties": false
       },
+      "CalculatedDataParam": {
+        "type": "object",
+        "properties": {
+          "pageSize": {
+            "type": "integer",
+            "description": "hy-AM:  էջ  | en-US:  page | ru-RU: страница",
+            "format": "int32",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "description": "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода",
+            "format": "date"
+          },
+          "accrualDeduction": {
+            "type": "string",
+            "description": "hy-AM: Հավելում/պահում | en-US: Accrual/deduction | ru-RU: Начисление/удержание",
+            "nullable": true
+          },
+          "contractType": {
+            "type": "string",
+            "description": "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора",
+            "nullable": true
+          },
+          "employees": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "hy-AM: Աշխատակիցներ | en-US: Employees | ru-RU: Сотрудники",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "description": "hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение",
+            "nullable": true
+          },
+          "extended": {
+            "type": "boolean",
+            "description": "hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculatedDataRow": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "description": "hy-AM: Տարի | en-US: Year | ru-RU: Год",
+            "format": "int32"
+          },
+          "month": {
+            "type": "string",
+            "description": "hy-AM: Ամիս | en-US: Month | ru-RU: Месяц",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "description": "hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение",
+            "nullable": true
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeCode": {
+            "type": "string",
+            "description": "hy-AM: Տաբելային համար | en-US: Employee number | ru-RU: Табельный номер",
+            "nullable": true
+          },
+          "employeeName": {
+            "type": "string",
+            "description": "hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник",
+            "nullable": true
+          },
+          "socialCardNumber": {
+            "type": "string",
+            "description": "hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты",
+            "nullable": true
+          },
+          "contractType": {
+            "type": "string",
+            "description": "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора",
+            "nullable": true
+          },
+          "contractTypeName": {
+            "type": "string",
+            "description": "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора",
+            "nullable": true
+          },
+          "accrualDeductionCode": {
+            "type": "string",
+            "description": "hy-AM: Հ/Պ կոդ | en-US: Accrual/deduction code | ru-RU: Код Н/У",
+            "nullable": true
+          },
+          "accrualDeductionName": {
+            "type": "string",
+            "description": "hy-AM: Հ/Պ անվանում | en-US: Accrual/deduction name | ru-RU: Наименование Н/У",
+            "nullable": true
+          },
+          "calculatedAmount": {
+            "type": "number",
+            "description": "hy-AM: Հաշվ. գումար | en-US: Calc. amount | ru-RU: Нач. сумма",
+            "format": "double"
+          },
+          "debitAccount": {
+            "type": "string",
+            "description": "hy-AM: Հաշիվ դեբետ | en-US: Account debit | ru-RU: Счет дебет",
+            "nullable": true
+          },
+          "debitPartnerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "debitPartnerCode": {
+            "type": "string",
+            "description": "hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн.",
+            "nullable": true
+          },
+          "debitPartnerName": {
+            "type": "string",
+            "description": "hy-AM: Դեբետ-անվանում | en-US: Debit-name | ru-RU: Дебет-наименование",
+            "nullable": true
+          },
+          "creditAccount": {
+            "type": "string",
+            "description": "hy-AM: Հաշիվ կրեդիտ | en-US: Account credit | ru-RU: Счет кредит",
+            "nullable": true
+          },
+          "creditPartnerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "creditPartnerCode": {
+            "type": "string",
+            "description": "hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн.",
+            "nullable": true
+          },
+          "creditPartnerName": {
+            "type": "string",
+            "description": "hy-AM: Կրեդիտ-անվանում | en-US: Credit-name | ru-RU: Кредит-наименование",
+            "nullable": true
+          },
+          "analytic1": {
+            "type": "string",
+            "description": "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1",
+            "nullable": true
+          },
+          "analytic2": {
+            "type": "string",
+            "description": "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date"
+          },
+          "initialAmount": {
+            "type": "number",
+            "description": "hy-AM: Սկզբնական գումար | en-US: Initial amount | ru-RU: Начальная сумма",
+            "format": "double"
+          },
+          "incomeTax": {
+            "type": "number",
+            "description": "hy-AM: Եկամտային հարկ | en-US: Income tax | ru-RU: Подоходный налог",
+            "format": "double"
+          },
+          "pension": {
+            "type": "number",
+            "description": "hy-AM: Կուտակային կենսաթոշակի գումար | en-US: Pension | ru-RU: Сумма накопительной пенсии",
+            "format": "double"
+          },
+          "stampFeeAmount": {
+            "type": "number",
+            "description": "hy-AM: Դրոշմանիշային վճարի չափ | en-US: Stamp fee amount | ru-RU: Величина гербового сбора",
+            "format": "double"
+          },
+          "insuranceFeeAmount": {
+            "type": "number",
+            "description": "hy-AM: Ապահովագրավճարի չափ | en-US: Insurance fee amount | ru-RU: Сумма страховой платы",
+            "format": "double"
+          },
+          "monthDays": {
+            "type": "number",
+            "description": "hy-AM: Ամսվա օրեր | en-US: Month days | ru-RU: Дни месяца",
+            "format": "double"
+          },
+          "actualDays": {
+            "type": "number",
+            "description": "hy-AM: Փաստացի օրեր | en-US: Actual days | ru-RU: Отработанные дни",
+            "format": "double"
+          },
+          "monthHours": {
+            "type": "number",
+            "description": "hy-AM: Ամսվա ժամեր | en-US: Month hours | ru-RU: Месячное число часов",
+            "format": "double"
+          },
+          "actualHours": {
+            "type": "number",
+            "description": "hy-AM: Փաստացի ժամեր | en-US: Actual hours | ru-RU: Отработанные часы",
+            "format": "double"
+          },
+          "paymentType": {
+            "type": "string",
+            "description": "hy-AM: Վարձատրության տեսակ | en-US: Payment type | ru-RU: Вид оплаты труда",
+            "nullable": true
+          },
+          "accrualDeductionType": {
+            "type": "string",
+            "description": "hy-AM: Հ/Պ տիպ | en-US: Accrual/deduction type | ru-RU: Тип Н/У",
+            "nullable": true
+          },
+          "amountCalculationMethod": {
+            "type": "string",
+            "description": "hy-AM: Գումարի հաշվարկի ձև | en-US: Amount calculation method | ru-RU: Порядок расчёта суммы",
+            "nullable": true
+          },
+          "amountCalculationMethodName": {
+            "type": "string",
+            "description": "hy-AM: Գումարի հաշվարկի ձև | en-US: Amount calculation method | ru-RU: Порядок расчёта суммы",
+            "nullable": true
+          },
+          "useEmployeeTimesheet": {
+            "type": "boolean",
+            "description": "hy-AM: Օգտագործել աշխատակցի գրաֆիկը | en-US: Use employee's timesheet | ru-RU: Использовать график сотрудника"
+          },
+          "timesheetCode": {
+            "type": "string",
+            "description": "hy-AM: Գրաֆիկի կոդ | en-US: Timesheet code | ru-RU: Код графика",
+            "nullable": true
+          },
+          "coefficient": {
+            "type": "number",
+            "description": "hy-AM: Գործակից | en-US: Coefficient | ru-RU: Коэффициент",
+            "format": "double"
+          },
+          "fundingSource": {
+            "type": "string",
+            "description": "hy-AM: Ֆին. աղբյուր | en-US: Funding source | ru-RU: Фин. источник",
+            "nullable": true
+          },
+          "fundingSourceName": {
+            "type": "string",
+            "description": "hy-AM: Ֆին. աղբյուր | en-US: Funding source | ru-RU: Фин. источник",
+            "nullable": true
+          },
+          "vacationType": {
+            "type": "string",
+            "description": "hy-AM: Արձակուրդի տեսակ | en-US: Type of vacation | ru-RU: Вид отпуска",
+            "nullable": true
+          },
+          "incomeType": {
+            "type": "string",
+            "description": "hy-AM: Եկամտի տեսակ | en-US: Income Type | ru-RU: Тип дохода",
+            "nullable": true
+          },
+          "incomeTypeName": {
+            "type": "string",
+            "description": "hy-AM: Եկամտի տեսակ | en-US: Income Type | ru-RU: Тип дохода",
+            "nullable": true
+          },
+          "reverseCalculation": {
+            "type": "boolean",
+            "description": "hy-AM: Հետհաշվարկ | en-US: Reverse calculation (net to gross) | ru-RU: Обратный расчет"
+          },
+          "deductAccrualDeductionIncomeTax": {
+            "type": "boolean",
+            "description": "hy-AM: Հ/Պ եկամտային հարկը պահվում է | en-US: Deduct accrual/deduction income tax | ru-RU: Н/У облагается подоходным налогом"
+          },
+          "reducedIncome": {
+            "type": "boolean",
+            "description": "hy-AM: Հ/Պ նվազեցվող եկամուտ է | en-US: F/H reduced income | ru-RU: Н/У вычитаемые доходы  "
+          },
+          "storedInMandatoryFundedPension": {
+            "type": "boolean",
+            "description": "hy-AM: Հ/Պ Պարտադիր կուտակային կենսաթոշակը պահվում է | en-US: F/H Stored in the mandatory funded pension | ru-RU: Удерживается обязательная накопительная пенсия"
+          },
+          "reduceStampFeeTaxableAmount": {
+            "type": "boolean",
+            "description": "hy-AM: Նվազեցնել դրոշմանիշային վճարի հարկվող գումարից | en-US: Reduce from taxable amount of stamp fee | ru-RU: Уменьшить базовый доход гербового сбора"
+          },
+          "reduceInsuranceFeeTaxableAmount": {
+            "type": "boolean",
+            "description": "hy-AM: Նվազեցնել ապահովագրավճարի հարկվող գումարից | en-US: Reduce from taxable amount of insurance fee | ru-RU: Уменьшить базовый доход страховой платы"
+          },
+          "participatingInEmployerPensionCalculation": {
+            "type": "boolean",
+            "description": "hy-AM: Հ/Պ Մասնակցում է գործատուի կողմից տրվող կուտ. կենս. հաշվարկի մեջ | en-US: F/H Participating in employer-provided pension calculation | ru-RU: Н/У участвует в расчете накопительной пенсии предоставляемой работодателем"
+          },
+          "onlyForTaxCalculation": {
+            "type": "boolean",
+            "description": "hy-AM: Միայն հարկերի հաշվարկման համար | en-US: Only for tax calculation | ru-RU: Только для расчета налогов"
+          },
+          "calculateTradeUnionDue": {
+            "type": "boolean",
+            "description": "hy-AM: Հ/Պ Արհմիութենական անդամավճար պահվում է | en-US: Calculate trade union due | ru-RU: Н/У Удерживается профсоюзный взнос"
+          },
+          "includeInAverageWage": {
+            "type": "string",
+            "description": "hy-AM: Մասնակցում է արձակուրդայինի միջինի մեջ | en-US: Include in the average wage | ru-RU: Участвует в среднем заработке для отпускных",
+            "nullable": true
+          },
+          "includeInAverageWageName": {
+            "type": "string",
+            "description": "hy-AM: Մասնակցում է արձակուրդայինի միջինի մեջ | en-US: Include in the average wage | ru-RU: Участвует в среднем заработке для отпускных",
+            "nullable": true
+          },
+          "resident": {
+            "type": "boolean",
+            "description": "hy-AM: ՀՀ քաղաքացի (Ռեզիդենտ) | en-US: RA citizen (resident) | ru-RU: Гражданин РА (Резидент)"
+          },
+          "deductEmployeeIncomeTax": {
+            "type": "boolean",
+            "description": "hy-AM: Աշխատակցի եկամտային հարկը պահվում է | en-US: Deduct employee income tax | ru-RU: Сотрудник облагается подоходным налогом"
+          },
+          "deductFundedPensionFromIncomeTax": {
+            "type": "boolean",
+            "description": "hy-AM: Աշխատակցի կուտակայինի գումարը նվազեցվում է եկամտային հարկից | en-US: Employee's funded pension amount is deducted from the income tax. | ru-RU: Сумма накопительной пенсии работника вычитается из подоходного налога"
+          },
+          "participationStatus": {
+            "type": "string",
+            "description": "hy-AM: Մասնակցության կարգավիճակ | en-US: Participation Status | ru-RU: Статус участия",
+            "nullable": true
+          },
+          "percentPaidByEmployer": {
+            "type": "number",
+            "description": "hy-AM: Գործատուի կողմից վճարվող տոկոս | en-US: Percent paid by the employer | ru-RU: Процент, уплачиваемый работодателем",
+            "format": "double"
+          },
+          "amountPaidByEmployer": {
+            "type": "number",
+            "description": "hy-AM: Գործատուի կողմից վճարվող գումար | en-US: Summa paid by the employer | ru-RU: Сумма, уплачиваемая работодателем",
+            "format": "double"
+          },
+          "stampFee": {
+            "type": "string",
+            "description": "hy-AM: Դրոշմանիշային վճար | en-US: Stamp fee | ru-RU: Гербовый сбор",
+            "nullable": true
+          },
+          "insuranceFee": {
+            "type": "string",
+            "description": "hy-AM: Ապահովագրավճար | en-US: Insurance fee | ru-RU: Страховая плата",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userName": {
+            "type": "string",
+            "description": "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь",
+            "nullable": true
+          },
+          "transaction": {
+            "type": "boolean",
+            "description": "hy-AM: Գործառնություն | en-US: Transaction | ru-RU: Проводка"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalculatedDataRowApiResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "hasMore": {
+            "type": "boolean"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalculatedDataRow"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CashInputOrder": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "cashDesk": {
+            "type": "string",
+            "description": "hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "description": "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "description": "hy-AM: Գումար ԱԴՄ-ով | en-US: Sum in AMD | ru-RU: Сумма в НДЕ",
+            "format": "double"
+          },
+          "currencyAmount": {
+            "type": "number",
+            "description": "hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте",
+            "format": "double"
+          },
+          "ecrCheckNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "correspondentAccount": {
+            "type": "string",
+            "description": "hy-AM: Թղթակցող հաշիվ | en-US: Corr. account | ru-RU: Корр. счет",
+            "nullable": true
+          },
+          "cashInFlowAccount": {
+            "type": "string",
+            "description": "hy-AM: Դրամ. ներ. հաշիվ | en-US: Cash in. acc. | ru-RU: Счет пост. ДС",
+            "nullable": true
+          },
+          "analytic1": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1",
+            "nullable": true
+          },
+          "analytic2": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2",
+            "nullable": true
+          },
+          "partnerCode": {
+            "type": "string",
+            "description": "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер",
+            "nullable": true
+          },
+          "payerName": {
+            "type": "string",
+            "description": "hy-AM: Ստացված է | en-US: Received | ru-RU: Получено",
+            "nullable": true
+          },
+          "base": {
+            "type": "string",
+            "description": "hy-AM: Հիմքը | en-US: Base | ru-RU: Основание",
+            "nullable": true
+          },
+          "attached": {
+            "type": "string",
+            "description": "hy-AM: Կցվում են | en-US: Attached | ru-RU: Прикреплены",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CashOutputOrder": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "cashDesk": {
+            "type": "string",
+            "description": "hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "description": "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "description": "hy-AM: Գումար ԱԴՄ-ով | en-US: Sum in AMD | ru-RU: Сумма в НДЕ",
+            "format": "double"
+          },
+          "currencyAmount": {
+            "type": "number",
+            "description": "hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте",
+            "format": "double"
+          },
+          "ecrReturnCheckNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "correspondentAccount": {
+            "type": "string",
+            "description": "hy-AM: Թղթակցող հաշիվ | en-US: Corr. account | ru-RU: Корр. счет",
+            "nullable": true
+          },
+          "cashOutFlowAccount": {
+            "type": "string",
+            "description": "hy-AM: Դրամ. արտ. հաշիվ | en-US: Cash out. acc. | ru-RU: Счет выб. ДС",
+            "nullable": true
+          },
+          "analytic1": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1",
+            "nullable": true
+          },
+          "analytic2": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2",
+            "nullable": true
+          },
+          "partnerCode": {
+            "type": "string",
+            "description": "hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер",
+            "nullable": true
+          },
+          "receiverName": {
+            "type": "string",
+            "description": "hy-AM: Տրամադրել | en-US: Receiver | ru-RU: Выдать",
+            "nullable": true
+          },
+          "aim": {
+            "type": "string",
+            "description": "hy-AM: Նպ. նշ. ծածկագիր | en-US: Code | ru-RU: Код целевого назначения",
+            "nullable": true
+          },
+          "base": {
+            "type": "string",
+            "description": "hy-AM: Հիմքը | en-US: Base | ru-RU: Основание",
+            "nullable": true
+          },
+          "enclosure": {
+            "type": "string",
+            "description": "hy-AM: Հավելված | en-US: Enclosure | ru-RU: Приложение",
+            "nullable": true
+          },
+          "otherInformation": {
+            "type": "string",
+            "description": "hy-AM: Այլ տեղեկություններ | en-US: Other information | ru-RU: Дополнительная информация",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ECRChecksJournalDataRow": {
         "type": "object",
         "properties": {
@@ -6648,6 +8429,366 @@
             "items": {
               "$ref": "#/components/schemas/EmployeeRow"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FixedAssetAcquisition": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "inventoryNumber": {
+            "type": "string",
+            "description": "hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "description": "hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование",
+            "nullable": true
+          },
+          "inputDate": {
+            "type": "string",
+            "description": "hy-AM: Մուտքի ամսաթիվ | en-US: Input date | ru-RU: Дата поступления",
+            "format": "date",
+            "nullable": true
+          },
+          "exploitationDate": {
+            "type": "string",
+            "description": "hy-AM: Շահագործման ամսաթիվ | en-US: Exploitation date | ru-RU: Дата эксплуатации",
+            "format": "date",
+            "nullable": true
+          },
+          "fixedAssetType": {
+            "type": "string",
+            "description": "hy-AM: ՀՄ տեսակ | en-US: Type of fixed asset | ru-RU: Вид ОС",
+            "nullable": true
+          },
+          "profitTaxLawGroup": {
+            "type": "string",
+            "description": "hy-AM: ՀՄ խումբ շահութահարկի օրենքով | en-US: FA group by Profit tax law | ru-RU: Группа ОС по закону о налоге на прибыль",
+            "nullable": true
+          },
+          "purchaseMode": {
+            "type": "string",
+            "description": "hy-AM: ՀՄ ձեռքբերման եղանակ | en-US: FA purchase mode  | ru-RU: Способ приобретения ОС",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение ",
+            "nullable": true
+          },
+          "responsiblePerson": {
+            "type": "string",
+            "description": "hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ",
+            "nullable": true
+          },
+          "inventoryCard": {
+            "type": "string",
+            "description": "hy-AM: Գույքային քարտ | en-US: Inventory card | ru-RU: Инвентарная карточка",
+            "nullable": true
+          },
+          "supplierCode": {
+            "type": "string",
+            "description": "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик",
+            "nullable": true
+          },
+          "supplierAccount": {
+            "type": "string",
+            "description": "hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика",
+            "nullable": true
+          },
+          "analytic1": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1",
+            "nullable": true
+          },
+          "analytic2": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2",
+            "nullable": true
+          },
+          "taxExportType": {
+            "type": "string",
+            "description": "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки",
+            "nullable": true
+          },
+          "purchaseDocumentNumber": {
+            "type": "string",
+            "description": "hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения",
+            "nullable": true
+          },
+          "purchaseDocumentDate": {
+            "type": "string",
+            "description": "hy-AM: ա/թ. | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "vatCalculationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "includeVATInCost": {
+            "type": "boolean",
+            "description": "hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость"
+          },
+          "vatInclusionMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "financialUsefulLife": {
+            "type": "integer",
+            "description": "hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)",
+            "format": "int32"
+          },
+          "financialCost": {
+            "type": "number",
+            "description": "hy-AM: Սկզբնական արժեք | en-US: Cost | ru-RU: Первоначальная стоимость",
+            "format": "double"
+          },
+          "financialCalculatedDepreciation": {
+            "type": "number",
+            "description": "hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ",
+            "format": "double"
+          },
+          "financialDisposalValue": {
+            "type": "number",
+            "description": "hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость",
+            "format": "double"
+          },
+          "financialIsDepreciated": {
+            "type": "boolean",
+            "description": "hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ",
+            "nullable": true
+          },
+          "taxUsefulLife": {
+            "type": "integer",
+            "description": "hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)",
+            "format": "int32"
+          },
+          "taxCost": {
+            "type": "number",
+            "description": "hy-AM: Սկզբնական արժեք | en-US: Cost | ru-RU: Первоначальная стоимость",
+            "format": "double"
+          },
+          "taxCalculatedDepreciation": {
+            "type": "number",
+            "description": "hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ",
+            "format": "double"
+          },
+          "taxDisposalValue": {
+            "type": "number",
+            "description": "hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость",
+            "format": "double"
+          },
+          "taxIsDepreciated": {
+            "type": "boolean",
+            "description": "hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ",
+            "nullable": true
+          },
+          "deferredIncomeUsefulLife": {
+            "type": "integer",
+            "description": "hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)",
+            "format": "int32"
+          },
+          "deferredIncomeAmount": {
+            "type": "number",
+            "description": "hy-AM: Հետաձգված հասույթ | en-US: Deferred income | ru-RU: Отложенный доход",
+            "format": "double"
+          },
+          "deferredIncomeCalculatedDepreciation": {
+            "type": "number",
+            "description": "hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ",
+            "format": "double"
+          },
+          "deferredIncomeIsDepreciated": {
+            "type": "boolean",
+            "description": "hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ",
+            "nullable": true
+          },
+          "grossCarryingAmountAccount": {
+            "type": "string",
+            "description": "hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС",
+            "nullable": true
+          },
+          "depreciationAccount": {
+            "type": "string",
+            "description": "hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа",
+            "nullable": true
+          },
+          "expenseAccount": {
+            "type": "string",
+            "description": "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов",
+            "nullable": true
+          },
+          "deferredIncomeAccount": {
+            "type": "string",
+            "description": "hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода",
+            "nullable": true
+          },
+          "deferredIncomeCurrentAccount": {
+            "type": "string",
+            "description": "hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов ",
+            "nullable": true
+          },
+          "incomeAccount": {
+            "type": "string",
+            "description": "hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов",
+            "nullable": true
+          },
+          "commissionDate": {
+            "type": "integer",
+            "description": "hy-AM: Թողարկման տարեթիվ | en-US: Date of commission | ru-RU: Дата выпуска",
+            "format": "int32"
+          },
+          "serialNumber": {
+            "type": "string",
+            "description": "hy-AM: Գործարանային համար | en-US: Serial number | ru-RU: Заводской номер",
+            "nullable": true
+          },
+          "technicalCertificate": {
+            "type": "string",
+            "description": "hy-AM: Տեխնիկական անձնագիր | en-US: Technical certificate | ru-RU: Тех. паспорт",
+            "nullable": true
+          },
+          "brand": {
+            "type": "string",
+            "description": "hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка",
+            "nullable": true
+          },
+          "briefDescription": {
+            "type": "string",
+            "description": "hy-AM: Համառոտ բնութագիր | en-US: Brief description | ru-RU: Краткое описание",
+            "nullable": true
+          },
+          "producer": {
+            "type": "string",
+            "description": "hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FixedAssetDisposalAct": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "outputLocation": {
+            "type": "string",
+            "description": "hy-AM: Հանձնող ստորաբաժանում | en-US: Output location | ru-RU: Подразделение отправитель",
+            "nullable": true
+          },
+          "relievedResponsiblePerson": {
+            "type": "string",
+            "description": "hy-AM: Հանձնող ՆՊԱ | en-US: Relieved mat.responsible person | ru-RU: МОЛ отправитель",
+            "nullable": true
+          },
+          "analytic1": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1",
+            "nullable": true
+          },
+          "analytic2": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "description": "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий",
+            "nullable": true
+          },
+          "inventoriesList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FixedAssetDisposalActSpecificationRow"
+            },
+            "description": "hy-AM: Գույքահամարներ | en-US: Inventories | ru-RU: Инвентарные номера",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FixedAssetDisposalActSpecificationRow": {
+        "type": "object",
+        "properties": {
+          "inventoryNumber": {
+            "type": "string",
+            "description": "hy-AM: Գույքահամար | en-US: Inventory | ru-RU: Инвентарный номер",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование",
+            "nullable": true
+          },
+          "grossCarryingAmountAccount": {
+            "type": "string",
+            "description": "hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС",
+            "nullable": true
+          },
+          "depreciationAccount": {
+            "type": "string",
+            "description": "hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа",
+            "nullable": true
+          },
+          "expenseAccount": {
+            "type": "string",
+            "description": "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов",
+            "nullable": true
+          },
+          "deferredIncomeAccount": {
+            "type": "string",
+            "description": "hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода",
+            "nullable": true
+          },
+          "deferredIncomeCurrentAccount": {
+            "type": "string",
+            "description": "hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов ",
+            "nullable": true
+          },
+          "incomeAccount": {
+            "type": "string",
+            "description": "hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов",
             "nullable": true
           }
         },
@@ -9949,6 +12090,229 @@
         },
         "additionalProperties": false
       },
+      "ReceivedService": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "currency": {
+            "type": "string",
+            "description": "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта",
+            "nullable": true
+          },
+          "currencyExchangeRate": {
+            "type": "number",
+            "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
+            "format": "double"
+          },
+          "currencyExchangeBase": {
+            "type": "number",
+            "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
+            "format": "double"
+          },
+          "previousDayExchangeRate": {
+            "type": "boolean",
+            "description": "hy-AM: Նախորդ օրվա փոխարժեքը | en-US: Previous day exchange rate | ru-RU: Курс валюты предыдущего дня"
+          },
+          "supplierCode": {
+            "type": "string",
+            "description": "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик",
+            "nullable": true
+          },
+          "supplierAccount": {
+            "type": "string",
+            "description": "hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика",
+            "nullable": true
+          },
+          "prepaymentAccount": {
+            "type": "string",
+            "description": "hy-AM: Տրված կանխավճարի հաշիվ | en-US: Prepayment account | ru-RU: Счет авансов выданных",
+            "nullable": true
+          },
+          "analytic1": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1",
+            "nullable": true
+          },
+          "analytic2": {
+            "type": "string",
+            "description": "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2",
+            "nullable": true
+          },
+          "selfInvoice": {
+            "type": "boolean",
+            "description": "hy-AM: Ինքնահաշիվ | en-US: Self-invoice | ru-RU: Счет самому себе"
+          },
+          "taxExportType": {
+            "type": "string",
+            "description": "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки",
+            "nullable": true
+          },
+          "purchaseDocumentNumber": {
+            "type": "string",
+            "description": "hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения",
+            "nullable": true
+          },
+          "submissionDate": {
+            "type": "string",
+            "description": "hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От",
+            "format": "date",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "description": "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий",
+            "nullable": true
+          },
+          "purchasingType": {
+            "type": "string",
+            "description": "hy-AM: Ծառայության ձեռք բերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги",
+            "nullable": true
+          },
+          "vatCalculationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "includeVATInExpense": {
+            "type": "boolean",
+            "description": "hy-AM: Ներառել ԱԱՀ-ն ծախսի մեջ | en-US: Include VAT in expense | ru-RU: НДС включить в расходы"
+          },
+          "vatInclusionMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "vatAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalAmount": {
+            "type": "number",
+            "description": "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма",
+            "format": "double"
+          },
+          "supplierLegalAddress": {
+            "type": "string",
+            "description": "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес",
+            "nullable": true
+          },
+          "supplierBusinessAddress": {
+            "type": "string",
+            "description": "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес ",
+            "nullable": true
+          },
+          "supplierSettlementAccount": {
+            "type": "string",
+            "description": "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет",
+            "nullable": true
+          },
+          "supplierTaxCode": {
+            "type": "string",
+            "description": "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код ",
+            "nullable": true
+          },
+          "supplierManagerPosition": {
+            "type": "string",
+            "description": "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя",
+            "nullable": true
+          },
+          "supplierManagerName": {
+            "type": "string",
+            "description": "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя",
+            "nullable": true
+          },
+          "supplierAccountantPosition": {
+            "type": "string",
+            "description": "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера",
+            "nullable": true
+          },
+          "supplierAccountantName": {
+            "type": "string",
+            "description": "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера",
+            "nullable": true
+          },
+          "servicesList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReceivedServiceSpecificationRow"
+            },
+            "description": "hy-AM: Ծառայություններ | en-US: Services | ru-RU: Услуги",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReceivedServiceSpecificationRow": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер",
+            "format": "int32"
+          },
+          "code": {
+            "type": "string",
+            "description": "hy-AM: Կոդ | en-US: Code | ru-RU: Код",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование",
+            "nullable": true
+          },
+          "unitAbbreviation": {
+            "type": "string",
+            "description": "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "description": "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "description": "hy-AM: Գին | en-US: Price | ru-RU: Цена",
+            "format": "double"
+          },
+          "amount": {
+            "type": "number",
+            "description": "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма",
+            "format": "double"
+          },
+          "vat": {
+            "type": "boolean"
+          },
+          "account": {
+            "type": "string",
+            "description": "hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет",
+            "nullable": true
+          },
+          "rowNumber": {
+            "type": "integer",
+            "description": "hy-AM: Տողի N | en-US: line N | ru-RU: N строки",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "RetailSale": {
         "type": "object",
         "properties": {
@@ -11789,7 +14153,19 @@
   ],
   "tags": [
     {
+      "name": "CashInputOrder"
+    },
+    {
+      "name": "CashOutputOrder"
+    },
+    {
       "name": "Employees"
+    },
+    {
+      "name": "FixedAssetAcquisition"
+    },
+    {
+      "name": "FixedAssetDisposalAct"
     },
     {
       "name": "Invoice"
@@ -11817,6 +14193,9 @@
     },
     {
       "name": "PaymentOrder"
+    },
+    {
+      "name": "ReceivedService"
     },
     {
       "name": "Reports"

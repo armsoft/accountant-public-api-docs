@@ -15,6 +15,1772 @@ Email: <a href="mailto:support@armsoft.am">Armsoft</a> Web: <a href="https://www
 * API Key (API Key)
     - Parameter Name: **apiKey**, in: header. Please insert client api key into field
 
+<h1 id="accountant-public-api-cashinputorder">CashInputOrder</h1>
+
+## get__v1_documents_cashinputorder_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/cashinputorder/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/cashinputorder/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashinputorder/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/cashinputorder/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/cashinputorder/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/cashinputorder/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashinputorder/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/cashinputorder/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/cashinputorder/{isn}`
+
+<h3 id="get__v1_documents_cashinputorder_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","currency":"string","amount":0.1,"currencyAmount":0.1,"ecrCheckNumber":"string","correspondentAccount":"string","cashInFlowAccount":"string","analytic1":"string","analytic2":"string","partnerCode":"string","payerName":"string","base":"string","attached":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}
+```
+
+<h3 id="get__v1_documents_cashinputorder_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CashInputOrder](#schemacashinputorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_cashinputorder_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/cashinputorder/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/cashinputorder/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashinputorder/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/cashinputorder/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/cashinputorder/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/cashinputorder/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashinputorder/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/cashinputorder/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/cashinputorder/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}
+```
+
+<h3 id="put__v1_documents_cashinputorder_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[CashInputOrder](#schemacashinputorder)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","currency":"string","amount":0.1,"currencyAmount":0.1,"ecrCheckNumber":"string","correspondentAccount":"string","cashInFlowAccount":"string","analytic1":"string","analytic2":"string","partnerCode":"string","payerName":"string","base":"string","attached":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}
+```
+
+<h3 id="put__v1_documents_cashinputorder_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CashInputOrder](#schemacashinputorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_cashinputorder_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/cashinputorder/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/cashinputorder/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashinputorder/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/cashinputorder/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/cashinputorder/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/cashinputorder/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashinputorder/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/cashinputorder/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/cashinputorder/{isn}`
+
+<h3 id="delete__v1_documents_cashinputorder_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_cashinputorder_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_cashinputorder
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/cashinputorder \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/cashinputorder HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashinputorder',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/cashinputorder',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/cashinputorder', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/cashinputorder', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashinputorder");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/cashinputorder", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/cashinputorder`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}
+```
+
+<h3 id="post__v1_documents_cashinputorder-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[CashInputOrder](#schemacashinputorder)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","currency":"string","amount":0.1,"currencyAmount":0.1,"ecrCheckNumber":"string","correspondentAccount":"string","cashInFlowAccount":"string","analytic1":"string","analytic2":"string","partnerCode":"string","payerName":"string","base":"string","attached":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}
+```
+
+<h3 id="post__v1_documents_cashinputorder-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[CashInputOrder](#schemacashinputorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="accountant-public-api-cashoutputorder">CashOutputOrder</h1>
+
+## get__v1_documents_cashoutputorder_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/cashoutputorder/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/cashoutputorder/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashoutputorder/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/cashoutputorder/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/cashoutputorder/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/cashoutputorder/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashoutputorder/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/cashoutputorder/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/cashoutputorder/{isn}`
+
+<h3 id="get__v1_documents_cashoutputorder_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","currency":"string","amount":0.1,"currencyAmount":0.1,"ecrReturnCheckNumber":"string","correspondentAccount":"string","cashOutFlowAccount":"string","analytic1":"string","analytic2":"string","partnerCode":"string","receiverName":"string","aim":"string","base":"string","enclosure":"string","otherInformation":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}
+```
+
+<h3 id="get__v1_documents_cashoutputorder_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CashOutputOrder](#schemacashoutputorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_cashoutputorder_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/cashoutputorder/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/cashoutputorder/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashoutputorder/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/cashoutputorder/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/cashoutputorder/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/cashoutputorder/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashoutputorder/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/cashoutputorder/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/cashoutputorder/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}
+```
+
+<h3 id="put__v1_documents_cashoutputorder_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[CashOutputOrder](#schemacashoutputorder)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","currency":"string","amount":0.1,"currencyAmount":0.1,"ecrReturnCheckNumber":"string","correspondentAccount":"string","cashOutFlowAccount":"string","analytic1":"string","analytic2":"string","partnerCode":"string","receiverName":"string","aim":"string","base":"string","enclosure":"string","otherInformation":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}
+```
+
+<h3 id="put__v1_documents_cashoutputorder_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CashOutputOrder](#schemacashoutputorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_cashoutputorder_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/cashoutputorder/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/cashoutputorder/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashoutputorder/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/cashoutputorder/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/cashoutputorder/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/cashoutputorder/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashoutputorder/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/cashoutputorder/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/cashoutputorder/{isn}`
+
+<h3 id="delete__v1_documents_cashoutputorder_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_cashoutputorder_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_cashoutputorder
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/cashoutputorder \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/cashoutputorder HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/cashoutputorder',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/cashoutputorder',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/cashoutputorder', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/cashoutputorder', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/cashoutputorder");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/cashoutputorder", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/cashoutputorder`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}
+```
+
+<h3 id="post__v1_documents_cashoutputorder-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[CashOutputOrder](#schemacashoutputorder)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","currency":"string","amount":0.1,"currencyAmount":0.1,"ecrReturnCheckNumber":"string","correspondentAccount":"string","cashOutFlowAccount":"string","analytic1":"string","analytic2":"string","partnerCode":"string","receiverName":"string","aim":"string","base":"string","enclosure":"string","otherInformation":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}
+```
+
+<h3 id="post__v1_documents_cashoutputorder-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[CashOutputOrder](#schemacashoutputorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 <h1 id="accountant-public-api-employees">Employees</h1>
 
 ## post__v1_directories_employees_list
@@ -1868,6 +3634,2017 @@ func main() {
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[Employee](#schemaemployee)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="accountant-public-api-fixedassetacquisition">FixedAssetAcquisition</h1>
+
+## get__v1_documents_fixedassetacquisition_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/fixedassetacquisition/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/fixedassetacquisition/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetacquisition/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/fixedassetacquisition/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/fixedassetacquisition/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/fixedassetacquisition/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetacquisition/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/fixedassetacquisition/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/fixedassetacquisition/{isn}`
+
+<h3 id="get__v1_documents_fixedassetacquisition_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","documentNumber":"string","state":0,"inventoryNumber":"string","name":"string","fullName":"string","inputDate":"2019-08-24","exploitationDate":"2019-08-24","fixedAssetType":"string","profitTaxLawGroup":"string","purchaseMode":"string","location":"string","responsiblePerson":"string","inventoryCard":"string","supplierCode":"string","supplierAccount":"string","analytic1":"string","analytic2":"string","taxExportType":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","vatCalculationType":"string","includeVATInCost":true,"vatInclusionMethod":"string","financialUsefulLife":0,"financialCost":0.1,"financialCalculatedDepreciation":0.1,"financialDisposalValue":0.1,"financialIsDepreciated":true,"taxUsefulLife":0,"taxCost":0.1,"taxCalculatedDepreciation":0.1,"taxDisposalValue":0.1,"taxIsDepreciated":true,"deferredIncomeUsefulLife":0,"deferredIncomeAmount":0.1,"deferredIncomeCalculatedDepreciation":0.1,"deferredIncomeIsDepreciated":true,"grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string","commissionDate":0,"serialNumber":"string","technicalCertificate":"string","brand":"string","briefDescription":"string","producer":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}
+```
+
+<h3 id="get__v1_documents_fixedassetacquisition_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[FixedAssetAcquisition](#schemafixedassetacquisition)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_fixedassetacquisition_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/fixedassetacquisition/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/fixedassetacquisition/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetacquisition/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/fixedassetacquisition/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/fixedassetacquisition/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/fixedassetacquisition/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetacquisition/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/fixedassetacquisition/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/fixedassetacquisition/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}
+```
+
+<h3 id="put__v1_documents_fixedassetacquisition_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[FixedAssetAcquisition](#schemafixedassetacquisition)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","documentNumber":"string","state":0,"inventoryNumber":"string","name":"string","fullName":"string","inputDate":"2019-08-24","exploitationDate":"2019-08-24","fixedAssetType":"string","profitTaxLawGroup":"string","purchaseMode":"string","location":"string","responsiblePerson":"string","inventoryCard":"string","supplierCode":"string","supplierAccount":"string","analytic1":"string","analytic2":"string","taxExportType":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","vatCalculationType":"string","includeVATInCost":true,"vatInclusionMethod":"string","financialUsefulLife":0,"financialCost":0.1,"financialCalculatedDepreciation":0.1,"financialDisposalValue":0.1,"financialIsDepreciated":true,"taxUsefulLife":0,"taxCost":0.1,"taxCalculatedDepreciation":0.1,"taxDisposalValue":0.1,"taxIsDepreciated":true,"deferredIncomeUsefulLife":0,"deferredIncomeAmount":0.1,"deferredIncomeCalculatedDepreciation":0.1,"deferredIncomeIsDepreciated":true,"grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string","commissionDate":0,"serialNumber":"string","technicalCertificate":"string","brand":"string","briefDescription":"string","producer":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}
+```
+
+<h3 id="put__v1_documents_fixedassetacquisition_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[FixedAssetAcquisition](#schemafixedassetacquisition)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_fixedassetacquisition_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/fixedassetacquisition/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/fixedassetacquisition/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetacquisition/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/fixedassetacquisition/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/fixedassetacquisition/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/fixedassetacquisition/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetacquisition/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/fixedassetacquisition/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/fixedassetacquisition/{isn}`
+
+<h3 id="delete__v1_documents_fixedassetacquisition_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_fixedassetacquisition_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_fixedassetacquisition
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/fixedassetacquisition \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/fixedassetacquisition HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetacquisition',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/fixedassetacquisition',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/fixedassetacquisition', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/fixedassetacquisition', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetacquisition");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/fixedassetacquisition", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/fixedassetacquisition`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}
+```
+
+<h3 id="post__v1_documents_fixedassetacquisition-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[FixedAssetAcquisition](#schemafixedassetacquisition)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","documentNumber":"string","state":0,"inventoryNumber":"string","name":"string","fullName":"string","inputDate":"2019-08-24","exploitationDate":"2019-08-24","fixedAssetType":"string","profitTaxLawGroup":"string","purchaseMode":"string","location":"string","responsiblePerson":"string","inventoryCard":"string","supplierCode":"string","supplierAccount":"string","analytic1":"string","analytic2":"string","taxExportType":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","vatCalculationType":"string","includeVATInCost":true,"vatInclusionMethod":"string","financialUsefulLife":0,"financialCost":0.1,"financialCalculatedDepreciation":0.1,"financialDisposalValue":0.1,"financialIsDepreciated":true,"taxUsefulLife":0,"taxCost":0.1,"taxCalculatedDepreciation":0.1,"taxDisposalValue":0.1,"taxIsDepreciated":true,"deferredIncomeUsefulLife":0,"deferredIncomeAmount":0.1,"deferredIncomeCalculatedDepreciation":0.1,"deferredIncomeIsDepreciated":true,"grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string","commissionDate":0,"serialNumber":"string","technicalCertificate":"string","brand":"string","briefDescription":"string","producer":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}
+```
+
+<h3 id="post__v1_documents_fixedassetacquisition-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[FixedAssetAcquisition](#schemafixedassetacquisition)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="accountant-public-api-fixedassetdisposalact">FixedAssetDisposalAct</h1>
+
+## get__v1_documents_fixedassetdisposalact_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/fixedassetdisposalact/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/fixedassetdisposalact/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetdisposalact/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/fixedassetdisposalact/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/fixedassetdisposalact/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/fixedassetdisposalact/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetdisposalact/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/fixedassetdisposalact/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/fixedassetdisposalact/{isn}`
+
+<h3 id="get__v1_documents_fixedassetdisposalact_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"outputLocation":"string","relievedResponsiblePerson":"string","analytic1":"string","analytic2":"string","comment":"string","inventoriesList":[{"inventoryNumber":"string","name":"string","grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string"}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}
+```
+
+<h3 id="get__v1_documents_fixedassetdisposalact_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[FixedAssetDisposalAct](#schemafixedassetdisposalact)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_fixedassetdisposalact_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/fixedassetdisposalact/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/fixedassetdisposalact/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetdisposalact/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/fixedassetdisposalact/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/fixedassetdisposalact/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/fixedassetdisposalact/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetdisposalact/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/fixedassetdisposalact/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/fixedassetdisposalact/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_fixedassetdisposalact_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[FixedAssetDisposalAct](#schemafixedassetdisposalact)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"outputLocation":"string","relievedResponsiblePerson":"string","analytic1":"string","analytic2":"string","comment":"string","inventoriesList":[{"inventoryNumber":"string","name":"string","grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string"}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_fixedassetdisposalact_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[FixedAssetDisposalAct](#schemafixedassetdisposalact)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_fixedassetdisposalact_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/fixedassetdisposalact/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/fixedassetdisposalact/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetdisposalact/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/fixedassetdisposalact/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/fixedassetdisposalact/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/fixedassetdisposalact/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetdisposalact/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/fixedassetdisposalact/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/fixedassetdisposalact/{isn}`
+
+<h3 id="delete__v1_documents_fixedassetdisposalact_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_fixedassetdisposalact_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_fixedassetdisposalact
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/fixedassetdisposalact \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/fixedassetdisposalact HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/fixedassetdisposalact',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/fixedassetdisposalact',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/fixedassetdisposalact', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/fixedassetdisposalact', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/fixedassetdisposalact");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/fixedassetdisposalact", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/fixedassetdisposalact`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_fixedassetdisposalact-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[FixedAssetDisposalAct](#schemafixedassetdisposalact)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"outputLocation":"string","relievedResponsiblePerson":"string","analytic1":"string","analytic2":"string","comment":"string","inventoriesList":[{"inventoryNumber":"string","name":"string","grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string"}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_fixedassetdisposalact-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[FixedAssetDisposalAct](#schemafixedassetdisposalact)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -12670,6 +16447,1085 @@ To perform this operation, you must be authenticated by means of one of the foll
 API Key
 </aside>
 
+<h1 id="accountant-public-api-receivedservice">ReceivedService</h1>
+
+## get__v1_documents_receivedservice_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/receivedservice/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/receivedservice/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/receivedservice/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/receivedservice/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/receivedservice/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/receivedservice/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/receivedservice/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/receivedservice/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/receivedservice/{isn}`
+
+<h3 id="get__v1_documents_receivedservice_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"supplierCode":"string","supplierAccount":"string","prepaymentAccount":"string","analytic1":"string","analytic2":"string","selfInvoice":true,"taxExportType":"string","purchaseDocumentNumber":"string","submissionDate":"2019-08-24","comment":"string","purchasingType":"string","vatCalculationType":"string","includeVATInExpense":true,"vatInclusionMethod":"string","vatAmount":0.1,"totalAmount":0.1,"supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","servicesList":[{"id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"amount":0.1,"vat":true,"account":"string","rowNumber":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="get__v1_documents_receivedservice_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ReceivedService](#schemareceivedservice)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_receivedservice_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/receivedservice/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/receivedservice/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/receivedservice/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/receivedservice/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/receivedservice/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/receivedservice/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/receivedservice/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/receivedservice/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/receivedservice/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_receivedservice_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ReceivedService](#schemareceivedservice)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"supplierCode":"string","supplierAccount":"string","prepaymentAccount":"string","analytic1":"string","analytic2":"string","selfInvoice":true,"taxExportType":"string","purchaseDocumentNumber":"string","submissionDate":"2019-08-24","comment":"string","purchasingType":"string","vatCalculationType":"string","includeVATInExpense":true,"vatInclusionMethod":"string","vatAmount":0.1,"totalAmount":0.1,"supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","servicesList":[{"id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"amount":0.1,"vat":true,"account":"string","rowNumber":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_receivedservice_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ReceivedService](#schemareceivedservice)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_receivedservice_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/receivedservice/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/receivedservice/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/receivedservice/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/receivedservice/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/receivedservice/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/receivedservice/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/receivedservice/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/receivedservice/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/receivedservice/{isn}`
+
+<h3 id="delete__v1_documents_receivedservice_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_receivedservice_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_receivedservice
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/receivedservice \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/receivedservice HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/receivedservice',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/receivedservice',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/receivedservice', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/receivedservice', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/receivedservice");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/receivedservice", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/receivedservice`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_receivedservice-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ReceivedService](#schemareceivedservice)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"supplierCode":"string","supplierAccount":"string","prepaymentAccount":"string","analytic1":"string","analytic2":"string","selfInvoice":true,"taxExportType":"string","purchaseDocumentNumber":"string","submissionDate":"2019-08-24","comment":"string","purchasingType":"string","vatCalculationType":"string","includeVATInExpense":true,"vatInclusionMethod":"string","vatAmount":0.1,"totalAmount":0.1,"supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","servicesList":[{"id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"amount":0.1,"vat":true,"account":"string","rowNumber":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_receivedservice-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[ReceivedService](#schemareceivedservice)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 <h1 id="accountant-public-api-reports">Reports</h1>
 
 ## post__v1_reports_partnersbalances
@@ -16709,6 +21565,576 @@ func main() {
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[StorageInputOrdersAndReceivedServicesDataRowApiResponse](#schemastorageinputordersandreceivedservicesdatarowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_reports_calculateddata
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/reports/calculateddata \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/reports/calculateddata HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "pageSize": 0,
+  "startDate": "2019-08-24",
+  "endDate": "2019-08-24",
+  "accrualDeduction": "string",
+  "contractType": "string",
+  "employees": [
+    "string"
+  ],
+  "department": "string",
+  "extended": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/reports/calculateddata',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/reports/calculateddata',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/reports/calculateddata', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/reports/calculateddata', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/reports/calculateddata");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/reports/calculateddata", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/reports/calculateddata`
+
+> Body parameter
+
+```json
+{
+  "pageSize": 0,
+  "startDate": "2019-08-24",
+  "endDate": "2019-08-24",
+  "accrualDeduction": "string",
+  "contractType": "string",
+  "employees": [
+    "string"
+  ],
+  "department": "string",
+  "extended": true
+}
+```
+
+<h3 id="post__v1_reports_calculateddata-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[CalculatedDataParam](#schemacalculateddataparam)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"year":0,"month":"string","department":"string","employeeId":0,"employeeCode":"string","employeeName":"string","socialCardNumber":"string","contractType":"string","contractTypeName":"string","accrualDeductionCode":"string","accrualDeductionName":"string","calculatedAmount":0.1,"debitAccount":"string","debitPartnerId":0,"debitPartnerCode":"string","debitPartnerName":"string","creditAccount":"string","creditPartnerId":0,"creditPartnerCode":"string","creditPartnerName":"string","analytic1":"string","analytic2":"string","date":"2019-08-24","initialAmount":0.1,"incomeTax":0.1,"pension":0.1,"stampFeeAmount":0.1,"insuranceFeeAmount":0.1,"monthDays":0.1,"actualDays":0.1,"monthHours":0.1,"actualHours":0.1,"paymentType":"string","accrualDeductionType":"string","amountCalculationMethod":"string","amountCalculationMethodName":"string","useEmployeeTimesheet":true,"timesheetCode":"string","coefficient":0.1,"fundingSource":"string","fundingSourceName":"string","vacationType":"string","incomeType":"string","incomeTypeName":"string","reverseCalculation":true,"deductAccrualDeductionIncomeTax":true,"reducedIncome":true,"storedInMandatoryFundedPension":true,"reduceStampFeeTaxableAmount":true,"reduceInsuranceFeeTaxableAmount":true,"participatingInEmployerPensionCalculation":true,"onlyForTaxCalculation":true,"calculateTradeUnionDue":true,"includeInAverageWage":"string","includeInAverageWageName":"string","resident":true,"deductEmployeeIncomeTax":true,"deductFundedPensionFromIncomeTax":true,"participationStatus":"string","percentPaidByEmployer":0.1,"amountPaidByEmployer":0.1,"stampFee":"string","insuranceFee":"string","userId":0,"userName":"string","transaction":true}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "year": 0,
+      "month": "string",
+      "department": "string",
+      "employeeId": 0,
+      "employeeCode": "string",
+      "employeeName": "string",
+      "socialCardNumber": "string",
+      "contractType": "string",
+      "contractTypeName": "string",
+      "accrualDeductionCode": "string",
+      "accrualDeductionName": "string",
+      "calculatedAmount": 0.1,
+      "debitAccount": "string",
+      "debitPartnerId": 0,
+      "debitPartnerCode": "string",
+      "debitPartnerName": "string",
+      "creditAccount": "string",
+      "creditPartnerId": 0,
+      "creditPartnerCode": "string",
+      "creditPartnerName": "string",
+      "analytic1": "string",
+      "analytic2": "string",
+      "date": "2019-08-24",
+      "initialAmount": 0.1,
+      "incomeTax": 0.1,
+      "pension": 0.1,
+      "stampFeeAmount": 0.1,
+      "insuranceFeeAmount": 0.1,
+      "monthDays": 0.1,
+      "actualDays": 0.1,
+      "monthHours": 0.1,
+      "actualHours": 0.1,
+      "paymentType": "string",
+      "accrualDeductionType": "string",
+      "amountCalculationMethod": "string",
+      "amountCalculationMethodName": "string",
+      "useEmployeeTimesheet": true,
+      "timesheetCode": "string",
+      "coefficient": 0.1,
+      "fundingSource": "string",
+      "fundingSourceName": "string",
+      "vacationType": "string",
+      "incomeType": "string",
+      "incomeTypeName": "string",
+      "reverseCalculation": true,
+      "deductAccrualDeductionIncomeTax": true,
+      "reducedIncome": true,
+      "storedInMandatoryFundedPension": true,
+      "reduceStampFeeTaxableAmount": true,
+      "reduceInsuranceFeeTaxableAmount": true,
+      "participatingInEmployerPensionCalculation": true,
+      "onlyForTaxCalculation": true,
+      "calculateTradeUnionDue": true,
+      "includeInAverageWage": "string",
+      "includeInAverageWageName": "string",
+      "resident": true,
+      "deductEmployeeIncomeTax": true,
+      "deductFundedPensionFromIncomeTax": true,
+      "participationStatus": "string",
+      "percentPaidByEmployer": 0.1,
+      "amountPaidByEmployer": 0.1,
+      "stampFee": "string",
+      "insuranceFee": "string",
+      "userId": 0,
+      "userName": "string",
+      "transaction": true
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_reports_calculateddata-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CalculatedDataRowApiResponse](#schemacalculateddatarowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_reports_calculateddata_nextpage
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/reports/calculateddata/nextpage \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/reports/calculateddata/nextpage HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/reports/calculateddata/nextpage',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/reports/calculateddata/nextpage',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/reports/calculateddata/nextpage', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/reports/calculateddata/nextpage', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/reports/calculateddata/nextpage");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/reports/calculateddata/nextpage", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/reports/calculateddata/nextpage`
+
+> Body parameter
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}
+```
+
+<h3 id="post__v1_reports_calculateddata_nextpage-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NextPageRequest](#schemanextpagerequest)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"year":0,"month":"string","department":"string","employeeId":0,"employeeCode":"string","employeeName":"string","socialCardNumber":"string","contractType":"string","contractTypeName":"string","accrualDeductionCode":"string","accrualDeductionName":"string","calculatedAmount":0.1,"debitAccount":"string","debitPartnerId":0,"debitPartnerCode":"string","debitPartnerName":"string","creditAccount":"string","creditPartnerId":0,"creditPartnerCode":"string","creditPartnerName":"string","analytic1":"string","analytic2":"string","date":"2019-08-24","initialAmount":0.1,"incomeTax":0.1,"pension":0.1,"stampFeeAmount":0.1,"insuranceFeeAmount":0.1,"monthDays":0.1,"actualDays":0.1,"monthHours":0.1,"actualHours":0.1,"paymentType":"string","accrualDeductionType":"string","amountCalculationMethod":"string","amountCalculationMethodName":"string","useEmployeeTimesheet":true,"timesheetCode":"string","coefficient":0.1,"fundingSource":"string","fundingSourceName":"string","vacationType":"string","incomeType":"string","incomeTypeName":"string","reverseCalculation":true,"deductAccrualDeductionIncomeTax":true,"reducedIncome":true,"storedInMandatoryFundedPension":true,"reduceStampFeeTaxableAmount":true,"reduceInsuranceFeeTaxableAmount":true,"participatingInEmployerPensionCalculation":true,"onlyForTaxCalculation":true,"calculateTradeUnionDue":true,"includeInAverageWage":"string","includeInAverageWageName":"string","resident":true,"deductEmployeeIncomeTax":true,"deductFundedPensionFromIncomeTax":true,"participationStatus":"string","percentPaidByEmployer":0.1,"amountPaidByEmployer":0.1,"stampFee":"string","insuranceFee":"string","userId":0,"userName":"string","transaction":true}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "year": 0,
+      "month": "string",
+      "department": "string",
+      "employeeId": 0,
+      "employeeCode": "string",
+      "employeeName": "string",
+      "socialCardNumber": "string",
+      "contractType": "string",
+      "contractTypeName": "string",
+      "accrualDeductionCode": "string",
+      "accrualDeductionName": "string",
+      "calculatedAmount": 0.1,
+      "debitAccount": "string",
+      "debitPartnerId": 0,
+      "debitPartnerCode": "string",
+      "debitPartnerName": "string",
+      "creditAccount": "string",
+      "creditPartnerId": 0,
+      "creditPartnerCode": "string",
+      "creditPartnerName": "string",
+      "analytic1": "string",
+      "analytic2": "string",
+      "date": "2019-08-24",
+      "initialAmount": 0.1,
+      "incomeTax": 0.1,
+      "pension": 0.1,
+      "stampFeeAmount": 0.1,
+      "insuranceFeeAmount": 0.1,
+      "monthDays": 0.1,
+      "actualDays": 0.1,
+      "monthHours": 0.1,
+      "actualHours": 0.1,
+      "paymentType": "string",
+      "accrualDeductionType": "string",
+      "amountCalculationMethod": "string",
+      "amountCalculationMethodName": "string",
+      "useEmployeeTimesheet": true,
+      "timesheetCode": "string",
+      "coefficient": 0.1,
+      "fundingSource": "string",
+      "fundingSourceName": "string",
+      "vacationType": "string",
+      "incomeType": "string",
+      "incomeTypeName": "string",
+      "reverseCalculation": true,
+      "deductAccrualDeductionIncomeTax": true,
+      "reducedIncome": true,
+      "storedInMandatoryFundedPension": true,
+      "reduceStampFeeTaxableAmount": true,
+      "reduceInsuranceFeeTaxableAmount": true,
+      "participatingInEmployerPensionCalculation": true,
+      "onlyForTaxCalculation": true,
+      "calculateTradeUnionDue": true,
+      "includeInAverageWage": "string",
+      "includeInAverageWageName": "string",
+      "resident": true,
+      "deductEmployeeIncomeTax": true,
+      "deductFundedPensionFromIncomeTax": true,
+      "participationStatus": "string",
+      "percentPaidByEmployer": 0.1,
+      "amountPaidByEmployer": 0.1,
+      "stampFee": "string",
+      "insuranceFee": "string",
+      "userId": 0,
+      "userName": "string",
+      "transaction": true
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_reports_calculateddata_nextpage-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CalculatedDataRowApiResponse](#schemacalculateddatarowapiresponse)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -24264,6 +29690,393 @@ This operation does not require authentication
 |inventoryNumber|string¦null|false|none|hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер|
 |documentState|string¦null|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
 
+<h2 id="tocS_CalculatedDataParam">CalculatedDataParam</h2>
+<!-- backwards compatibility -->
+<a id="schemacalculateddataparam"></a>
+<a id="schema_CalculatedDataParam"></a>
+<a id="tocScalculateddataparam"></a>
+<a id="tocscalculateddataparam"></a>
+
+```json
+{
+  "pageSize": 0,
+  "startDate": "2019-08-24",
+  "endDate": "2019-08-24",
+  "accrualDeduction": "string",
+  "contractType": "string",
+  "employees": [
+    "string"
+  ],
+  "department": "string",
+  "extended": true
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|startDate|string(date)|false|none|hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода|
+|endDate|string(date)|false|none|hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода|
+|accrualDeduction|string¦null|false|none|hy-AM: Հավելում/պահում | en-US: Accrual/deduction | ru-RU: Начисление/удержание|
+|contractType|string¦null|false|none|hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора|
+|employees|[string]¦null|false|none|hy-AM: Աշխատակիցներ | en-US: Employees | ru-RU: Сотрудники|
+|department|string¦null|false|none|hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение|
+|extended|boolean|false|none|hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный|
+
+<h2 id="tocS_CalculatedDataRow">CalculatedDataRow</h2>
+<!-- backwards compatibility -->
+<a id="schemacalculateddatarow"></a>
+<a id="schema_CalculatedDataRow"></a>
+<a id="tocScalculateddatarow"></a>
+<a id="tocscalculateddatarow"></a>
+
+```json
+{
+  "year": 0,
+  "month": "string",
+  "department": "string",
+  "employeeId": 0,
+  "employeeCode": "string",
+  "employeeName": "string",
+  "socialCardNumber": "string",
+  "contractType": "string",
+  "contractTypeName": "string",
+  "accrualDeductionCode": "string",
+  "accrualDeductionName": "string",
+  "calculatedAmount": 0.1,
+  "debitAccount": "string",
+  "debitPartnerId": 0,
+  "debitPartnerCode": "string",
+  "debitPartnerName": "string",
+  "creditAccount": "string",
+  "creditPartnerId": 0,
+  "creditPartnerCode": "string",
+  "creditPartnerName": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "date": "2019-08-24",
+  "initialAmount": 0.1,
+  "incomeTax": 0.1,
+  "pension": 0.1,
+  "stampFeeAmount": 0.1,
+  "insuranceFeeAmount": 0.1,
+  "monthDays": 0.1,
+  "actualDays": 0.1,
+  "monthHours": 0.1,
+  "actualHours": 0.1,
+  "paymentType": "string",
+  "accrualDeductionType": "string",
+  "amountCalculationMethod": "string",
+  "amountCalculationMethodName": "string",
+  "useEmployeeTimesheet": true,
+  "timesheetCode": "string",
+  "coefficient": 0.1,
+  "fundingSource": "string",
+  "fundingSourceName": "string",
+  "vacationType": "string",
+  "incomeType": "string",
+  "incomeTypeName": "string",
+  "reverseCalculation": true,
+  "deductAccrualDeductionIncomeTax": true,
+  "reducedIncome": true,
+  "storedInMandatoryFundedPension": true,
+  "reduceStampFeeTaxableAmount": true,
+  "reduceInsuranceFeeTaxableAmount": true,
+  "participatingInEmployerPensionCalculation": true,
+  "onlyForTaxCalculation": true,
+  "calculateTradeUnionDue": true,
+  "includeInAverageWage": "string",
+  "includeInAverageWageName": "string",
+  "resident": true,
+  "deductEmployeeIncomeTax": true,
+  "deductFundedPensionFromIncomeTax": true,
+  "participationStatus": "string",
+  "percentPaidByEmployer": 0.1,
+  "amountPaidByEmployer": 0.1,
+  "stampFee": "string",
+  "insuranceFee": "string",
+  "userId": 0,
+  "userName": "string",
+  "transaction": true
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|year|integer(int32)|false|none|hy-AM: Տարի | en-US: Year | ru-RU: Год|
+|month|string¦null|false|none|hy-AM: Ամիս | en-US: Month | ru-RU: Месяц|
+|department|string¦null|false|none|hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение|
+|employeeId|integer(int32)|false|none|none|
+|employeeCode|string¦null|false|none|hy-AM: Տաբելային համար | en-US: Employee number | ru-RU: Табельный номер|
+|employeeName|string¦null|false|none|hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник|
+|socialCardNumber|string¦null|false|none|hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты|
+|contractType|string¦null|false|none|hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора|
+|contractTypeName|string¦null|false|none|hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора|
+|accrualDeductionCode|string¦null|false|none|hy-AM: Հ/Պ կոդ | en-US: Accrual/deduction code | ru-RU: Код Н/У|
+|accrualDeductionName|string¦null|false|none|hy-AM: Հ/Պ անվանում | en-US: Accrual/deduction name | ru-RU: Наименование Н/У|
+|calculatedAmount|number(double)|false|none|hy-AM: Հաշվ. գումար | en-US: Calc. amount | ru-RU: Нач. сумма|
+|debitAccount|string¦null|false|none|hy-AM: Հաշիվ դեբետ | en-US: Account debit | ru-RU: Счет дебет|
+|debitPartnerId|integer(int32)|false|none|none|
+|debitPartnerCode|string¦null|false|none|hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн.|
+|debitPartnerName|string¦null|false|none|hy-AM: Դեբետ-անվանում | en-US: Debit-name | ru-RU: Дебет-наименование|
+|creditAccount|string¦null|false|none|hy-AM: Հաշիվ կրեդիտ | en-US: Account credit | ru-RU: Счет кредит|
+|creditPartnerId|integer(int32)|false|none|none|
+|creditPartnerCode|string¦null|false|none|hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн.|
+|creditPartnerName|string¦null|false|none|hy-AM: Կրեդիտ-անվանում | en-US: Credit-name | ru-RU: Кредит-наименование|
+|analytic1|string¦null|false|none|hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1|
+|analytic2|string¦null|false|none|hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|initialAmount|number(double)|false|none|hy-AM: Սկզբնական գումար | en-US: Initial amount | ru-RU: Начальная сумма|
+|incomeTax|number(double)|false|none|hy-AM: Եկամտային հարկ | en-US: Income tax | ru-RU: Подоходный налог|
+|pension|number(double)|false|none|hy-AM: Կուտակային կենսաթոշակի գումար | en-US: Pension | ru-RU: Сумма накопительной пенсии|
+|stampFeeAmount|number(double)|false|none|hy-AM: Դրոշմանիշային վճարի չափ | en-US: Stamp fee amount | ru-RU: Величина гербового сбора|
+|insuranceFeeAmount|number(double)|false|none|hy-AM: Ապահովագրավճարի չափ | en-US: Insurance fee amount | ru-RU: Сумма страховой платы|
+|monthDays|number(double)|false|none|hy-AM: Ամսվա օրեր | en-US: Month days | ru-RU: Дни месяца|
+|actualDays|number(double)|false|none|hy-AM: Փաստացի օրեր | en-US: Actual days | ru-RU: Отработанные дни|
+|monthHours|number(double)|false|none|hy-AM: Ամսվա ժամեր | en-US: Month hours | ru-RU: Месячное число часов|
+|actualHours|number(double)|false|none|hy-AM: Փաստացի ժամեր | en-US: Actual hours | ru-RU: Отработанные часы|
+|paymentType|string¦null|false|none|hy-AM: Վարձատրության տեսակ | en-US: Payment type | ru-RU: Вид оплаты труда|
+|accrualDeductionType|string¦null|false|none|hy-AM: Հ/Պ տիպ | en-US: Accrual/deduction type | ru-RU: Тип Н/У|
+|amountCalculationMethod|string¦null|false|none|hy-AM: Գումարի հաշվարկի ձև | en-US: Amount calculation method | ru-RU: Порядок расчёта суммы|
+|amountCalculationMethodName|string¦null|false|none|hy-AM: Գումարի հաշվարկի ձև | en-US: Amount calculation method | ru-RU: Порядок расчёта суммы|
+|useEmployeeTimesheet|boolean|false|none|hy-AM: Օգտագործել աշխատակցի գրաֆիկը | en-US: Use employee's timesheet | ru-RU: Использовать график сотрудника|
+|timesheetCode|string¦null|false|none|hy-AM: Գրաֆիկի կոդ | en-US: Timesheet code | ru-RU: Код графика|
+|coefficient|number(double)|false|none|hy-AM: Գործակից | en-US: Coefficient | ru-RU: Коэффициент|
+|fundingSource|string¦null|false|none|hy-AM: Ֆին. աղբյուր | en-US: Funding source | ru-RU: Фин. источник|
+|fundingSourceName|string¦null|false|none|hy-AM: Ֆին. աղբյուր | en-US: Funding source | ru-RU: Фин. источник|
+|vacationType|string¦null|false|none|hy-AM: Արձակուրդի տեսակ | en-US: Type of vacation | ru-RU: Вид отпуска|
+|incomeType|string¦null|false|none|hy-AM: Եկամտի տեսակ | en-US: Income Type | ru-RU: Тип дохода|
+|incomeTypeName|string¦null|false|none|hy-AM: Եկամտի տեսակ | en-US: Income Type | ru-RU: Тип дохода|
+|reverseCalculation|boolean|false|none|hy-AM: Հետհաշվարկ | en-US: Reverse calculation (net to gross) | ru-RU: Обратный расчет|
+|deductAccrualDeductionIncomeTax|boolean|false|none|hy-AM: Հ/Պ եկամտային հարկը պահվում է | en-US: Deduct accrual/deduction income tax | ru-RU: Н/У облагается подоходным налогом|
+|reducedIncome|boolean|false|none|hy-AM: Հ/Պ նվազեցվող եկամուտ է | en-US: F/H reduced income | ru-RU: Н/У вычитаемые доходы|
+|storedInMandatoryFundedPension|boolean|false|none|hy-AM: Հ/Պ Պարտադիր կուտակային կենսաթոշակը պահվում է | en-US: F/H Stored in the mandatory funded pension | ru-RU: Удерживается обязательная накопительная пенсия|
+|reduceStampFeeTaxableAmount|boolean|false|none|hy-AM: Նվազեցնել դրոշմանիշային վճարի հարկվող գումարից | en-US: Reduce from taxable amount of stamp fee | ru-RU: Уменьшить базовый доход гербового сбора|
+|reduceInsuranceFeeTaxableAmount|boolean|false|none|hy-AM: Նվազեցնել ապահովագրավճարի հարկվող գումարից | en-US: Reduce from taxable amount of insurance fee | ru-RU: Уменьшить базовый доход страховой платы|
+|participatingInEmployerPensionCalculation|boolean|false|none|hy-AM: Հ/Պ Մասնակցում է գործատուի կողմից տրվող կուտ. կենս. հաշվարկի մեջ | en-US: F/H Participating in employer-provided pension calculation | ru-RU: Н/У участвует в расчете накопительной пенсии предоставляемой работодателем|
+|onlyForTaxCalculation|boolean|false|none|hy-AM: Միայն հարկերի հաշվարկման համար | en-US: Only for tax calculation | ru-RU: Только для расчета налогов|
+|calculateTradeUnionDue|boolean|false|none|hy-AM: Հ/Պ Արհմիութենական անդամավճար պահվում է | en-US: Calculate trade union due | ru-RU: Н/У Удерживается профсоюзный взнос|
+|includeInAverageWage|string¦null|false|none|hy-AM: Մասնակցում է արձակուրդայինի միջինի մեջ | en-US: Include in the average wage | ru-RU: Участвует в среднем заработке для отпускных|
+|includeInAverageWageName|string¦null|false|none|hy-AM: Մասնակցում է արձակուրդայինի միջինի մեջ | en-US: Include in the average wage | ru-RU: Участвует в среднем заработке для отпускных|
+|resident|boolean|false|none|hy-AM: ՀՀ քաղաքացի (Ռեզիդենտ) | en-US: RA citizen (resident) | ru-RU: Гражданин РА (Резидент)|
+|deductEmployeeIncomeTax|boolean|false|none|hy-AM: Աշխատակցի եկամտային հարկը պահվում է | en-US: Deduct employee income tax | ru-RU: Сотрудник облагается подоходным налогом|
+|deductFundedPensionFromIncomeTax|boolean|false|none|hy-AM: Աշխատակցի կուտակայինի գումարը նվազեցվում է եկամտային հարկից | en-US: Employee's funded pension amount is deducted from the income tax. | ru-RU: Сумма накопительной пенсии работника вычитается из подоходного налога|
+|participationStatus|string¦null|false|none|hy-AM: Մասնակցության կարգավիճակ | en-US: Participation Status | ru-RU: Статус участия|
+|percentPaidByEmployer|number(double)|false|none|hy-AM: Գործատուի կողմից վճարվող տոկոս | en-US: Percent paid by the employer | ru-RU: Процент, уплачиваемый работодателем|
+|amountPaidByEmployer|number(double)|false|none|hy-AM: Գործատուի կողմից վճարվող գումար | en-US: Summa paid by the employer | ru-RU: Сумма, уплачиваемая работодателем|
+|stampFee|string¦null|false|none|hy-AM: Դրոշմանիշային վճար | en-US: Stamp fee | ru-RU: Гербовый сбор|
+|insuranceFee|string¦null|false|none|hy-AM: Ապահովագրավճար | en-US: Insurance fee | ru-RU: Страховая плата|
+|userId|integer(int32)|false|none|none|
+|userName|string¦null|false|none|hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь|
+|transaction|boolean|false|none|hy-AM: Գործառնություն | en-US: Transaction | ru-RU: Проводка|
+
+<h2 id="tocS_CalculatedDataRowApiResponse">CalculatedDataRowApiResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemacalculateddatarowapiresponse"></a>
+<a id="schema_CalculatedDataRowApiResponse"></a>
+<a id="tocScalculateddatarowapiresponse"></a>
+<a id="tocscalculateddatarowapiresponse"></a>
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "year": 0,
+      "month": "string",
+      "department": "string",
+      "employeeId": 0,
+      "employeeCode": "string",
+      "employeeName": "string",
+      "socialCardNumber": "string",
+      "contractType": "string",
+      "contractTypeName": "string",
+      "accrualDeductionCode": "string",
+      "accrualDeductionName": "string",
+      "calculatedAmount": 0.1,
+      "debitAccount": "string",
+      "debitPartnerId": 0,
+      "debitPartnerCode": "string",
+      "debitPartnerName": "string",
+      "creditAccount": "string",
+      "creditPartnerId": 0,
+      "creditPartnerCode": "string",
+      "creditPartnerName": "string",
+      "analytic1": "string",
+      "analytic2": "string",
+      "date": "2019-08-24",
+      "initialAmount": 0.1,
+      "incomeTax": 0.1,
+      "pension": 0.1,
+      "stampFeeAmount": 0.1,
+      "insuranceFeeAmount": 0.1,
+      "monthDays": 0.1,
+      "actualDays": 0.1,
+      "monthHours": 0.1,
+      "actualHours": 0.1,
+      "paymentType": "string",
+      "accrualDeductionType": "string",
+      "amountCalculationMethod": "string",
+      "amountCalculationMethodName": "string",
+      "useEmployeeTimesheet": true,
+      "timesheetCode": "string",
+      "coefficient": 0.1,
+      "fundingSource": "string",
+      "fundingSourceName": "string",
+      "vacationType": "string",
+      "incomeType": "string",
+      "incomeTypeName": "string",
+      "reverseCalculation": true,
+      "deductAccrualDeductionIncomeTax": true,
+      "reducedIncome": true,
+      "storedInMandatoryFundedPension": true,
+      "reduceStampFeeTaxableAmount": true,
+      "reduceInsuranceFeeTaxableAmount": true,
+      "participatingInEmployerPensionCalculation": true,
+      "onlyForTaxCalculation": true,
+      "calculateTradeUnionDue": true,
+      "includeInAverageWage": "string",
+      "includeInAverageWageName": "string",
+      "resident": true,
+      "deductEmployeeIncomeTax": true,
+      "deductFundedPensionFromIncomeTax": true,
+      "participationStatus": "string",
+      "percentPaidByEmployer": 0.1,
+      "amountPaidByEmployer": 0.1,
+      "stampFee": "string",
+      "insuranceFee": "string",
+      "userId": 0,
+      "userName": "string",
+      "transaction": true
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|string(uuid)|false|none|none|
+|hasMore|boolean|false|none|none|
+|data|[[CalculatedDataRow](#schemacalculateddatarow)]¦null|false|none|none|
+
+<h2 id="tocS_CashInputOrder">CashInputOrder</h2>
+<!-- backwards compatibility -->
+<a id="schemacashinputorder"></a>
+<a id="schema_CashInputOrder"></a>
+<a id="tocScashinputorder"></a>
+<a id="tocscashinputorder"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashInFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "payerName": "string",
+  "base": "string",
+  "attached": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|amount|number(double)|false|none|hy-AM: Գումար ԱԴՄ-ով | en-US: Sum in AMD | ru-RU: Сумма в НДЕ|
+|currencyAmount|number(double)|false|none|hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте|
+|ecrCheckNumber|string¦null|false|none|none|
+|correspondentAccount|string¦null|false|none|hy-AM: Թղթակցող հաշիվ | en-US: Corr. account | ru-RU: Корр. счет|
+|cashInFlowAccount|string¦null|false|none|hy-AM: Դրամ. ներ. հաշիվ | en-US: Cash in. acc. | ru-RU: Счет пост. ДС|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|payerName|string¦null|false|none|hy-AM: Ստացված է | en-US: Received | ru-RU: Получено|
+|base|string¦null|false|none|hy-AM: Հիմքը | en-US: Base | ru-RU: Основание|
+|attached|string¦null|false|none|hy-AM: Կցվում են | en-US: Attached | ru-RU: Прикреплены|
+
+<h2 id="tocS_CashOutputOrder">CashOutputOrder</h2>
+<!-- backwards compatibility -->
+<a id="schemacashoutputorder"></a>
+<a id="schema_CashOutputOrder"></a>
+<a id="tocScashoutputorder"></a>
+<a id="tocscashoutputorder"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "currency": "string",
+  "amount": 0.1,
+  "currencyAmount": 0.1,
+  "ecrReturnCheckNumber": "string",
+  "correspondentAccount": "string",
+  "cashOutFlowAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "partnerCode": "string",
+  "receiverName": "string",
+  "aim": "string",
+  "base": "string",
+  "enclosure": "string",
+  "otherInformation": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|amount|number(double)|false|none|hy-AM: Գումար ԱԴՄ-ով | en-US: Sum in AMD | ru-RU: Сумма в НДЕ|
+|currencyAmount|number(double)|false|none|hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте|
+|ecrReturnCheckNumber|string¦null|false|none|none|
+|correspondentAccount|string¦null|false|none|hy-AM: Թղթակցող հաշիվ | en-US: Corr. account | ru-RU: Корр. счет|
+|cashOutFlowAccount|string¦null|false|none|hy-AM: Դրամ. արտ. հաշիվ | en-US: Cash out. acc. | ru-RU: Счет выб. ДС|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|receiverName|string¦null|false|none|hy-AM: Տրամադրել | en-US: Receiver | ru-RU: Выдать|
+|aim|string¦null|false|none|hy-AM: Նպ. նշ. ծածկագիր | en-US: Code | ru-RU: Код целевого назначения|
+|base|string¦null|false|none|hy-AM: Հիմքը | en-US: Base | ru-RU: Основание|
+|enclosure|string¦null|false|none|hy-AM: Հավելված | en-US: Enclosure | ru-RU: Приложение|
+|otherInformation|string¦null|false|none|hy-AM: Այլ տեղեկություններ | en-US: Other information | ru-RU: Дополнительная информация|
+
 <h2 id="tocS_ECRChecksJournalDataRow">ECRChecksJournalDataRow</h2>
 <!-- backwards compatibility -->
 <a id="schemaecrchecksjournaldatarow"></a>
@@ -24791,6 +30604,207 @@ This operation does not require authentication
 |id|string(uuid)|false|none|none|
 |hasMore|boolean|false|none|none|
 |data|[[EmployeeRow](#schemaemployeerow)]¦null|false|none|none|
+
+<h2 id="tocS_FixedAssetAcquisition">FixedAssetAcquisition</h2>
+<!-- backwards compatibility -->
+<a id="schemafixedassetacquisition"></a>
+<a id="schema_FixedAssetAcquisition"></a>
+<a id="tocSfixedassetacquisition"></a>
+<a id="tocsfixedassetacquisition"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "documentNumber": "string",
+  "state": 0,
+  "inventoryNumber": "string",
+  "name": "string",
+  "fullName": "string",
+  "inputDate": "2019-08-24",
+  "exploitationDate": "2019-08-24",
+  "fixedAssetType": "string",
+  "profitTaxLawGroup": "string",
+  "purchaseMode": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "inventoryCard": "string",
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "vatInclusionMethod": "string",
+  "financialUsefulLife": 0,
+  "financialCost": 0.1,
+  "financialCalculatedDepreciation": 0.1,
+  "financialDisposalValue": 0.1,
+  "financialIsDepreciated": true,
+  "taxUsefulLife": 0,
+  "taxCost": 0.1,
+  "taxCalculatedDepreciation": 0.1,
+  "taxDisposalValue": 0.1,
+  "taxIsDepreciated": true,
+  "deferredIncomeUsefulLife": 0,
+  "deferredIncomeAmount": 0.1,
+  "deferredIncomeCalculatedDepreciation": 0.1,
+  "deferredIncomeIsDepreciated": true,
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "producer": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|inventoryNumber|string¦null|false|none|hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|inputDate|string(date)¦null|false|none|hy-AM: Մուտքի ամսաթիվ | en-US: Input date | ru-RU: Дата поступления|
+|exploitationDate|string(date)¦null|false|none|hy-AM: Շահագործման ամսաթիվ | en-US: Exploitation date | ru-RU: Дата эксплуатации|
+|fixedAssetType|string¦null|false|none|hy-AM: ՀՄ տեսակ | en-US: Type of fixed asset | ru-RU: Вид ОС|
+|profitTaxLawGroup|string¦null|false|none|hy-AM: ՀՄ խումբ շահութահարկի օրենքով | en-US: FA group by Profit tax law | ru-RU: Группа ОС по закону о налоге на прибыль|
+|purchaseMode|string¦null|false|none|hy-AM: ՀՄ ձեռքբերման եղանակ | en-US: FA purchase mode  | ru-RU: Способ приобретения ОС|
+|location|string¦null|false|none|hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение|
+|responsiblePerson|string¦null|false|none|hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ|
+|inventoryCard|string¦null|false|none|hy-AM: Գույքային քարտ | en-US: Inventory card | ru-RU: Инвентарная карточка|
+|supplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|supplierAccount|string¦null|false|none|hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|taxExportType|string¦null|false|none|hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки|
+|purchaseDocumentNumber|string¦null|false|none|hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения|
+|purchaseDocumentDate|string(date)¦null|false|none|hy-AM: ա/թ. | en-US: Date | ru-RU: Дата|
+|vatCalculationType|string¦null|false|none|none|
+|includeVATInCost|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость|
+|vatInclusionMethod|string¦null|false|none|none|
+|financialUsefulLife|integer(int32)|false|none|hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)|
+|financialCost|number(double)|false|none|hy-AM: Սկզբնական արժեք | en-US: Cost | ru-RU: Первоначальная стоимость|
+|financialCalculatedDepreciation|number(double)|false|none|hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ|
+|financialDisposalValue|number(double)|false|none|hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость|
+|financialIsDepreciated|boolean¦null|false|none|hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ|
+|taxUsefulLife|integer(int32)|false|none|hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)|
+|taxCost|number(double)|false|none|hy-AM: Սկզբնական արժեք | en-US: Cost | ru-RU: Первоначальная стоимость|
+|taxCalculatedDepreciation|number(double)|false|none|hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ|
+|taxDisposalValue|number(double)|false|none|hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость|
+|taxIsDepreciated|boolean¦null|false|none|hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ|
+|deferredIncomeUsefulLife|integer(int32)|false|none|hy-AM: Օգտակար ծառայության ժամկետ(ամիս) | en-US: Useful life (month) | ru-RU: Срок полезного использования (месяц)|
+|deferredIncomeAmount|number(double)|false|none|hy-AM: Հետաձգված հասույթ | en-US: Deferred income | ru-RU: Отложенный доход|
+|deferredIncomeCalculatedDepreciation|number(double)|false|none|hy-AM: Հաշվարկված մաշվածք | en-US: Calculated depreciation | ru-RU: Начисленый износ|
+|deferredIncomeIsDepreciated|boolean¦null|false|none|hy-AM: Մաշվող է | en-US: Is depreciated | ru-RU: Начисляется износ|
+|grossCarryingAmountAccount|string¦null|false|none|hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС|
+|depreciationAccount|string¦null|false|none|hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа|
+|expenseAccount|string¦null|false|none|hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов|
+|deferredIncomeAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода|
+|deferredIncomeCurrentAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов|
+|incomeAccount|string¦null|false|none|hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов|
+|commissionDate|integer(int32)|false|none|hy-AM: Թողարկման տարեթիվ | en-US: Date of commission | ru-RU: Дата выпуска|
+|serialNumber|string¦null|false|none|hy-AM: Գործարանային համար | en-US: Serial number | ru-RU: Заводской номер|
+|technicalCertificate|string¦null|false|none|hy-AM: Տեխնիկական անձնագիր | en-US: Technical certificate | ru-RU: Тех. паспорт|
+|brand|string¦null|false|none|hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка|
+|briefDescription|string¦null|false|none|hy-AM: Համառոտ բնութագիր | en-US: Brief description | ru-RU: Краткое описание|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+
+<h2 id="tocS_FixedAssetDisposalAct">FixedAssetDisposalAct</h2>
+<!-- backwards compatibility -->
+<a id="schemafixedassetdisposalact"></a>
+<a id="schema_FixedAssetDisposalAct"></a>
+<a id="tocSfixedassetdisposalact"></a>
+<a id="tocsfixedassetdisposalact"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "outputLocation": "string",
+  "relievedResponsiblePerson": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "inventoriesList": [
+    {
+      "inventoryNumber": "string",
+      "name": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string"
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|outputLocation|string¦null|false|none|hy-AM: Հանձնող ստորաբաժանում | en-US: Output location | ru-RU: Подразделение отправитель|
+|relievedResponsiblePerson|string¦null|false|none|hy-AM: Հանձնող ՆՊԱ | en-US: Relieved mat.responsible person | ru-RU: МОЛ отправитель|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|inventoriesList|[[FixedAssetDisposalActSpecificationRow](#schemafixedassetdisposalactspecificationrow)]¦null|false|none|hy-AM: Գույքահամարներ | en-US: Inventories | ru-RU: Инвентарные номера|
+
+<h2 id="tocS_FixedAssetDisposalActSpecificationRow">FixedAssetDisposalActSpecificationRow</h2>
+<!-- backwards compatibility -->
+<a id="schemafixedassetdisposalactspecificationrow"></a>
+<a id="schema_FixedAssetDisposalActSpecificationRow"></a>
+<a id="tocSfixedassetdisposalactspecificationrow"></a>
+<a id="tocsfixedassetdisposalactspecificationrow"></a>
+
+```json
+{
+  "inventoryNumber": "string",
+  "name": "string",
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|inventoryNumber|string¦null|false|none|hy-AM: Գույքահամար | en-US: Inventory | ru-RU: Инвентарный номер|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|grossCarryingAmountAccount|string¦null|false|none|hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС|
+|depreciationAccount|string¦null|false|none|hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа|
+|expenseAccount|string¦null|false|none|hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов|
+|deferredIncomeAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода|
+|deferredIncomeCurrentAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов|
+|incomeAccount|string¦null|false|none|hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов|
 
 <h2 id="tocS_Invoice">Invoice</h2>
 <!-- backwards compatibility -->
@@ -27017,6 +33031,141 @@ This operation does not require authentication
 |otherPartnerPassportNumber|string¦null|false|none|hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта|
 |otherPartnerSocialCard|string¦null|false|none|hy-AM: Սոցիալական քարտ | en-US: Social card | ru-RU: Социальная карта|
 |otherPartnerAddress|string¦null|false|none|hy-AM: Հասցե | en-US: Address | ru-RU: Адрес|
+
+<h2 id="tocS_ReceivedService">ReceivedService</h2>
+<!-- backwards compatibility -->
+<a id="schemareceivedservice"></a>
+<a id="schema_ReceivedService"></a>
+<a id="tocSreceivedservice"></a>
+<a id="tocsreceivedservice"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "prepaymentAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "selfInvoice": true,
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "purchasingType": "string",
+  "vatCalculationType": "string",
+  "includeVATInExpense": true,
+  "vatInclusionMethod": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "servicesList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "account": "string",
+      "rowNumber": 0
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|previousDayExchangeRate|boolean|false|none|hy-AM: Նախորդ օրվա փոխարժեքը | en-US: Previous day exchange rate | ru-RU: Курс валюты предыдущего дня|
+|supplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|supplierAccount|string¦null|false|none|hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика|
+|prepaymentAccount|string¦null|false|none|hy-AM: Տրված կանխավճարի հաշիվ | en-US: Prepayment account | ru-RU: Счет авансов выданных|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|selfInvoice|boolean|false|none|hy-AM: Ինքնահաշիվ | en-US: Self-invoice | ru-RU: Счет самому себе|
+|taxExportType|string¦null|false|none|hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки|
+|purchaseDocumentNumber|string¦null|false|none|hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения|
+|submissionDate|string(date)¦null|false|none|hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|purchasingType|string¦null|false|none|hy-AM: Ծառայության ձեռք բերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги|
+|vatCalculationType|string¦null|false|none|none|
+|includeVATInExpense|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ծախսի մեջ | en-US: Include VAT in expense | ru-RU: НДС включить в расходы|
+|vatInclusionMethod|string¦null|false|none|none|
+|vatAmount|number(double)|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|supplierLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|supplierBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|supplierSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|supplierTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|supplierManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|supplierManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|supplierAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|supplierAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|servicesList|[[ReceivedServiceSpecificationRow](#schemareceivedservicespecificationrow)]¦null|false|none|hy-AM: Ծառայություններ | en-US: Services | ru-RU: Услуги|
+
+<h2 id="tocS_ReceivedServiceSpecificationRow">ReceivedServiceSpecificationRow</h2>
+<!-- backwards compatibility -->
+<a id="schemareceivedservicespecificationrow"></a>
+<a id="schema_ReceivedServiceSpecificationRow"></a>
+<a id="tocSreceivedservicespecificationrow"></a>
+<a id="tocsreceivedservicespecificationrow"></a>
+
+```json
+{
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "unitAbbreviation": "string",
+  "quantity": 0.1,
+  "price": 0.1,
+  "amount": 0.1,
+  "vat": true,
+  "account": "string",
+  "rowNumber": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitAbbreviation|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|price|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|amount|number(double)|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|vat|boolean|false|none|none|
+|account|string¦null|false|none|hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
 
 <h2 id="tocS_RetailSale">RetailSale</h2>
 <!-- backwards compatibility -->
