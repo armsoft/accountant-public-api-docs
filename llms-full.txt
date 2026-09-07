@@ -234,6 +234,7 @@ Every report is a POST with a parameter object, and every report has a `/nextpag
 | Materials Balances | `/reports/materialsbalances` | `date` |
 | Materials Operations Journal | `/reports/materialsoperationsjournal` | `startDate`, `endDate` |
 | Storage Input Orders and Received Services | `/reports/storageinputordersandreceivedservices` | `startDate`, `endDate` |
+| Calculated Data | `/reports/calculateddata` | `startDate`, `endDate` |
 
 ---
 

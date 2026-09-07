@@ -1,0 +1,249 @@
+type: object
+properties:
+  year:
+    type: integer
+    description: "hy-AM: Տարի | en-US: Year | ru-RU: Год"
+    format: int32
+  month:
+    type: string
+    description: "hy-AM: Ամիս | en-US: Month | ru-RU: Месяц"
+    nullable: true
+  department:
+    type: string
+    description: "hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение"
+    nullable: true
+  employeeId:
+    type: integer
+    format: int32
+  employeeCode:
+    type: string
+    description: "hy-AM: Տաբելային համար | en-US: Employee number | ru-RU: Табельный номер"
+    nullable: true
+  employeeName:
+    type: string
+    description: "hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник"
+    nullable: true
+  socialCardNumber:
+    type: string
+    description: "hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты"
+    nullable: true
+  contractType:
+    type: string
+    description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"
+    nullable: true
+  contractTypeName:
+    type: string
+    description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"
+    nullable: true
+  accrualDeductionCode:
+    type: string
+    description: "hy-AM: Հ/Պ կոդ | en-US: Accrual/deduction code | ru-RU: Код Н/У"
+    nullable: true
+  accrualDeductionName:
+    type: string
+    description: "hy-AM: Հ/Պ անվանում | en-US: Accrual/deduction name | ru-RU: Наименование Н/У"
+    nullable: true
+  calculatedAmount:
+    type: number
+    description: "hy-AM: Հաշվ. գումար | en-US: Calc. amount | ru-RU: Нач. сумма"
+    format: double
+  debitAccount:
+    type: string
+    description: "hy-AM: Հաշիվ դեբետ | en-US: Account debit | ru-RU: Счет дебет"
+    nullable: true
+  debitPartnerId:
+    type: integer
+    format: int32
+  debitPartnerCode:
+    type: string
+    description: "hy-AM: Դեբետ գործ. | en-US: Debit part. | ru-RU: Дебет партн."
+    nullable: true
+  debitPartnerName:
+    type: string
+    description: "hy-AM: Դեբետ-անվանում | en-US: Debit-name | ru-RU: Дебет-наименование"
+    nullable: true
+  creditAccount:
+    type: string
+    description: "hy-AM: Հաշիվ կրեդիտ | en-US: Account credit | ru-RU: Счет кредит"
+    nullable: true
+  creditPartnerId:
+    type: integer
+    format: int32
+  creditPartnerCode:
+    type: string
+    description: "hy-AM: Կրեդիտ գործ. | en-US: Credit part. | ru-RU: Кредит партн."
+    nullable: true
+  creditPartnerName:
+    type: string
+    description: "hy-AM: Կրեդիտ-անվանում | en-US: Credit-name | ru-RU: Кредит-наименование"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  initialAmount:
+    type: number
+    description: "hy-AM: Սկզբնական գումար | en-US: Initial amount | ru-RU: Начальная сумма"
+    format: double
+  incomeTax:
+    type: number
+    description: "hy-AM: Եկամտային հարկ | en-US: Income tax | ru-RU: Подоходный налог"
+    format: double
+  pension:
+    type: number
+    description: "hy-AM: Կուտակային կենսաթոշակի գումար | en-US: Pension | ru-RU: Сумма накопительной пенсии"
+    format: double
+  stampFeeAmount:
+    type: number
+    description: "hy-AM: Դրոշմանիշային վճարի չափ | en-US: Stamp fee amount | ru-RU: Величина гербового сбора"
+    format: double
+  insuranceFeeAmount:
+    type: number
+    description: "hy-AM: Ապահովագրավճարի չափ | en-US: Insurance fee amount | ru-RU: Сумма страховой платы"
+    format: double
+  monthDays:
+    type: number
+    description: "hy-AM: Ամսվա օրեր | en-US: Month days | ru-RU: Дни месяца"
+    format: double
+  actualDays:
+    type: number
+    description: "hy-AM: Փաստացի օրեր | en-US: Actual days | ru-RU: Отработанные дни"
+    format: double
+  monthHours:
+    type: number
+    description: "hy-AM: Ամսվա ժամեր | en-US: Month hours | ru-RU: Месячное число часов"
+    format: double
+  actualHours:
+    type: number
+    description: "hy-AM: Փաստացի ժամեր | en-US: Actual hours | ru-RU: Отработанные часы"
+    format: double
+  paymentType:
+    type: string
+    description: "hy-AM: Վարձատրության տեսակ | en-US: Payment type | ru-RU: Вид оплаты труда"
+    nullable: true
+  accrualDeductionType:
+    type: string
+    description: "hy-AM: Հ/Պ տիպ | en-US: Accrual/deduction type | ru-RU: Тип Н/У"
+    nullable: true
+  amountCalculationMethod:
+    type: string
+    description: "hy-AM: Գումարի հաշվարկի ձև | en-US: Amount calculation method | ru-RU: Порядок расчёта суммы"
+    nullable: true
+  amountCalculationMethodName:
+    type: string
+    description: "hy-AM: Գումարի հաշվարկի ձև | en-US: Amount calculation method | ru-RU: Порядок расчёта суммы"
+    nullable: true
+  useEmployeeTimesheet:
+    type: boolean
+    description: "hy-AM: Օգտագործել աշխատակցի գրաֆիկը | en-US: Use employee's timesheet | ru-RU: Использовать график сотрудника"
+  timesheetCode:
+    type: string
+    description: "hy-AM: Գրաֆիկի կոդ | en-US: Timesheet code | ru-RU: Код графика"
+    nullable: true
+  coefficient:
+    type: number
+    description: "hy-AM: Գործակից | en-US: Coefficient | ru-RU: Коэффициент"
+    format: double
+  fundingSource:
+    type: string
+    description: "hy-AM: Ֆին. աղբյուր | en-US: Funding source | ru-RU: Фин. источник"
+    nullable: true
+  fundingSourceName:
+    type: string
+    description: "hy-AM: Ֆին. աղբյուր | en-US: Funding source | ru-RU: Фин. источник"
+    nullable: true
+  vacationType:
+    type: string
+    description: "hy-AM: Արձակուրդի տեսակ | en-US: Type of vacation | ru-RU: Вид отпуска"
+    nullable: true
+  incomeType:
+    type: string
+    description: "hy-AM: Եկամտի տեսակ | en-US: Income Type | ru-RU: Тип дохода"
+    nullable: true
+  incomeTypeName:
+    type: string
+    description: "hy-AM: Եկամտի տեսակ | en-US: Income Type | ru-RU: Тип дохода"
+    nullable: true
+  reverseCalculation:
+    type: boolean
+    description: "hy-AM: Հետհաշվարկ | en-US: Reverse calculation (net to gross) | ru-RU: Обратный расчет"
+  deductAccrualDeductionIncomeTax:
+    type: boolean
+    description: "hy-AM: Հ/Պ եկամտային հարկը պահվում է | en-US: Deduct accrual/deduction income tax | ru-RU: Н/У облагается подоходным налогом"
+  reducedIncome:
+    type: boolean
+    description: "hy-AM: Հ/Պ նվազեցվող եկամուտ է | en-US: F/H reduced income | ru-RU: Н/У вычитаемые доходы  "
+  storedInMandatoryFundedPension:
+    type: boolean
+    description: "hy-AM: Հ/Պ Պարտադիր կուտակային կենսաթոշակը պահվում է | en-US: F/H Stored in the mandatory funded pension | ru-RU: Удерживается обязательная накопительная пенсия"
+  reduceStampFeeTaxableAmount:
+    type: boolean
+    description: "hy-AM: Նվազեցնել դրոշմանիշային վճարի հարկվող գումարից | en-US: Reduce from taxable amount of stamp fee | ru-RU: Уменьшить базовый доход гербового сбора"
+  reduceInsuranceFeeTaxableAmount:
+    type: boolean
+    description: "hy-AM: Նվազեցնել ապահովագրավճարի հարկվող գումարից | en-US: Reduce from taxable amount of insurance fee | ru-RU: Уменьшить базовый доход страховой платы"
+  participatingInEmployerPensionCalculation:
+    type: boolean
+    description: "hy-AM: Հ/Պ Մասնակցում է գործատուի կողմից տրվող կուտ. կենս. հաշվարկի մեջ | en-US: F/H Participating in employer-provided pension calculation | ru-RU: Н/У участвует в расчете накопительной пенсии предоставляемой работодателем"
+  onlyForTaxCalculation:
+    type: boolean
+    description: "hy-AM: Միայն հարկերի հաշվարկման համար | en-US: Only for tax calculation | ru-RU: Только для расчета налогов"
+  calculateTradeUnionDue:
+    type: boolean
+    description: "hy-AM: Հ/Պ Արհմիութենական անդամավճար պահվում է | en-US: Calculate trade union due | ru-RU: Н/У Удерживается профсоюзный взнос"
+  includeInAverageWage:
+    type: string
+    description: "hy-AM: Մասնակցում է արձակուրդայինի միջինի մեջ | en-US: Include in the average wage | ru-RU: Участвует в среднем заработке для отпускных"
+    nullable: true
+  includeInAverageWageName:
+    type: string
+    description: "hy-AM: Մասնակցում է արձակուրդայինի միջինի մեջ | en-US: Include in the average wage | ru-RU: Участвует в среднем заработке для отпускных"
+    nullable: true
+  resident:
+    type: boolean
+    description: "hy-AM: ՀՀ քաղաքացի (Ռեզիդենտ) | en-US: RA citizen (resident) | ru-RU: Гражданин РА (Резидент)"
+  deductEmployeeIncomeTax:
+    type: boolean
+    description: "hy-AM: Աշխատակցի եկամտային հարկը պահվում է | en-US: Deduct employee income tax | ru-RU: Сотрудник облагается подоходным налогом"
+  deductFundedPensionFromIncomeTax:
+    type: boolean
+    description: "hy-AM: Աշխատակցի կուտակայինի գումարը նվազեցվում է եկամտային հարկից | en-US: Employee's funded pension amount is deducted from the income tax. | ru-RU: Сумма накопительной пенсии работника вычитается из подоходного налога"
+  participationStatus:
+    type: string
+    description: "hy-AM: Մասնակցության կարգավիճակ | en-US: Participation Status | ru-RU: Статус участия"
+    nullable: true
+  percentPaidByEmployer:
+    type: number
+    description: "hy-AM: Գործատուի կողմից վճարվող տոկոս | en-US: Percent paid by the employer | ru-RU: Процент, уплачиваемый работодателем"
+    format: double
+  amountPaidByEmployer:
+    type: number
+    description: "hy-AM: Գործատուի կողմից վճարվող գումար | en-US: Summa paid by the employer | ru-RU: Сумма, уплачиваемая работодателем"
+    format: double
+  stampFee:
+    type: string
+    description: "hy-AM: Դրոշմանիշային վճար | en-US: Stamp fee | ru-RU: Гербовый сбор"
+    nullable: true
+  insuranceFee:
+    type: string
+    description: "hy-AM: Ապահովագրավճար | en-US: Insurance fee | ru-RU: Страховая плата"
+    nullable: true
+  userId:
+    type: integer
+    format: int32
+  userName:
+    type: string
+    description: "hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь"
+    nullable: true
+  transaction:
+    type: boolean
+    description: "hy-AM: Գործառնություն | en-US: Transaction | ru-RU: Проводка"
+additionalProperties: false

@@ -66,3 +66,4 @@ public class ReportsClient
 // reports/materialsbalances
 // reports/materialsoperationsjournal
 // reports/storageinputordersandreceivedservices
+// reports/calculateddata

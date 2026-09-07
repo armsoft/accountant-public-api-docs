@@ -47,15 +47,15 @@ tags:
   - name: OverheadExpenseAllocation
     description: Overhead expense allocation document endpoints
   - name: ReceivedService
-    description: Received service document endpoints (not published yet)
+    description: Received service document endpoints
   - name: FixedAssetAcquisition
-    description: Fixed asset acquisition document endpoints (not published yet)
+    description: Fixed asset acquisition document endpoints
   - name: FixedAssetDisposalAct
-    description: Fixed asset disposal act document endpoints (not published yet)
+    description: Fixed asset disposal act document endpoints
   - name: CashInputOrder
-    description: Cash input order document endpoints (not published yet)
+    description: Cash input order document endpoints
   - name: CashOutputOrder
-    description: Cash output order document endpoints (not published yet)
+    description: Cash output order document endpoints
   - name: Journals
     description: Document journal endpoints
   - name: Reports
@@ -155,27 +155,27 @@ paths:
     $ref: ./paths/documents/overheadexpenseallocation.yaml#/~1documents~1overheadexpenseallocation
   /documents/overheadexpenseallocation/{isn}:
     $ref: ./paths/documents/overheadexpenseallocation_{isn}.yaml#/~1documents~1overheadexpenseallocation~1{isn}
-  # Documents - Received Service (not published yet)
+  # Documents - Received Service
   /documents/receivedservice:
     $ref: ./paths/documents/receivedservice.yaml#/~1documents~1receivedservice
   /documents/receivedservice/{isn}:
     $ref: ./paths/documents/receivedservice_{isn}.yaml#/~1documents~1receivedservice~1{isn}
-  # Documents - Fixed Asset Acquisition (not published yet)
+  # Documents - Fixed Asset Acquisition
   /documents/fixedassetacquisition:
     $ref: ./paths/documents/fixedassetacquisition.yaml#/~1documents~1fixedassetacquisition
   /documents/fixedassetacquisition/{isn}:
     $ref: ./paths/documents/fixedassetacquisition_{isn}.yaml#/~1documents~1fixedassetacquisition~1{isn}
-  # Documents - Fixed Asset Disposal Act (not published yet)
+  # Documents - Fixed Asset Disposal Act
   /documents/fixedassetdisposalact:
     $ref: ./paths/documents/fixedassetdisposalact.yaml#/~1documents~1fixedassetdisposalact
   /documents/fixedassetdisposalact/{isn}:
     $ref: ./paths/documents/fixedassetdisposalact_{isn}.yaml#/~1documents~1fixedassetdisposalact~1{isn}
-  # Documents - Cash Input Order (not published yet)
+  # Documents - Cash Input Order
   /documents/cashinputorder:
     $ref: ./paths/documents/cashinputorder.yaml#/~1documents~1cashinputorder
   /documents/cashinputorder/{isn}:
     $ref: ./paths/documents/cashinputorder_{isn}.yaml#/~1documents~1cashinputorder~1{isn}
-  # Documents - Cash Output Order (not published yet)
+  # Documents - Cash Output Order
   /documents/cashoutputorder:
     $ref: ./paths/documents/cashoutputorder.yaml#/~1documents~1cashoutputorder
   /documents/cashoutputorder/{isn}:
@@ -226,6 +226,11 @@ paths:
     $ref: ./paths/reports/storageinputordersandreceivedservices.yaml#/~1reports~1storageinputordersandreceivedservices
   /reports/storageinputordersandreceivedservices/nextpage:
     $ref: ./paths/reports/storageinputordersandreceivedservices.yaml#/~1reports~1storageinputordersandreceivedservices~1nextpage
+  # Reports - Calculated Data
+  /reports/calculateddata:
+    $ref: ./paths/reports/calculateddata.yaml#/~1reports~1calculateddata
+  /reports/calculateddata/nextpage:
+    $ref: ./paths/reports/calculateddata.yaml#/~1reports~1calculateddata~1nextpage
   # System
   /api/Version:
     $ref: ./paths/version.yaml#/~1api~1Version
@@ -327,7 +332,6 @@ components:
       $ref: ./components/schemas/documents/OverheadExpenseAllocation.yaml
     OverheadExpenseAllocationSpecificationRow:
       $ref: ./components/schemas/documents/OverheadExpenseAllocationSpecificationRow.yaml
-    # Documents - not published yet
     ReceivedService:
       $ref: ./components/schemas/documents/ReceivedService.yaml
     ReceivedServiceSpecificationRow:
@@ -410,6 +414,13 @@ components:
       $ref: ./components/schemas/reports/StorageInputOrdersAndReceivedServicesDataRow.yaml
     StorageInputOrdersAndReceivedServicesDataRowApiResponse:
       $ref: ./components/schemas/reports/StorageInputOrdersAndReceivedServicesDataRowApiResponse.yaml
+    # Reports - Calculated Data
+    CalculatedDataParam:
+      $ref: ./components/schemas/reports/CalculatedDataParam.yaml
+    CalculatedDataRow:
+      $ref: ./components/schemas/reports/CalculatedDataRow.yaml
+    CalculatedDataRowApiResponse:
+      $ref: ./components/schemas/reports/CalculatedDataRowApiResponse.yaml
 
   responses:
     BadRequest:

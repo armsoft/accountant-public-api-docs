@@ -1,0 +1,37 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  accrualDeduction:
+    type: string
+    description: "hy-AM: Հավելում/պահում | en-US: Accrual/deduction | ru-RU: Начисление/удержание"
+    nullable: true
+  contractType:
+    type: string
+    description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"
+    nullable: true
+  employees:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Աշխատակիցներ | en-US: Employees | ru-RU: Сотрудники"
+    nullable: true
+  department:
+    type: string
+    description: "hy-AM: Ստորաբաժանում | en-US: Department | ru-RU: Подразделение"
+    nullable: true
+  extended:
+    type: boolean
+    description: "hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный"
+additionalProperties: false

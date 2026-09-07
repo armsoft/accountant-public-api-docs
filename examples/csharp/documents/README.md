@@ -16,11 +16,11 @@ Create examples:
 - [`create-materialsmovement.cs`](create-materialsmovement.cs) — Materials Movement
 - [`create-materialskitting.cs`](create-materialskitting.cs) — Materials Kitting
 - [`create-overheadexpenseallocation.cs`](create-overheadexpenseallocation.cs) — Overhead Expense Allocation
-- [`create-receivedservice.cs`](create-receivedservice.cs) — Received Service *(not published yet)*
-- [`create-fixedassetacquisition.cs`](create-fixedassetacquisition.cs) — Fixed Asset Acquisition *(not published yet)*
-- [`create-fixedassetdisposalact.cs`](create-fixedassetdisposalact.cs) — Fixed Asset Disposal Act *(not published yet)*
-- [`create-cashinputorder.cs`](create-cashinputorder.cs) — Cash Input Order *(not published yet)*
-- [`create-cashoutputorder.cs`](create-cashoutputorder.cs) — Cash Output Order *(not published yet)*
+- [`create-receivedservice.cs`](create-receivedservice.cs) — Received Service
+- [`create-fixedassetacquisition.cs`](create-fixedassetacquisition.cs) — Fixed Asset Acquisition
+- [`create-fixedassetdisposalact.cs`](create-fixedassetdisposalact.cs) — Fixed Asset Disposal Act
+- [`create-cashinputorder.cs`](create-cashinputorder.cs) — Cash Input Order
+- [`create-cashoutputorder.cs`](create-cashoutputorder.cs) — Cash Output Order
 
 Read / update / delete:
 

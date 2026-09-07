@@ -123,6 +123,7 @@ API keys with restricted permissions are limited to the following endpoints:
 | POST | `/reports/materialsbalances` | Materials balances report |
 | POST | `/reports/materialsoperationsjournal` | Materials operations journal report |
 | POST | `/reports/storageinputordersandreceivedservices` | Storage input orders and received services report |
+| POST | `/reports/calculateddata` | Calculated data (wages) report |
 
 Every report in the table above also allows its matching `/nextpage` call.
 

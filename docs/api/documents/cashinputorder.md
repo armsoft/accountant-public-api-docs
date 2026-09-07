@@ -6,11 +6,6 @@
 
 Creates, reads, updates and deletes cash received into a cash desk.
 
-> **Not in the published specification yet.** This document type is implemented in the
-> Accountant Public API service but is not yet served by `api.armsoft.am`, so it does not appear
-> in [`swagger.json`](../../../swagger.json) until the next service release. The field reference
-> below is generated from the service's own model definitions.
-
 ## Endpoints
 
 | Method | Route | Description |

@@ -85,8 +85,6 @@
 - /accountant/v1/documents/materialsmovement
 - /accountant/v1/documents/materialskitting
 - /accountant/v1/documents/overheadexpenseallocation
-
-Implemented in the service, not in the published swagger yet:
 - /accountant/v1/documents/receivedservice
 - /accountant/v1/documents/fixedassetacquisition
 - /accountant/v1/documents/fixedassetdisposalact
@@ -107,6 +105,7 @@ Implemented in the service, not in the published swagger yet:
 - /accountant/v1/reports/materialsbalances
 - /accountant/v1/reports/materialsoperationsjournal
 - /accountant/v1/reports/storageinputordersandreceivedservices
+- /accountant/v1/reports/calculateddata
 
 ### System
 - GET /accountant/api/Version (no API key required)

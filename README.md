@@ -158,12 +158,6 @@ Every document type supports the same four calls.
 | Materials Movement | `materialsmovement` | [materialsmovement.md](docs/api/documents/materialsmovement.md) |
 | Materials Kitting | `materialskitting` | [materialskitting.md](docs/api/documents/materialskitting.md) |
 | Overhead Expense Allocation | `overheadexpenseallocation` | [overheadexpenseallocation.md](docs/api/documents/overheadexpenseallocation.md) |
-
-The following document types are implemented in the service but are not part of the published
-specification yet — they will appear in `swagger.json` after the next service release:
-
-| Document | `{document}` | Reference |
-|----------|--------------|-----------|
 | Received Service | `receivedservice` | [receivedservice.md](docs/api/documents/receivedservice.md) |
 | Fixed Asset Acquisition | `fixedassetacquisition` | [fixedassetacquisition.md](docs/api/documents/fixedassetacquisition.md) |
 | Fixed Asset Disposal Act | `fixedassetdisposalact` | [fixedassetdisposalact.md](docs/api/documents/fixedassetdisposalact.md) |
@@ -201,6 +195,8 @@ specification yet — they will appear in `swagger.json` after the next service 
 | POST | `/reports/materialsoperationsjournal/nextpage` | Materials operations journal next page |
 | POST | `/reports/storageinputordersandreceivedservices` | Storage input orders and received services report |
 | POST | `/reports/storageinputordersandreceivedservices/nextpage` | Storage input orders and received services next page |
+| POST | `/reports/calculateddata` | Calculated data (wages) report |
+| POST | `/reports/calculateddata/nextpage` | Calculated data next page |
 
 ### System
 

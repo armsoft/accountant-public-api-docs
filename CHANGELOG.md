@@ -4,6 +4,37 @@
 
 All notable changes to the ArmSoft SME Accountant Public API are documented here.
 
+## [1.1.0] - 2026-09-07
+
+Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`
+after the September service release — 73 paths and 83 schemas.
+
+### Added
+
+#### Reports API
+- Calculated Data (`POST /v1/reports/calculateddata`, with its `/nextpage` call) - the wages
+  report of every accrual and deduction calculated for a period, per employee, with income tax,
+  funded pension, stamp fee and insurance fee amounts and the accounting accounts of each row.
+  Its `CalculatedDataParam`, `CalculatedDataRow` and `CalculatedDataRowApiResponse` schemas are
+  added to the curated `openapi/` spec.
+- The `extended` request flag is documented: it controls whether the accrual/deduction, employee
+  and partner attribute fields (`amountCalculationMethodName`, `incomeTypeName`,
+  `includeInAverageWageName`, `fundingSourceName`, `vacationType`, debit/credit partner code and
+  name) are resolved.
+- The endpoint is reachable with a limited-access API key, and is listed as such in the
+  authentication guide.
+- C# examples `calculateddata.cs` and `calculateddata-nextpage.cs`.
+
+#### Now served by `api.armsoft.am`
+- Received Service, Fixed Asset Acquisition, Fixed Asset Disposal Act, Cash Input Order and
+  Cash Output Order — documented since 1.0.0 and now part of the published specification.
+
+### Changed
+- `swagger.json` and the generated `docs/api-reference.md` re-synced from the live
+  specification (12 new paths, 10 new schemas).
+
+---
+
 ## [1.0.0] - 2026-08-31
 
 First published documentation set for the ArmSoft SME Accountant Public API, matching the
@@ -20,8 +51,9 @@ specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.js
 
 #### Documents API
 - Invoice, Retail Sale, Transfer Invoice, Memorial Order, Payment Order, Storage Input Order,
-  Storage Output Order, Materials Movement, Materials Kitting and Overhead Expense Allocation —
-  each with create, get by ISN, update and delete.
+  Storage Output Order, Materials Movement, Materials Kitting, Overhead Expense Allocation,
+  Received Service, Fixed Asset Acquisition, Fixed Asset Disposal Act, Cash Input Order and
+  Cash Output Order — each with create, get by ISN, update and delete.
 
 #### Journals API
 - All Documents, Invoices and ECR Checks journals, each with a `/nextpage` call.
@@ -30,13 +62,6 @@ specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.js
 - Accounts Balances, Accounts Turnover, Transactions, Partners Balances, Partners Transactions,
   Materials Balances, Materials Operations Journal, and Storage Input Orders and Received
   Services — each with a `/nextpage` call.
-
-#### Documents implemented but not published yet
-- Received Service, Fixed Asset Acquisition, Fixed Asset Disposal Act, Cash Input Order and
-  Cash Output Order are documented ahead of their release. They are implemented in the
-  Accountant Public API service but are not yet served by `api.armsoft.am`, so they do not
-  appear in `swagger.json`. Their schemas in the curated `openapi/` spec and their field tables
-  are derived from the service's own model definitions.
 
 #### System
 - `GET /api/Version`, documented as not requiring the `apiKey` header.

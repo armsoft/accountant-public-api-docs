@@ -34,11 +34,11 @@ Document endpoints create and maintain accounting documents in the ArmSoft SME A
 - [Materials Movement](materialsmovement.md)
 - [Materials Kitting](materialskitting.md)
 - [Overhead Expense Allocation](overheadexpenseallocation.md)
-- [Received Service](receivedservice.md) — *not published yet*
-- [Fixed Asset Acquisition](fixedassetacquisition.md) — *not published yet*
-- [Fixed Asset Disposal Act](fixedassetdisposalact.md) — *not published yet*
-- [Cash Input Order](cashinputorder.md) — *not published yet*
-- [Cash Output Order](cashoutputorder.md) — *not published yet*
+- [Received Service](receivedservice.md)
+- [Fixed Asset Acquisition](fixedassetacquisition.md)
+- [Fixed Asset Disposal Act](fixedassetdisposalact.md)
+- [Cash Input Order](cashinputorder.md)
+- [Cash Output Order](cashoutputorder.md)
 
 ## Overview
 
@@ -54,11 +54,11 @@ Document endpoints create and maintain accounting documents in the ArmSoft SME A
 | [Materials Movement](materialsmovement.md) | `/v1/documents/materialsmovement` | Materials moved between two storages | Published |
 | [Materials Kitting](materialskitting.md) | `/v1/documents/materialskitting` | Assembling a kit from its component materials | Published |
 | [Overhead Expense Allocation](overheadexpenseallocation.md) | `/v1/documents/overheadexpenseallocation` | Allocating overhead expenses across received materials | Published |
-| [Received Service](receivedservice.md) | `/v1/documents/receivedservice` | Services received from a supplier | Not published yet. |
-| [Fixed Asset Acquisition](fixedassetacquisition.md) | `/v1/documents/fixedassetacquisition` | Acquiring a fixed asset and putting it into operation | Not published yet. |
-| [Fixed Asset Disposal Act](fixedassetdisposalact.md) | `/v1/documents/fixedassetdisposalact` | Writing fixed assets off the balance sheet | Not published yet. |
-| [Cash Input Order](cashinputorder.md) | `/v1/documents/cashinputorder` | Cash received into a cash desk | Not published yet. |
-| [Cash Output Order](cashoutputorder.md) | `/v1/documents/cashoutputorder` | Cash paid out of a cash desk | Not published yet. |
+| [Received Service](receivedservice.md) | `/v1/documents/receivedservice` | Services received from a supplier | Published |
+| [Fixed Asset Acquisition](fixedassetacquisition.md) | `/v1/documents/fixedassetacquisition` | Acquiring a fixed asset and putting it into operation | Published |
+| [Fixed Asset Disposal Act](fixedassetdisposalact.md) | `/v1/documents/fixedassetdisposalact` | Writing fixed assets off the balance sheet | Published |
+| [Cash Input Order](cashinputorder.md) | `/v1/documents/cashinputorder` | Cash received into a cash desk | Published |
+| [Cash Output Order](cashoutputorder.md) | `/v1/documents/cashoutputorder` | Cash paid out of a cash desk | Published |
 
 ## Common shape
 
