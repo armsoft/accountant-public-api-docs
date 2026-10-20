@@ -1974,7 +1974,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","fullName":"string","departmentCode":"string","departmentName":"string","positionCode":"string","positionName":"string","positionStartDate":"2019-08-24","defaultTimeSheet":"string","contractTypeCode":"string","contractTypeName":"string","employmentStartDate":"2019-08-24","dateOfDismissal":"2019-08-24","birthDate":"2019-08-24","genderCode":"string","genderName":"string","phone":"string","passport":"string","bankAccount":"string","professionCode":"string","professionName":"string","raCitizen":true,"calculateIncomeTax":true,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","salaryAccount":"string","partnerCode":"string","partnerName":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z"}]}
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","fullName":"string","departmentCode":"string","departmentName":"string","positionCode":"string","positionName":"string","positionStartDate":"2019-08-24","defaultTimeSheet":"string","annualVacationNorm":0,"contractTypeCode":"string","contractTypeName":"string","employmentStartDate":"2019-08-24","dateOfDismissal":"2019-08-24","birthDate":"2019-08-24","genderCode":"string","genderName":"string","phone":"string","passport":"string","bankAccount":"string","professionCode":"string","professionName":"string","raCitizen":true,"calculateIncomeTax":true,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","salaryAccount":"string","partnerCode":"string","partnerName":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z"}]}
 ```
 
 ```json
@@ -1992,6 +1992,7 @@ func main() {
       "positionName": "string",
       "positionStartDate": "2019-08-24",
       "defaultTimeSheet": "string",
+      "annualVacationNorm": 0,
       "contractTypeCode": "string",
       "contractTypeName": "string",
       "employmentStartDate": "2019-08-24",
@@ -2218,7 +2219,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","fullName":"string","departmentCode":"string","departmentName":"string","positionCode":"string","positionName":"string","positionStartDate":"2019-08-24","defaultTimeSheet":"string","contractTypeCode":"string","contractTypeName":"string","employmentStartDate":"2019-08-24","dateOfDismissal":"2019-08-24","birthDate":"2019-08-24","genderCode":"string","genderName":"string","phone":"string","passport":"string","bankAccount":"string","professionCode":"string","professionName":"string","raCitizen":true,"calculateIncomeTax":true,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","salaryAccount":"string","partnerCode":"string","partnerName":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z"}]}
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","fullName":"string","departmentCode":"string","departmentName":"string","positionCode":"string","positionName":"string","positionStartDate":"2019-08-24","defaultTimeSheet":"string","annualVacationNorm":0,"contractTypeCode":"string","contractTypeName":"string","employmentStartDate":"2019-08-24","dateOfDismissal":"2019-08-24","birthDate":"2019-08-24","genderCode":"string","genderName":"string","phone":"string","passport":"string","bankAccount":"string","professionCode":"string","professionName":"string","raCitizen":true,"calculateIncomeTax":true,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","salaryAccount":"string","partnerCode":"string","partnerName":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z"}]}
 ```
 
 ```json
@@ -2236,6 +2237,7 @@ func main() {
       "positionName": "string",
       "positionStartDate": "2019-08-24",
       "defaultTimeSheet": "string",
+      "annualVacationNorm": 0,
       "contractTypeCode": "string",
       "contractTypeName": "string",
       "employmentStartDate": "2019-08-24",
@@ -2443,7 +2445,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":0,"code":"string","fullName":"string","departmentCode":"string","positionCode":"string","positionStartDate":"2019-08-24","professionCode":"string","genderCode":"string","birthDate":"2019-08-24","contractTypeCode":"string","defaultAccrual":"string","defaultTimeSheet":"string","employmentStartDate":"2019-08-24","employmentOrderNumber":"string","dateOfDismissal":"2019-08-24","dismissalOrderNumber":"string","raCitizen":true,"calculateIncomeTax":true,"reducePensionFromIncomeTax":true,"salaryAccount":"string","partnerCode":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","employerPercent":0.1,"employerAmount":0.1,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","registrationPlaceRA":true,"registrationRegion":"string","registrationCommunity":"string","registrationCity":"string","registrationStreet":"string","registrationHouse":"string","registrationApartment":"string","registrationSameAsResidence":true,"placeResidenceRA":true,"residenceRegion":"string","residenceCommunity":"string","residenceLocation":"string","residenceCity":"string","residenceStreet":"string","residenceHouse":"string","residenceApartment":"string","residenceCountry":"string","addressLine1":"string","addressLine2":"string","addressLine3":"string","postalCode":"string","bankAccount":"string","socialCardNumber":"string","identificationDocumentType":"string","passport":"string","passportIssueDate":"2019-08-24","passportIssuedBy":"string","nationality":"string","otherDocumentNumber":"string","phone":"string","mobilePhone":"string","email":"string","languages":"string","maritalStatus":"string","education":"string","institute":"string","educationStartDate":"2019-08-24","educationEndDate":"2019-08-24","educationCertificateNumber":"string","militaryServiceDescription":"string","militaryServiceStartDate":"2019-08-24","militaryServiceEndDate":"2019-08-24","familyMember1Type":"string","familyMember1FullName":"string","familyMember2Type":"string","familyMember2FullName":"string","familyMember3Type":"string","familyMember3FullName":"string","familyMember4Type":"string","familyMember4FullName":"string","accrualsDeductions":[{"date":"2019-08-24","code":"string","name":"string","amount":0.1,"default":true}]}
+{"id":0,"code":"string","fullName":"string","departmentCode":"string","positionCode":"string","positionStartDate":"2019-08-24","professionCode":"string","genderCode":"string","birthDate":"2019-08-24","contractTypeCode":"string","defaultAccrual":"string","defaultTimeSheet":"string","annualVacationNorm":0,"employmentStartDate":"2019-08-24","employmentOrderNumber":"string","dateOfDismissal":"2019-08-24","dismissalOrderNumber":"string","raCitizen":true,"calculateIncomeTax":true,"reducePensionFromIncomeTax":true,"salaryAccount":"string","partnerCode":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","employerPercent":0.1,"employerAmount":0.1,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","registrationPlaceRA":true,"registrationRegion":"string","registrationCommunity":"string","registrationCity":"string","registrationStreet":"string","registrationHouse":"string","registrationApartment":"string","registrationSameAsResidence":true,"placeResidenceRA":true,"residenceRegion":"string","residenceCommunity":"string","residenceLocation":"string","residenceCity":"string","residenceStreet":"string","residenceHouse":"string","residenceApartment":"string","residenceCountry":"string","addressLine1":"string","addressLine2":"string","addressLine3":"string","postalCode":"string","bankAccount":"string","socialCardNumber":"string","identificationDocumentType":"string","passport":"string","passportIssueDate":"2019-08-24","passportIssuedBy":"string","nationality":"string","otherDocumentNumber":"string","phone":"string","mobilePhone":"string","email":"string","languages":"string","maritalStatus":"string","education":"string","institute":"string","educationStartDate":"2019-08-24","educationEndDate":"2019-08-24","educationCertificateNumber":"string","militaryServiceDescription":"string","militaryServiceStartDate":"2019-08-24","militaryServiceEndDate":"2019-08-24","familyMember1Type":"string","familyMember1FullName":"string","familyMember2Type":"string","familyMember2FullName":"string","familyMember3Type":"string","familyMember3FullName":"string","familyMember4Type":"string","familyMember4FullName":"string","accrualsDeductions":[{"date":"2019-08-24","code":"string","name":"string","amount":0.1,"default":true}]}
 ```
 
 ```json
@@ -2460,6 +2462,7 @@ func main() {
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -2587,6 +2590,7 @@ const inputBody = '{
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -2815,6 +2819,7 @@ func main() {
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -2906,7 +2911,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":0,"code":"string","fullName":"string","departmentCode":"string","positionCode":"string","positionStartDate":"2019-08-24","professionCode":"string","genderCode":"string","birthDate":"2019-08-24","contractTypeCode":"string","defaultAccrual":"string","defaultTimeSheet":"string","employmentStartDate":"2019-08-24","employmentOrderNumber":"string","dateOfDismissal":"2019-08-24","dismissalOrderNumber":"string","raCitizen":true,"calculateIncomeTax":true,"reducePensionFromIncomeTax":true,"salaryAccount":"string","partnerCode":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","employerPercent":0.1,"employerAmount":0.1,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","registrationPlaceRA":true,"registrationRegion":"string","registrationCommunity":"string","registrationCity":"string","registrationStreet":"string","registrationHouse":"string","registrationApartment":"string","registrationSameAsResidence":true,"placeResidenceRA":true,"residenceRegion":"string","residenceCommunity":"string","residenceLocation":"string","residenceCity":"string","residenceStreet":"string","residenceHouse":"string","residenceApartment":"string","residenceCountry":"string","addressLine1":"string","addressLine2":"string","addressLine3":"string","postalCode":"string","bankAccount":"string","socialCardNumber":"string","identificationDocumentType":"string","passport":"string","passportIssueDate":"2019-08-24","passportIssuedBy":"string","nationality":"string","otherDocumentNumber":"string","phone":"string","mobilePhone":"string","email":"string","languages":"string","maritalStatus":"string","education":"string","institute":"string","educationStartDate":"2019-08-24","educationEndDate":"2019-08-24","educationCertificateNumber":"string","militaryServiceDescription":"string","militaryServiceStartDate":"2019-08-24","militaryServiceEndDate":"2019-08-24","familyMember1Type":"string","familyMember1FullName":"string","familyMember2Type":"string","familyMember2FullName":"string","familyMember3Type":"string","familyMember3FullName":"string","familyMember4Type":"string","familyMember4FullName":"string","accrualsDeductions":[{"date":"2019-08-24","code":"string","name":"string","amount":0.1,"default":true}]}
+{"id":0,"code":"string","fullName":"string","departmentCode":"string","positionCode":"string","positionStartDate":"2019-08-24","professionCode":"string","genderCode":"string","birthDate":"2019-08-24","contractTypeCode":"string","defaultAccrual":"string","defaultTimeSheet":"string","annualVacationNorm":0,"employmentStartDate":"2019-08-24","employmentOrderNumber":"string","dateOfDismissal":"2019-08-24","dismissalOrderNumber":"string","raCitizen":true,"calculateIncomeTax":true,"reducePensionFromIncomeTax":true,"salaryAccount":"string","partnerCode":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","employerPercent":0.1,"employerAmount":0.1,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","registrationPlaceRA":true,"registrationRegion":"string","registrationCommunity":"string","registrationCity":"string","registrationStreet":"string","registrationHouse":"string","registrationApartment":"string","registrationSameAsResidence":true,"placeResidenceRA":true,"residenceRegion":"string","residenceCommunity":"string","residenceLocation":"string","residenceCity":"string","residenceStreet":"string","residenceHouse":"string","residenceApartment":"string","residenceCountry":"string","addressLine1":"string","addressLine2":"string","addressLine3":"string","postalCode":"string","bankAccount":"string","socialCardNumber":"string","identificationDocumentType":"string","passport":"string","passportIssueDate":"2019-08-24","passportIssuedBy":"string","nationality":"string","otherDocumentNumber":"string","phone":"string","mobilePhone":"string","email":"string","languages":"string","maritalStatus":"string","education":"string","institute":"string","educationStartDate":"2019-08-24","educationEndDate":"2019-08-24","educationCertificateNumber":"string","militaryServiceDescription":"string","militaryServiceStartDate":"2019-08-24","militaryServiceEndDate":"2019-08-24","familyMember1Type":"string","familyMember1FullName":"string","familyMember2Type":"string","familyMember2FullName":"string","familyMember3Type":"string","familyMember3FullName":"string","familyMember4Type":"string","familyMember4FullName":"string","accrualsDeductions":[{"date":"2019-08-24","code":"string","name":"string","amount":0.1,"default":true}]}
 ```
 
 ```json
@@ -2923,6 +2928,7 @@ func main() {
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -3216,6 +3222,7 @@ const inputBody = '{
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -3444,6 +3451,7 @@ func main() {
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -3534,7 +3542,7 @@ func main() {
 > 201 Response
 
 ```
-{"id":0,"code":"string","fullName":"string","departmentCode":"string","positionCode":"string","positionStartDate":"2019-08-24","professionCode":"string","genderCode":"string","birthDate":"2019-08-24","contractTypeCode":"string","defaultAccrual":"string","defaultTimeSheet":"string","employmentStartDate":"2019-08-24","employmentOrderNumber":"string","dateOfDismissal":"2019-08-24","dismissalOrderNumber":"string","raCitizen":true,"calculateIncomeTax":true,"reducePensionFromIncomeTax":true,"salaryAccount":"string","partnerCode":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","employerPercent":0.1,"employerAmount":0.1,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","registrationPlaceRA":true,"registrationRegion":"string","registrationCommunity":"string","registrationCity":"string","registrationStreet":"string","registrationHouse":"string","registrationApartment":"string","registrationSameAsResidence":true,"placeResidenceRA":true,"residenceRegion":"string","residenceCommunity":"string","residenceLocation":"string","residenceCity":"string","residenceStreet":"string","residenceHouse":"string","residenceApartment":"string","residenceCountry":"string","addressLine1":"string","addressLine2":"string","addressLine3":"string","postalCode":"string","bankAccount":"string","socialCardNumber":"string","identificationDocumentType":"string","passport":"string","passportIssueDate":"2019-08-24","passportIssuedBy":"string","nationality":"string","otherDocumentNumber":"string","phone":"string","mobilePhone":"string","email":"string","languages":"string","maritalStatus":"string","education":"string","institute":"string","educationStartDate":"2019-08-24","educationEndDate":"2019-08-24","educationCertificateNumber":"string","militaryServiceDescription":"string","militaryServiceStartDate":"2019-08-24","militaryServiceEndDate":"2019-08-24","familyMember1Type":"string","familyMember1FullName":"string","familyMember2Type":"string","familyMember2FullName":"string","familyMember3Type":"string","familyMember3FullName":"string","familyMember4Type":"string","familyMember4FullName":"string","accrualsDeductions":[{"date":"2019-08-24","code":"string","name":"string","amount":0.1,"default":true}]}
+{"id":0,"code":"string","fullName":"string","departmentCode":"string","positionCode":"string","positionStartDate":"2019-08-24","professionCode":"string","genderCode":"string","birthDate":"2019-08-24","contractTypeCode":"string","defaultAccrual":"string","defaultTimeSheet":"string","annualVacationNorm":0,"employmentStartDate":"2019-08-24","employmentOrderNumber":"string","dateOfDismissal":"2019-08-24","dismissalOrderNumber":"string","raCitizen":true,"calculateIncomeTax":true,"reducePensionFromIncomeTax":true,"salaryAccount":"string","partnerCode":"string","tradeUnionDuesPercent":0.1,"participationStatus":"string","employerPercent":0.1,"employerAmount":0.1,"stampFeeType":"string","insuranceFeeType":"string","insuranceFeeDate":"2019-08-24","registrationPlaceRA":true,"registrationRegion":"string","registrationCommunity":"string","registrationCity":"string","registrationStreet":"string","registrationHouse":"string","registrationApartment":"string","registrationSameAsResidence":true,"placeResidenceRA":true,"residenceRegion":"string","residenceCommunity":"string","residenceLocation":"string","residenceCity":"string","residenceStreet":"string","residenceHouse":"string","residenceApartment":"string","residenceCountry":"string","addressLine1":"string","addressLine2":"string","addressLine3":"string","postalCode":"string","bankAccount":"string","socialCardNumber":"string","identificationDocumentType":"string","passport":"string","passportIssueDate":"2019-08-24","passportIssuedBy":"string","nationality":"string","otherDocumentNumber":"string","phone":"string","mobilePhone":"string","email":"string","languages":"string","maritalStatus":"string","education":"string","institute":"string","educationStartDate":"2019-08-24","educationEndDate":"2019-08-24","educationCertificateNumber":"string","militaryServiceDescription":"string","militaryServiceStartDate":"2019-08-24","militaryServiceEndDate":"2019-08-24","familyMember1Type":"string","familyMember1FullName":"string","familyMember2Type":"string","familyMember2FullName":"string","familyMember3Type":"string","familyMember3FullName":"string","familyMember4Type":"string","familyMember4FullName":"string","accrualsDeductions":[{"date":"2019-08-24","code":"string","name":"string","amount":0.1,"default":true}]}
 ```
 
 ```json
@@ -3551,6 +3559,7 @@ func main() {
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -30244,6 +30253,7 @@ This operation does not require authentication
   "contractTypeCode": "string",
   "defaultAccrual": "string",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "employmentStartDate": "2019-08-24",
   "employmentOrderNumber": "string",
   "dateOfDismissal": "2019-08-24",
@@ -30339,6 +30349,7 @@ This operation does not require authentication
 |contractTypeCode|string¦null|false|none|hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора|
 |defaultAccrual|string¦null|false|none|hy-AM: Հիմնական հավելում | en-US: Default accrual | ru-RU: Основное начисление|
 |defaultTimeSheet|string¦null|false|none|hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график|
+|annualVacationNorm|integer(int32)¦null|false|none|hy-AM: Արձակուրդի տարեկան նորմա | en-US: Annual vacation norm | ru-RU: Годовая норма отпуска|
 |employmentStartDate|string(date)¦null|false|none|hy-AM: Ընդունման ամսաթիվ | en-US: Employment start date | ru-RU: Дата приема на работу|
 |employmentOrderNumber|string¦null|false|none|hy-AM: Աշխ. ընդունման հրամանի N | en-US: N of employment order | ru-RU: Номер приказа о приеме на работу|
 |dateOfDismissal|string(date)¦null|false|none|hy-AM: Ազատման ամսաթիվ | en-US: Date of dismissal | ru-RU: Дата увольнения|
@@ -30479,6 +30490,7 @@ This operation does not require authentication
   "positionName": "string",
   "positionStartDate": "2019-08-24",
   "defaultTimeSheet": "string",
+  "annualVacationNorm": 0,
   "contractTypeCode": "string",
   "contractTypeName": "string",
   "employmentStartDate": "2019-08-24",
@@ -30520,6 +30532,7 @@ This operation does not require authentication
 |positionName|string¦null|false|none|hy-AM: Պաշտոն | en-US: Position | ru-RU: Должность|
 |positionStartDate|string(date)¦null|false|none|hy-AM: Պաշտոնի սկիզբ | en-US: Position start | ru-RU: Принят на должность с|
 |defaultTimeSheet|string¦null|false|none|hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график|
+|annualVacationNorm|integer(int32)|false|none|hy-AM: Արձակուրդի տարեկան նորմա | en-US: Annual vacation norm | ru-RU: Годовая норма отпуска|
 |contractTypeCode|string¦null|false|none|hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора|
 |contractTypeName|string¦null|false|none|hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора|
 |employmentStartDate|string(date)¦null|false|none|hy-AM: Ընդունման ամսաթիվ | en-US: Employment start date | ru-RU: Дата приема на работу|
@@ -30567,6 +30580,7 @@ This operation does not require authentication
       "positionName": "string",
       "positionStartDate": "2019-08-24",
       "defaultTimeSheet": "string",
+      "annualVacationNorm": 0,
       "contractTypeCode": "string",
       "contractTypeName": "string",
       "employmentStartDate": "2019-08-24",

@@ -7833,6 +7833,12 @@
             "description": "hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график",
             "nullable": true
           },
+          "annualVacationNorm": {
+            "type": "integer",
+            "description": "hy-AM: Արձակուրդի տարեկան նորմա | en-US: Annual vacation norm | ru-RU: Годовая норма отпуска",
+            "format": "int32",
+            "nullable": true
+          },
           "employmentStartDate": {
             "type": "string",
             "description": "hy-AM: Ընդունման ամսաթիվ | en-US: Employment start date | ru-RU: Дата приема на работу",
@@ -8288,6 +8294,11 @@
             "type": "string",
             "description": "hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график",
             "nullable": true
+          },
+          "annualVacationNorm": {
+            "type": "integer",
+            "description": "hy-AM: Արձակուրդի տարեկան նորմա | en-US: Annual vacation norm | ru-RU: Годовая норма отпуска",
+            "format": "int32"
           },
           "contractTypeCode": {
             "type": "string",
