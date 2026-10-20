@@ -37,6 +37,10 @@ properties:
     type: string
     description: "hy-AM: Հիմնական աշխատանքի գրաֆիկ | en-US: Default timesheet | ru-RU: Основной рабочий график"
     nullable: true
+  annualVacationNorm:
+    type: integer
+    description: "hy-AM: Արձակուրդի տարեկան նորմա | en-US: Annual vacation norm | ru-RU: Годовая норма отпуска"
+    format: int32
   contractTypeCode:
     type: string
     description: "hy-AM: Պայմանագրի տեսակ | en-US: Contract type | ru-RU: Тип договора"

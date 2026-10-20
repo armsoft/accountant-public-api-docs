@@ -32,6 +32,7 @@ See the [field reference](README.md#employee-fields) for every property.
   "contractTypeCode": "",
   "defaultAccrual": "",
   "defaultTimeSheet": "",
+  "annualVacationNorm": 20,
   "employmentStartDate": "2026-01-15",
   "employmentOrderNumber": "",
   "dateOfDismissal": "2026-01-15",

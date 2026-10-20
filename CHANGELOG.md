@@ -4,6 +4,24 @@
 
 All notable changes to the ArmSoft SME Accountant Public API are documented here.
 
+## [1.1.1] - 2026-10-20
+
+Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`
+— 73 paths and 83 schemas.
+
+### Added
+
+#### Directories API
+- Employees: new `annualVacationNorm` field (integer, Annual vacation norm). It is accepted and
+  returned by Create, Get and Update (`Employee`, nullable) and returned in the List and Next Page
+  rows (`EmployeeRow`). Added to the curated `openapi/` schemas, the Employees field table and the
+  request/response examples.
+
+### Changed
+- `swagger.json` and the generated `docs/api-reference.md` re-synced from the live specification.
+
+---
+
 ## [1.1.0] - 2026-09-07
 
 Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`

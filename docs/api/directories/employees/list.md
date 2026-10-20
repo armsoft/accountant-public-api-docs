@@ -58,6 +58,7 @@ Returns a `EmployeeRowApiResponse` object with paging metadata and an array of `
       "positionName": "",
       "positionStartDate": "2026-01-15",
       "defaultTimeSheet": "",
+      "annualVacationNorm": 20,
       "contractTypeCode": "",
       "contractTypeName": "",
       "employmentStartDate": "2026-01-15",

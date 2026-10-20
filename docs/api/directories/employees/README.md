@@ -33,6 +33,7 @@ Employees endpoints map to `EmployeesController` in API version `v1`.
 | `contractTypeCode` | string | Contract type |
 | `defaultAccrual` | string | Default accrual |
 | `defaultTimeSheet` | string | Default timesheet |
+| `annualVacationNorm` | integer | Annual vacation norm |
 | `employmentStartDate` | date | Employment start date |
 | `employmentOrderNumber` | string | N of employment order |
 | `dateOfDismissal` | date | Date of dismissal |
