@@ -101,6 +101,11 @@ API keys with restricted permissions are limited to the following endpoints:
 | GET | `/documents/materialsmovement/{isn}` | Get materials movement by ISN |
 | GET | `/documents/materialskitting/{isn}` | Get materials kitting by ISN |
 | GET | `/documents/overheadexpenseallocation/{isn}` | Get overhead expense allocation by ISN |
+| GET | `/documents/receivedservice/{isn}` | Get received service by ISN |
+| GET | `/documents/fixedassetacquisition/{isn}` | Get fixed asset acquisition by ISN |
+| GET | `/documents/fixedassetdisposalact/{isn}` | Get fixed asset disposal act by ISN |
+| GET | `/documents/cashinputorder/{isn}` | Get cash input order by ISN |
+| GET | `/documents/cashoutputorder/{isn}` | Get cash output order by ISN |
 | GET | `/documents/noncashprepayment/{isn}` | Get non-cash prepayment by ISN |
 | GET | `/documents/returnfromcustomer/{isn}` | Get return from customer by ISN |
 | GET | `/documents/returntosupplier/{isn}` | Get return to supplier by ISN |
