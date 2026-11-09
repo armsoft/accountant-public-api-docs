@@ -9933,6 +9933,994 @@ To perform this operation, you must be authenticated by means of one of the foll
 API Key
 </aside>
 
+<h1 id="accountant-public-api-materialsgroups">MaterialsGroups</h1>
+
+## get__v1_directories_materialsgroups
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/directories/materialsgroups \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/directories/materialsgroups HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/directories/materialsgroups',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/directories/materialsgroups',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/directories/materialsgroups', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/directories/materialsgroups', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/directories/materialsgroups");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/directories/materialsgroups", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/directories/materialsgroups`
+
+<h3 id="get__v1_directories_materialsgroups-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+[{"code":"string","name":"string","parent":"string","path":"string"}]
+```
+
+```json
+[
+  {
+    "code": "string",
+    "name": "string",
+    "parent": "string",
+    "path": "string"
+  }
+]
+```
+
+<h3 id="get__v1_directories_materialsgroups-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<h3 id="get__v1_directories_materialsgroups-responseschema">Response Schema</h3>
+
+Status Code **200**
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|*anonymous*|[[MaterialsGroup](#schemamaterialsgroup)]|false|none|none|
+|» code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|» name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|» parent|string¦null|false|none|hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель|
+|» path|string¦null|false|none|none|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_directories_materialsgroups
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/directories/materialsgroups \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/directories/materialsgroups HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/directories/materialsgroups',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/directories/materialsgroups',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/directories/materialsgroups', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/directories/materialsgroups', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/directories/materialsgroups");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/directories/materialsgroups", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/directories/materialsgroups`
+
+> Body parameter
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+```
+
+<h3 id="post__v1_directories_materialsgroups-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[MaterialsGroup](#schemamaterialsgroup)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"code":"string","name":"string","parent":"string","path":"string"}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+```
+
+<h3 id="post__v1_directories_materialsgroups-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[MaterialsGroup](#schemamaterialsgroup)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## get__v1_directories_materialsgroups_{code}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/directories/materialsgroups/{code} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/directories/materialsgroups/{code} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/directories/materialsgroups/{code}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/directories/materialsgroups/{code}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/directories/materialsgroups/{code}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/directories/materialsgroups/{code}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/directories/materialsgroups/{code}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/directories/materialsgroups/{code}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/directories/materialsgroups/{code}`
+
+<h3 id="get__v1_directories_materialsgroups_{code}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|code|path|string|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","parent":"string","path":"string"}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+```
+
+<h3 id="get__v1_directories_materialsgroups_{code}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[MaterialsGroup](#schemamaterialsgroup)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_directories_materialsgroups_{code}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/directories/materialsgroups/{code} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/directories/materialsgroups/{code} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/directories/materialsgroups/{code}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/directories/materialsgroups/{code}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/directories/materialsgroups/{code}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/directories/materialsgroups/{code}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/directories/materialsgroups/{code}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/directories/materialsgroups/{code}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/directories/materialsgroups/{code}`
+
+> Body parameter
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+```
+
+<h3 id="put__v1_directories_materialsgroups_{code}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|code|path|string|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[MaterialsGroup](#schemamaterialsgroup)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","parent":"string","path":"string"}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+```
+
+<h3 id="put__v1_directories_materialsgroups_{code}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[MaterialsGroup](#schemamaterialsgroup)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_directories_materialsgroups_{code}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/directories/materialsgroups/{code} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/directories/materialsgroups/{code} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/directories/materialsgroups/{code}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/directories/materialsgroups/{code}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/directories/materialsgroups/{code}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/directories/materialsgroups/{code}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/directories/materialsgroups/{code}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/directories/materialsgroups/{code}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/directories/materialsgroups/{code}`
+
+<h3 id="delete__v1_directories_materialsgroups_{code}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|code|path|string|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_directories_materialsgroups_{code}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 <h1 id="accountant-public-api-materialskitting">MaterialsKitting</h1>
 
 ## get__v1_documents_materialskitting_{isn}
@@ -12855,6 +13843,896 @@ func main() {
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[MemorialOrder](#schemamemorialorder)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="accountant-public-api-noncashprepayment">NonCashPrepayment</h1>
+
+## get__v1_documents_noncashprepayment_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/noncashprepayment/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/noncashprepayment/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/noncashprepayment/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/noncashprepayment/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/noncashprepayment/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/noncashprepayment/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/noncashprepayment/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/noncashprepayment/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/noncashprepayment/{isn}`
+
+<h3 id="get__v1_documents_noncashprepayment_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","ecrCheckNumber":"string","useECRPOS":true,"nonCashTransactionAccount":"string","cashInFlowAccount":"string","partnerCode":"string","currency":"string","currencyAmount":0.1,"amount":0.1,"receivedPrepaymentAccount":"string","customer":"string","printExpenseConfirmingCheck":true,"analytic1":"string","analytic2":"string","comment":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}
+```
+
+<h3 id="get__v1_documents_noncashprepayment_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NonCashPrepayment](#schemanoncashprepayment)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_noncashprepayment_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/noncashprepayment/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/noncashprepayment/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/noncashprepayment/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/noncashprepayment/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/noncashprepayment/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/noncashprepayment/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/noncashprepayment/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/noncashprepayment/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/noncashprepayment/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}
+```
+
+<h3 id="put__v1_documents_noncashprepayment_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NonCashPrepayment](#schemanoncashprepayment)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","ecrCheckNumber":"string","useECRPOS":true,"nonCashTransactionAccount":"string","cashInFlowAccount":"string","partnerCode":"string","currency":"string","currencyAmount":0.1,"amount":0.1,"receivedPrepaymentAccount":"string","customer":"string","printExpenseConfirmingCheck":true,"analytic1":"string","analytic2":"string","comment":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}
+```
+
+<h3 id="put__v1_documents_noncashprepayment_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NonCashPrepayment](#schemanoncashprepayment)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_noncashprepayment_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/noncashprepayment/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/noncashprepayment/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/noncashprepayment/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/noncashprepayment/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/noncashprepayment/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/noncashprepayment/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/noncashprepayment/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/noncashprepayment/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/noncashprepayment/{isn}`
+
+<h3 id="delete__v1_documents_noncashprepayment_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_noncashprepayment_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_noncashprepayment
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/noncashprepayment \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/noncashprepayment HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/noncashprepayment',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/noncashprepayment',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/noncashprepayment', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/noncashprepayment', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/noncashprepayment");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/noncashprepayment", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/noncashprepayment`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}
+```
+
+<h3 id="post__v1_documents_noncashprepayment-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NonCashPrepayment](#schemanoncashprepayment)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"cashDesk":"string","ecrCheckNumber":"string","useECRPOS":true,"nonCashTransactionAccount":"string","cashInFlowAccount":"string","partnerCode":"string","currency":"string","currencyAmount":0.1,"amount":0.1,"receivedPrepaymentAccount":"string","customer":"string","printExpenseConfirmingCheck":true,"analytic1":"string","analytic2":"string","comment":"string"}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}
+```
+
+<h3 id="post__v1_documents_noncashprepayment-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[NonCashPrepayment](#schemanoncashprepayment)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -21107,6 +22985,584 @@ To perform this operation, you must be authenticated by means of one of the foll
 API Key
 </aside>
 
+## post__v1_reports_salesjournal
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/reports/salesjournal \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/reports/salesjournal HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "pageSize": 0,
+  "startDate": "2019-08-24",
+  "endDate": "2019-08-24",
+  "storage": "string",
+  "materialGroup": "string",
+  "material": "string",
+  "service": "string",
+  "fixedAsset": "string",
+  "incomeAccount": "string",
+  "expenseAccount": "string",
+  "partnerGroup": "string",
+  "customer": "string",
+  "operationTypes": "string",
+  "showByDifferentParties": true,
+  "currency": "string",
+  "showCurrencies": true,
+  "showVATAmounts": true,
+  "showMTAdditionalColumns": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/reports/salesjournal',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/reports/salesjournal',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/reports/salesjournal', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/reports/salesjournal', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/reports/salesjournal");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/reports/salesjournal", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/reports/salesjournal`
+
+> Body parameter
+
+```json
+{
+  "pageSize": 0,
+  "startDate": "2019-08-24",
+  "endDate": "2019-08-24",
+  "storage": "string",
+  "materialGroup": "string",
+  "material": "string",
+  "service": "string",
+  "fixedAsset": "string",
+  "incomeAccount": "string",
+  "expenseAccount": "string",
+  "partnerGroup": "string",
+  "customer": "string",
+  "operationTypes": "string",
+  "showByDifferentParties": true,
+  "currency": "string",
+  "showCurrencies": true,
+  "showVATAmounts": true,
+  "showMTAdditionalColumns": true
+}
+```
+
+<h3 id="post__v1_reports_salesjournal-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[SalesJournalParam](#schemasalesjournalparam)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","documentType":0,"operationType":"string","operationName":"string","itemType":"string","itemId":0,"itemCode":"string","itemName":"string","storage":"string","storageName":"string","unitMeasure":"string","unitMeasureAbbreviation":"string","partnerGroup":"string","customer":"string","customerAccount":"string","customerBusinessAddress":"string","quantity":0.1,"cost":0.1,"costAmount":0.1,"initialPrice":0.1,"salePrice":0.1,"saleAmount":0.1,"environmentalFeePercent":0.1,"environmentalFeeAmount":0.1,"profit":0.1,"profitPercentBySale":0.1,"profitPercentByCost":0.1,"unitVAT":0.1,"costVATAmount":0.1,"saleVATPrice":0.1,"saleVATAmount":0.1,"vatDifference":0.1,"currency":"string","salePriceCurrency":0.1,"saleAmountCurrency":0.1,"discountPercent":0.1,"itemVAT":true,"incomeAccount":"string","expenseAccount":"string","analytic1":"string","analytic2":"string","comment":"string","group":"string","groupName":"string","specification":"string","cpaClassifier":"string","vat":true,"fullName":"string","baseDocumentDate":"2019-08-24","baseDocumentNumber":"string","rowId":0,"incomeDate":"2019-08-24","partySupplierId":0,"partySupplierCode":"string","partySupplierName":"string","partyDocumentNumber":"string","partyDocumentType":0,"partyDocumentTypeName":"string","partyPurchasingPrice":0.1,"partyPurchasingPriceWithoutVAT":0.1}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+      "date": "2019-08-24",
+      "documentNumber": "string",
+      "documentType": 0,
+      "operationType": "string",
+      "operationName": "string",
+      "itemType": "string",
+      "itemId": 0,
+      "itemCode": "string",
+      "itemName": "string",
+      "storage": "string",
+      "storageName": "string",
+      "unitMeasure": "string",
+      "unitMeasureAbbreviation": "string",
+      "partnerGroup": "string",
+      "customer": "string",
+      "customerAccount": "string",
+      "customerBusinessAddress": "string",
+      "quantity": 0.1,
+      "cost": 0.1,
+      "costAmount": 0.1,
+      "initialPrice": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "profit": 0.1,
+      "profitPercentBySale": 0.1,
+      "profitPercentByCost": 0.1,
+      "unitVAT": 0.1,
+      "costVATAmount": 0.1,
+      "saleVATPrice": 0.1,
+      "saleVATAmount": 0.1,
+      "vatDifference": 0.1,
+      "currency": "string",
+      "salePriceCurrency": 0.1,
+      "saleAmountCurrency": 0.1,
+      "discountPercent": 0.1,
+      "itemVAT": true,
+      "incomeAccount": "string",
+      "expenseAccount": "string",
+      "analytic1": "string",
+      "analytic2": "string",
+      "comment": "string",
+      "group": "string",
+      "groupName": "string",
+      "specification": "string",
+      "cpaClassifier": "string",
+      "vat": true,
+      "fullName": "string",
+      "baseDocumentDate": "2019-08-24",
+      "baseDocumentNumber": "string",
+      "rowId": 0,
+      "incomeDate": "2019-08-24",
+      "partySupplierId": 0,
+      "partySupplierCode": "string",
+      "partySupplierName": "string",
+      "partyDocumentNumber": "string",
+      "partyDocumentType": 0,
+      "partyDocumentTypeName": "string",
+      "partyPurchasingPrice": 0.1,
+      "partyPurchasingPriceWithoutVAT": 0.1
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_reports_salesjournal-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[SalesJournalDataRowApiResponse](#schemasalesjournaldatarowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_reports_salesjournal_nextpage
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/reports/salesjournal/nextpage \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/reports/salesjournal/nextpage HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/reports/salesjournal/nextpage',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/reports/salesjournal/nextpage',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/reports/salesjournal/nextpage', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/reports/salesjournal/nextpage', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/reports/salesjournal/nextpage");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/reports/salesjournal/nextpage", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/reports/salesjournal/nextpage`
+
+> Body parameter
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}
+```
+
+<h3 id="post__v1_reports_salesjournal_nextpage-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NextPageRequest](#schemanextpagerequest)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","documentType":0,"operationType":"string","operationName":"string","itemType":"string","itemId":0,"itemCode":"string","itemName":"string","storage":"string","storageName":"string","unitMeasure":"string","unitMeasureAbbreviation":"string","partnerGroup":"string","customer":"string","customerAccount":"string","customerBusinessAddress":"string","quantity":0.1,"cost":0.1,"costAmount":0.1,"initialPrice":0.1,"salePrice":0.1,"saleAmount":0.1,"environmentalFeePercent":0.1,"environmentalFeeAmount":0.1,"profit":0.1,"profitPercentBySale":0.1,"profitPercentByCost":0.1,"unitVAT":0.1,"costVATAmount":0.1,"saleVATPrice":0.1,"saleVATAmount":0.1,"vatDifference":0.1,"currency":"string","salePriceCurrency":0.1,"saleAmountCurrency":0.1,"discountPercent":0.1,"itemVAT":true,"incomeAccount":"string","expenseAccount":"string","analytic1":"string","analytic2":"string","comment":"string","group":"string","groupName":"string","specification":"string","cpaClassifier":"string","vat":true,"fullName":"string","baseDocumentDate":"2019-08-24","baseDocumentNumber":"string","rowId":0,"incomeDate":"2019-08-24","partySupplierId":0,"partySupplierCode":"string","partySupplierName":"string","partyDocumentNumber":"string","partyDocumentType":0,"partyDocumentTypeName":"string","partyPurchasingPrice":0.1,"partyPurchasingPriceWithoutVAT":0.1}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+      "date": "2019-08-24",
+      "documentNumber": "string",
+      "documentType": 0,
+      "operationType": "string",
+      "operationName": "string",
+      "itemType": "string",
+      "itemId": 0,
+      "itemCode": "string",
+      "itemName": "string",
+      "storage": "string",
+      "storageName": "string",
+      "unitMeasure": "string",
+      "unitMeasureAbbreviation": "string",
+      "partnerGroup": "string",
+      "customer": "string",
+      "customerAccount": "string",
+      "customerBusinessAddress": "string",
+      "quantity": 0.1,
+      "cost": 0.1,
+      "costAmount": 0.1,
+      "initialPrice": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "profit": 0.1,
+      "profitPercentBySale": 0.1,
+      "profitPercentByCost": 0.1,
+      "unitVAT": 0.1,
+      "costVATAmount": 0.1,
+      "saleVATPrice": 0.1,
+      "saleVATAmount": 0.1,
+      "vatDifference": 0.1,
+      "currency": "string",
+      "salePriceCurrency": 0.1,
+      "saleAmountCurrency": 0.1,
+      "discountPercent": 0.1,
+      "itemVAT": true,
+      "incomeAccount": "string",
+      "expenseAccount": "string",
+      "analytic1": "string",
+      "analytic2": "string",
+      "comment": "string",
+      "group": "string",
+      "groupName": "string",
+      "specification": "string",
+      "cpaClassifier": "string",
+      "vat": true,
+      "fullName": "string",
+      "baseDocumentDate": "2019-08-24",
+      "baseDocumentNumber": "string",
+      "rowId": 0,
+      "incomeDate": "2019-08-24",
+      "partySupplierId": 0,
+      "partySupplierCode": "string",
+      "partySupplierName": "string",
+      "partyDocumentNumber": "string",
+      "partyDocumentType": 0,
+      "partyDocumentTypeName": "string",
+      "partyPurchasingPrice": 0.1,
+      "partyPurchasingPriceWithoutVAT": 0.1
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_reports_salesjournal_nextpage-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[SalesJournalDataRowApiResponse](#schemasalesjournaldatarowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 ## post__v1_reports_storageinputordersandreceivedservices
 
 > Code samples
@@ -23468,6 +25924,2542 @@ func main() {
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[RetailSale](#schemaretailsale)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="accountant-public-api-returnfromcustomer">ReturnFromCustomer</h1>
+
+## get__v1_documents_returnfromcustomer_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/returnfromcustomer/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/returnfromcustomer/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returnfromcustomer/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/returnfromcustomer/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/returnfromcustomer/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/returnfromcustomer/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returnfromcustomer/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/returnfromcustomer/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/returnfromcustomer/{isn}`
+
+<h3 id="get__v1_documents_returnfromcustomer_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","ecrReturnCheckNumber":"string","customer":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"contract":"string","contractDate":"2019-08-24","cashDesk":"string","customerAccount":"string","receivedPrepaymentAccount":"string","vatAccount":"string","environmentalFeeAccount":"string","nonCashTransactionAccount":"string","analytic1":"string","analytic2":"string","baseTaxInvoiceSeries":"string","baseTaxInvoiceNumber":"string","baseSubmissionDate":"2019-08-24","taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","comment":"string","vatCalculationType":"string","dealType":"string","storage":"string","discountPercent":0.1,"nonCashAmount":0.1,"prepaymentAmount":0.1,"vatAmount":0.1,"totalAmount":0.1,"supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","stateRegisterNumber":"string","idDocumentType":"string","passportNumber":"string","socialCardNumber":"string","customerAdditionalData":"string","shippingMethod":"string","additionalFullName":"string","credentialNumber":"string","credentialDate":"2019-08-24","itemList":[{"type":"string","storage":"string","id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"environmentalFeePercent":0.1,"environmentalFeeAmount":0.1,"vat":true,"dealType":"string","costPriceWithoutVAT":0.1,"costAmountWithoutVAT":0.1,"costVATAmount":0.1,"costAccount":"string","expenseAccount":"string","incomeAccount":"string","markingList":["string"],"cpaClassifier":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="get__v1_documents_returnfromcustomer_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ReturnFromCustomer](#schemareturnfromcustomer)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_returnfromcustomer_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/returnfromcustomer/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/returnfromcustomer/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returnfromcustomer/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/returnfromcustomer/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/returnfromcustomer/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/returnfromcustomer/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returnfromcustomer/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/returnfromcustomer/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/returnfromcustomer/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_returnfromcustomer_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ReturnFromCustomer](#schemareturnfromcustomer)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","ecrReturnCheckNumber":"string","customer":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"contract":"string","contractDate":"2019-08-24","cashDesk":"string","customerAccount":"string","receivedPrepaymentAccount":"string","vatAccount":"string","environmentalFeeAccount":"string","nonCashTransactionAccount":"string","analytic1":"string","analytic2":"string","baseTaxInvoiceSeries":"string","baseTaxInvoiceNumber":"string","baseSubmissionDate":"2019-08-24","taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","comment":"string","vatCalculationType":"string","dealType":"string","storage":"string","discountPercent":0.1,"nonCashAmount":0.1,"prepaymentAmount":0.1,"vatAmount":0.1,"totalAmount":0.1,"supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","stateRegisterNumber":"string","idDocumentType":"string","passportNumber":"string","socialCardNumber":"string","customerAdditionalData":"string","shippingMethod":"string","additionalFullName":"string","credentialNumber":"string","credentialDate":"2019-08-24","itemList":[{"type":"string","storage":"string","id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"environmentalFeePercent":0.1,"environmentalFeeAmount":0.1,"vat":true,"dealType":"string","costPriceWithoutVAT":0.1,"costAmountWithoutVAT":0.1,"costVATAmount":0.1,"costAccount":"string","expenseAccount":"string","incomeAccount":"string","markingList":["string"],"cpaClassifier":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_returnfromcustomer_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ReturnFromCustomer](#schemareturnfromcustomer)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_returnfromcustomer_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/returnfromcustomer/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/returnfromcustomer/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returnfromcustomer/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/returnfromcustomer/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/returnfromcustomer/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/returnfromcustomer/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returnfromcustomer/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/returnfromcustomer/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/returnfromcustomer/{isn}`
+
+<h3 id="delete__v1_documents_returnfromcustomer_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_returnfromcustomer_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_returnfromcustomer
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/returnfromcustomer \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/returnfromcustomer HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returnfromcustomer',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/returnfromcustomer',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/returnfromcustomer', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/returnfromcustomer', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returnfromcustomer");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/returnfromcustomer", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/returnfromcustomer`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_returnfromcustomer-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ReturnFromCustomer](#schemareturnfromcustomer)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","ecrReturnCheckNumber":"string","customer":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"contract":"string","contractDate":"2019-08-24","cashDesk":"string","customerAccount":"string","receivedPrepaymentAccount":"string","vatAccount":"string","environmentalFeeAccount":"string","nonCashTransactionAccount":"string","analytic1":"string","analytic2":"string","baseTaxInvoiceSeries":"string","baseTaxInvoiceNumber":"string","baseSubmissionDate":"2019-08-24","taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","comment":"string","vatCalculationType":"string","dealType":"string","storage":"string","discountPercent":0.1,"nonCashAmount":0.1,"prepaymentAmount":0.1,"vatAmount":0.1,"totalAmount":0.1,"supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","stateRegisterNumber":"string","idDocumentType":"string","passportNumber":"string","socialCardNumber":"string","customerAdditionalData":"string","shippingMethod":"string","additionalFullName":"string","credentialNumber":"string","credentialDate":"2019-08-24","itemList":[{"type":"string","storage":"string","id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"environmentalFeePercent":0.1,"environmentalFeeAmount":0.1,"vat":true,"dealType":"string","costPriceWithoutVAT":0.1,"costAmountWithoutVAT":0.1,"costVATAmount":0.1,"costAccount":"string","expenseAccount":"string","incomeAccount":"string","markingList":["string"],"cpaClassifier":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_returnfromcustomer-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[ReturnFromCustomer](#schemareturnfromcustomer)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="accountant-public-api-returntosupplier">ReturnToSupplier</h1>
+
+## get__v1_documents_returntosupplier_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /accountant/v1/documents/returntosupplier/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /accountant/v1/documents/returntosupplier/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returntosupplier/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/accountant/v1/documents/returntosupplier/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/accountant/v1/documents/returntosupplier/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/accountant/v1/documents/returntosupplier/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returntosupplier/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/accountant/v1/documents/returntosupplier/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/returntosupplier/{isn}`
+
+<h3 id="get__v1_documents_returntosupplier_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"supplierCode":"string","supplierAccount":"string","transitAccount":"string","analytic1":"string","analytic2":"string","comment":"string","baseTaxInvoiceSeries":"string","baseTaxInvoiceNumber":"string","baseSubmissionDate":"2019-08-24","vatCalculationType":"string","vatIncludedInCost":true,"storage":"string","vatAmount":0.1,"totalAmount":0.1,"supplierName":"string","supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","materialsList":[{"storage":"string","id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"amount":0.1,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="get__v1_documents_returntosupplier_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ReturnToSupplier](#schemareturntosupplier)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_returntosupplier_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /accountant/v1/documents/returntosupplier/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /accountant/v1/documents/returntosupplier/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returntosupplier/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/accountant/v1/documents/returntosupplier/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/accountant/v1/documents/returntosupplier/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/accountant/v1/documents/returntosupplier/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returntosupplier/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/accountant/v1/documents/returntosupplier/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/returntosupplier/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_returntosupplier_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ReturnToSupplier](#schemareturntosupplier)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"supplierCode":"string","supplierAccount":"string","transitAccount":"string","analytic1":"string","analytic2":"string","comment":"string","baseTaxInvoiceSeries":"string","baseTaxInvoiceNumber":"string","baseSubmissionDate":"2019-08-24","vatCalculationType":"string","vatIncludedInCost":true,"storage":"string","vatAmount":0.1,"totalAmount":0.1,"supplierName":"string","supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","materialsList":[{"storage":"string","id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"amount":0.1,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_returntosupplier_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ReturnToSupplier](#schemareturntosupplier)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_returntosupplier_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /accountant/v1/documents/returntosupplier/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /accountant/v1/documents/returntosupplier/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returntosupplier/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/accountant/v1/documents/returntosupplier/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/accountant/v1/documents/returntosupplier/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/accountant/v1/documents/returntosupplier/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returntosupplier/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/accountant/v1/documents/returntosupplier/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/returntosupplier/{isn}`
+
+<h3 id="delete__v1_documents_returntosupplier_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_returntosupplier_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_returntosupplier
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/documents/returntosupplier \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/documents/returntosupplier HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/documents/returntosupplier',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/documents/returntosupplier',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/documents/returntosupplier', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/documents/returntosupplier', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/documents/returntosupplier");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/documents/returntosupplier", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/returntosupplier`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_returntosupplier-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ReturnToSupplier](#schemareturntosupplier)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"previousDayExchangeRate":true,"supplierCode":"string","supplierAccount":"string","transitAccount":"string","analytic1":"string","analytic2":"string","comment":"string","baseTaxInvoiceSeries":"string","baseTaxInvoiceNumber":"string","baseSubmissionDate":"2019-08-24","vatCalculationType":"string","vatIncludedInCost":true,"storage":"string","vatAmount":0.1,"totalAmount":0.1,"supplierName":"string","supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","materialsList":[{"storage":"string","id":0,"code":"string","name":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"amount":0.1,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_returntosupplier-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[ReturnToSupplier](#schemareturntosupplier)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -31643,6 +36635,32 @@ This operation does not require authentication
 |currency|string¦null|false|none|hy-AM: Արտարժույթ | en-US: Currency | ru-RU: Валюта|
 |showZeroRows|boolean|false|none|hy-AM: Ցույց տալ զրոյական տողերը | en-US: Show zero rows | ru-RU: Показать нулевые строки|
 
+<h2 id="tocS_MaterialsGroup">MaterialsGroup</h2>
+<!-- backwards compatibility -->
+<a id="schemamaterialsgroup"></a>
+<a id="schema_MaterialsGroup"></a>
+<a id="tocSmaterialsgroup"></a>
+<a id="tocsmaterialsgroup"></a>
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|parent|string¦null|false|none|hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель|
+|path|string¦null|false|none|none|
+
 <h2 id="tocS_MaterialsKitting">MaterialsKitting</h2>
 <!-- backwards compatibility -->
 <a id="schemamaterialskitting"></a>
@@ -32219,6 +37237,62 @@ This operation does not require authentication
 |---|---|---|---|---|
 |id|string(uuid)|false|none|none|
 |close|boolean|false|none|none|
+
+<h2 id="tocS_NonCashPrepayment">NonCashPrepayment</h2>
+<!-- backwards compatibility -->
+<a id="schemanoncashprepayment"></a>
+<a id="schema_NonCashPrepayment"></a>
+<a id="tocSnoncashprepayment"></a>
+<a id="tocsnoncashprepayment"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "cashDesk": "string",
+  "ecrCheckNumber": "string",
+  "useECRPOS": true,
+  "nonCashTransactionAccount": "string",
+  "cashInFlowAccount": "string",
+  "partnerCode": "string",
+  "currency": "string",
+  "currencyAmount": 0.1,
+  "amount": 0.1,
+  "receivedPrepaymentAccount": "string",
+  "customer": "string",
+  "printExpenseConfirmingCheck": true,
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|ecrCheckNumber|string¦null|false|none|none|
+|useECRPOS|boolean|false|none|hy-AM: Օգտագործել ՀԴՄ-ի POS-ը | en-US: Use ECR POS | ru-RU: Использовать POS ККМ|
+|nonCashTransactionAccount|string¦null|false|none|hy-AM: Անկանխիկ գործարքների հաշիվ | en-US: Non-cash transaction’s account | ru-RU: Счет безналичных расчетов|
+|cashInFlowAccount|string¦null|false|none|hy-AM: Դրամ. ներ. հաշիվ | en-US: Cash in. acc. | ru-RU: Счет пост. ДС|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyAmount|number(double)|false|none|hy-AM: Գումար արժ. | en-US: Amount in curr. | ru-RU: Сумма в валюте|
+|amount|number(double)|false|none|hy-AM: Գումար ԱԴՄ-ով | en-US: Sum in AMD | ru-RU: Сумма в НДЕ|
+|receivedPrepaymentAccount|string¦null|false|none|hy-AM: Ստացված կանխավճարի հաշիվ | en-US: Received prepayment account | ru-RU: Счет авансов полученных|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|printExpenseConfirmingCheck|boolean|false|none|hy-AM: Տպել ծախս հիմնավորող ՀԴՄԿ | en-US: Print expense confirming check | ru-RU: Печать чека ККМ подтвер. расходы|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
 
 <h2 id="tocS_OverheadExpenseAllocation">OverheadExpenseAllocation</h2>
 <!-- backwards compatibility -->
@@ -33127,7 +38201,7 @@ This operation does not require authentication
 |purchaseDocumentNumber|string¦null|false|none|hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения|
 |submissionDate|string(date)¦null|false|none|hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От|
 |comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
-|purchasingType|string¦null|false|none|hy-AM: Ծառայության ձեռք բերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги|
+|purchasingType|string¦null|false|none|hy-AM: Ծառայության ձեռքբերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги|
 |vatCalculationType|string¦null|false|none|none|
 |includeVATInExpense|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ծախսի մեջ | en-US: Include VAT in expense | ru-RU: НДС включить в расходы|
 |vatInclusionMethod|string¦null|false|none|none|
@@ -33395,6 +38469,683 @@ This operation does not require authentication
 |markingList|[string]¦null|false|none|hy-AM: Դրոշմավորում | en-US: Marking | ru-RU: Маркировка|
 |rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
 |rowId|integer(int32)|false|none|hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии|
+
+<h2 id="tocS_ReturnFromCustomer">ReturnFromCustomer</h2>
+<!-- backwards compatibility -->
+<a id="schemareturnfromcustomer"></a>
+<a id="schema_ReturnFromCustomer"></a>
+<a id="tocSreturnfromcustomer"></a>
+<a id="tocsreturnfromcustomer"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "ecrReturnCheckNumber": "string",
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "cashDesk": "string",
+  "customerAccount": "string",
+  "receivedPrepaymentAccount": "string",
+  "vatAccount": "string",
+  "environmentalFeeAccount": "string",
+  "nonCashTransactionAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "comment": "string",
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "nonCashAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "socialCardNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "costPriceWithoutVAT": 0.1,
+      "costAmountWithoutVAT": 0.1,
+      "costVATAmount": 0.1,
+      "costAccount": "string",
+      "expenseAccount": "string",
+      "incomeAccount": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|ecrReturnCheckNumber|string¦null|false|none|none|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|previousDayExchangeRate|boolean|false|none|hy-AM: Նախորդ օրվա փոխարժեքը | en-US: Previous day exchange rate | ru-RU: Курс валюты предыдущего дня|
+|contract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|contractDate|string(date)¦null|false|none|hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|customerAccount|string¦null|false|none|hy-AM: Գնորդի հաշիվ | en-US: Customer account | ru-RU: Счет покупателя|
+|receivedPrepaymentAccount|string¦null|false|none|hy-AM: Ստացված կանխավճարի հաշիվ | en-US: Received prepayment account | ru-RU: Счет авансов полученных|
+|vatAccount|string¦null|false|none|none|
+|environmentalFeeAccount|string¦null|false|none|hy-AM: Բնապահ. հարկի կրեդիտային հաշիվ | en-US: Environmental fees' credit account | ru-RU: Кредитовый счет эко. налога|
+|nonCashTransactionAccount|string¦null|false|none|hy-AM: Անկանխիկ գործարքների հաշիվ | en-US: Non-cash transaction’s account | ru-RU: Счет безналичных расчетов|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|baseTaxInvoiceSeries|string¦null|false|none|hy-AM: Հիմք սերիա | en-US: Base serial | ru-RU: Основание серия|
+|baseTaxInvoiceNumber|string¦null|false|none|hy-AM: Հիմք սերիա և համար | en-US: Base serial number | ru-RU: Основание серия-номер|
+|baseSubmissionDate|string(date)¦null|false|none|hy-AM: Հիմք դուրս գրման ա/թ | en-US: Base submission date | ru-RU: Основание дата выписки|
+|taxExportType|string¦null|false|none|hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки|
+|taxInvoiceSeries|string¦null|false|none|hy-AM: Սերիա | en-US: Serial | ru-RU: Серия|
+|taxInvoiceNumber|string¦null|false|none|hy-AM: Համար | en-US: Number | ru-RU: Номер|
+|submissionDate|string(date)¦null|false|none|hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|vatCalculationType|string¦null|false|none|none|
+|dealType|string¦null|false|none|hy-AM: Գործարքի տեսակ | en-US: Deal type | ru-RU: Тип сделки|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|discountPercent|number(double)|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|nonCashAmount|number(double)|false|none|hy-AM: Անկանխիկ գումար | en-US: Non-cash amount | ru-RU: Безналичная сумма|
+|prepaymentAmount|number(double)|false|none|hy-AM: Կանխավճար | en-US: Payment in advance | ru-RU: Аванс|
+|vatAmount|number(double)|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|supplierBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|supplierSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|supplierManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|supplierManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|supplierAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|supplierAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|customerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|customerLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|customerBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|customerSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|customerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|customerManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|customerManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|customerAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|customerAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|stateRegisterNumber|string¦null|false|none|hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП|
+|idDocumentType|string¦null|false|none|hy-AM: Անձը հաստատող փաստաթուղթ | en-US: Identification document | ru-RU: Документ, удостоверяющий личность|
+|passportNumber|string¦null|false|none|hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта|
+|socialCardNumber|string¦null|false|none|hy-AM: Հանրային ծառայությունների համարանիշ | en-US: Social card number | ru-RU: Номер социальной карты|
+|customerAdditionalData|string¦null|false|none|hy-AM: Լրացուցիչ տվյալներ | en-US: Additional data | ru-RU: Дополнительная информация|
+|shippingMethod|string¦null|false|none|hy-AM: Ապր. առաքման եղանակը | en-US: Shipping method | ru-RU: Способ доставки товаров|
+|additionalFullName|string¦null|false|none|hy-AM: Ազգանուն, անուն, հայրանուն | en-US: Full name | ru-RU: Фамилия, имя, отчество|
+|credentialNumber|string¦null|false|none|hy-AM: Լիազորագրի համար | en-US: Credential number | ru-RU: Номер доверенности|
+|credentialDate|string(date)¦null|false|none|hy-AM: Լիազորագրի ամսաթիվ | en-US: Credential date | ru-RU: Дата доверенности|
+|itemList|[[ReturnFromCustomerSpecificationRow](#schemareturnfromcustomerspecificationrow)]¦null|false|none|hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг|
+
+<h2 id="tocS_ReturnFromCustomerSpecificationRow">ReturnFromCustomerSpecificationRow</h2>
+<!-- backwards compatibility -->
+<a id="schemareturnfromcustomerspecificationrow"></a>
+<a id="schema_ReturnFromCustomerSpecificationRow"></a>
+<a id="tocSreturnfromcustomerspecificationrow"></a>
+<a id="tocsreturnfromcustomerspecificationrow"></a>
+
+```json
+{
+  "type": "string",
+  "storage": "string",
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "unitAbbreviation": "string",
+  "quantity": 0.1,
+  "price": 0.1,
+  "discountPercent": 0.1,
+  "discountedPrice": 0.1,
+  "amount": 0.1,
+  "environmentalFeePercent": 0.1,
+  "environmentalFeeAmount": 0.1,
+  "vat": true,
+  "dealType": "string",
+  "costPriceWithoutVAT": 0.1,
+  "costAmountWithoutVAT": 0.1,
+  "costVATAmount": 0.1,
+  "costAccount": "string",
+  "expenseAccount": "string",
+  "incomeAccount": "string",
+  "markingList": [
+    "string"
+  ],
+  "cpaClassifier": "string",
+  "rowNumber": 0,
+  "rowId": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitAbbreviation|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|price|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|amount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|environmentalFeePercent|number(double)|false|none|hy-AM: Այդ թվում բն. հրկ. (%) | en-US: Env. fee (%) | ru-RU: Включая % эко. налога|
+|environmentalFeeAmount|number(double)|false|none|hy-AM: Այդ թվում բն. հրկ. գումար | en-US: Env. fee amount | ru-RU: Включая сумму эко. налога|
+|vat|boolean¦null|false|none|none|
+|dealType|string¦null|false|none|hy-AM: Գործարքի տեսակ | en-US: Deal type | ru-RU: Тип сделки|
+|costPriceWithoutVAT|number(double)¦null|false|none|hy-AM: Ինքնարժեք (առանց ԱԱՀ) | en-US: Cost price (without VAT) | ru-RU: Себестоимость (без НДС)|
+|costAmountWithoutVAT|number(double)¦null|false|none|hy-AM: Ինքնարժեքի գումար (առանց ԱԱՀ) | en-US: Cost amount (without VAT) | ru-RU: Сумма себестоимости (без НДС)|
+|costVATAmount|number(double)|false|none|hy-AM: Ինքնարժեքի գումարի ԱԱՀ | en-US: VAT of cost’s amount | ru-RU: НДС себестоимости|
+|costAccount|string¦null|false|none|hy-AM: Ինքնարժեքի հաշիվ | en-US: Cost account | ru-RU: Счет себестоимости|
+|expenseAccount|string¦null|false|none|hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов|
+|incomeAccount|string¦null|false|none|hy-AM: Հասույթի հաշիվ | en-US: Income account | ru-RU: Счет дохода|
+|markingList|[string]¦null|false|none|hy-AM: Դրոշմավորում | en-US: Marking | ru-RU: Маркировка|
+|cpaClassifier|string¦null|false|none|none|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии|
+
+<h2 id="tocS_ReturnToSupplier">ReturnToSupplier</h2>
+<!-- backwards compatibility -->
+<a id="schemareturntosupplier"></a>
+<a id="schema_ReturnToSupplier"></a>
+<a id="tocSreturntosupplier"></a>
+<a id="tocsreturntosupplier"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "previousDayExchangeRate": true,
+  "supplierCode": "string",
+  "supplierAccount": "string",
+  "transitAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "baseTaxInvoiceSeries": "string",
+  "baseTaxInvoiceNumber": "string",
+  "baseSubmissionDate": "2019-08-24",
+  "vatCalculationType": "string",
+  "vatIncludedInCost": true,
+  "storage": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "materialsList": [
+    {
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "amount": 0.1,
+      "rowId": 0
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|previousDayExchangeRate|boolean|false|none|hy-AM: Նախորդ օրվա փոխարժեքը | en-US: Previous day exchange rate | ru-RU: Курс валюты предыдущего дня|
+|supplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|supplierAccount|string¦null|false|none|hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика|
+|transitAccount|string¦null|false|none|hy-AM: Տարանցիկ հաշիվ | en-US: Transit account | ru-RU: Транзитный счет|
+|analytic1|string¦null|false|none|hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1|
+|analytic2|string¦null|false|none|hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|baseTaxInvoiceSeries|string¦null|false|none|hy-AM: Հիմք սերիա | en-US: Base serial | ru-RU: Основание серия|
+|baseTaxInvoiceNumber|string¦null|false|none|hy-AM: Հիմք սերիա և համար | en-US: Base serial number | ru-RU: Основание серия-номер|
+|baseSubmissionDate|string(date)¦null|false|none|hy-AM: Հիմք դուրս գրման ա/թ | en-US: Base submission date | ru-RU: Основание дата выписки|
+|vatCalculationType|string¦null|false|none|none|
+|vatIncludedInCost|boolean¦null|false|none|none|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|vatAmount|number(double)|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|supplierName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|supplierLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|supplierBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|supplierSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|supplierTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|supplierManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|supplierManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|supplierAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|supplierAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|customerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|customerLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|customerBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|customerSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|customerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|customerManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|customerManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|customerAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|customerAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|materialsList|[[ReturnToSupplierSpecificationRow](#schemareturntosupplierspecificationrow)]¦null|false|none|hy-AM: Նյութական արժեքների ցուցակ | en-US: Materials list | ru-RU: Список ТМЦ|
+
+<h2 id="tocS_ReturnToSupplierSpecificationRow">ReturnToSupplierSpecificationRow</h2>
+<!-- backwards compatibility -->
+<a id="schemareturntosupplierspecificationrow"></a>
+<a id="schema_ReturnToSupplierSpecificationRow"></a>
+<a id="tocSreturntosupplierspecificationrow"></a>
+<a id="tocsreturntosupplierspecificationrow"></a>
+
+```json
+{
+  "storage": "string",
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "unitAbbreviation": "string",
+  "quantity": 0.1,
+  "price": 0.1,
+  "amount": 0.1,
+  "rowId": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitAbbreviation|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|price|number(double)¦null|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|amount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|rowId|integer(int32)|false|none|hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии|
+
+<h2 id="tocS_SalesJournalDataRow">SalesJournalDataRow</h2>
+<!-- backwards compatibility -->
+<a id="schemasalesjournaldatarow"></a>
+<a id="schema_SalesJournalDataRow"></a>
+<a id="tocSsalesjournaldatarow"></a>
+<a id="tocssalesjournaldatarow"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "documentType": 0,
+  "operationType": "string",
+  "operationName": "string",
+  "itemType": "string",
+  "itemId": 0,
+  "itemCode": "string",
+  "itemName": "string",
+  "storage": "string",
+  "storageName": "string",
+  "unitMeasure": "string",
+  "unitMeasureAbbreviation": "string",
+  "partnerGroup": "string",
+  "customer": "string",
+  "customerAccount": "string",
+  "customerBusinessAddress": "string",
+  "quantity": 0.1,
+  "cost": 0.1,
+  "costAmount": 0.1,
+  "initialPrice": 0.1,
+  "salePrice": 0.1,
+  "saleAmount": 0.1,
+  "environmentalFeePercent": 0.1,
+  "environmentalFeeAmount": 0.1,
+  "profit": 0.1,
+  "profitPercentBySale": 0.1,
+  "profitPercentByCost": 0.1,
+  "unitVAT": 0.1,
+  "costVATAmount": 0.1,
+  "saleVATPrice": 0.1,
+  "saleVATAmount": 0.1,
+  "vatDifference": 0.1,
+  "currency": "string",
+  "salePriceCurrency": 0.1,
+  "saleAmountCurrency": 0.1,
+  "discountPercent": 0.1,
+  "itemVAT": true,
+  "incomeAccount": "string",
+  "expenseAccount": "string",
+  "analytic1": "string",
+  "analytic2": "string",
+  "comment": "string",
+  "group": "string",
+  "groupName": "string",
+  "specification": "string",
+  "cpaClassifier": "string",
+  "vat": true,
+  "fullName": "string",
+  "baseDocumentDate": "2019-08-24",
+  "baseDocumentNumber": "string",
+  "rowId": 0,
+  "incomeDate": "2019-08-24",
+  "partySupplierId": 0,
+  "partySupplierCode": "string",
+  "partySupplierName": "string",
+  "partyDocumentNumber": "string",
+  "partyDocumentType": 0,
+  "partyDocumentTypeName": "string",
+  "partyPurchasingPrice": 0.1,
+  "partyPurchasingPriceWithoutVAT": 0.1
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|documentType|integer(int32)|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|operationType|string¦null|false|none|hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции|
+|operationName|string¦null|false|none|hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции|
+|itemType|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|itemId|integer(int32)|false|none|none|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|itemName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|storageName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitMeasure|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Չափման միավոր | en-US: Unit of measure | ru-RU: Единица измерения|
+|partnerGroup|string¦null|false|none|hy-AM: Գործընկերոջ խումբ | en-US: Partner's group | ru-RU: Группа партнера|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|customerAccount|string¦null|false|none|hy-AM: Գնորդի հաշիվ | en-US: Customer account | ru-RU: Счет покупателя|
+|customerBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|cost|number(double)|false|none|hy-AM: Գին դրամով | en-US: Price in drams | ru-RU: Цена в драмах|
+|costAmount|number(double)|false|none|hy-AM: Ինքնարժեքի գումար | en-US: Prime cost amount | ru-RU: Сумма себестоимости|
+|initialPrice|number(double)|false|none|hy-AM: Սկզբնական գին | en-US: Initial price | ru-RU: Начальная цена|
+|salePrice|number(double)|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|saleAmount|number(double)|false|none|hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи|
+|environmentalFeePercent|number(double)|false|none|hy-AM: Այդ թվում բն. հրկ. (%) | en-US: Env. fee (%) | ru-RU: Включая % эко. налога|
+|environmentalFeeAmount|number(double)|false|none|hy-AM: Այդ թվում բն. հրկ. գումար | en-US: Env. fee amount | ru-RU: Включая сумму эко. налога|
+|profit|number(double)|false|none|hy-AM: Շահույթ | en-US: Profit | ru-RU: Прибыль|
+|profitPercentBySale|number(double)|false|none|hy-AM: Վաճառքի շահութաբերություն (%) | en-US: Profit percent by sale | ru-RU: Прибыль от продажи (%)|
+|profitPercentByCost|number(double)|false|none|hy-AM: Վաճառքի արդյունավետություն (%) | en-US: Profit percent by cost | ru-RU: Прибыль от стоимости (%)|
+|unitVAT|number(double)|false|none|hy-AM: Միավորի ԱԱՀ | en-US: Unit VAT | ru-RU: НДС единицы|
+|costVATAmount|number(double)|false|none|hy-AM: Ինքնարժեքի գումարի ԱԱՀ | en-US: VAT of cost’s amount | ru-RU: НДС себестоимости|
+|saleVATPrice|number(double)|false|none|hy-AM: Վաճառքի գնի ԱԱՀ | en-US: Sales price VAT | ru-RU: НДС продажной цены|
+|saleVATAmount|number(double)|false|none|hy-AM: Վաճառքի գումարի ԱԱՀ | en-US: VAT of sale’s amount | ru-RU: Сумма НДС при продаже|
+|vatDifference|number(double)|false|none|none|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|salePriceCurrency|number(double)|false|none|hy-AM: Վաճառքի գին արժ. | en-US: Sale price in curr. | ru-RU: Цена продажи вал.|
+|saleAmountCurrency|number(double)|false|none|hy-AM: Վաճառքի գումար արժ. | en-US: Sale amount in curr. | ru-RU: Сумма продажи вал.|
+|discountPercent|number(double)|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|itemVAT|boolean|false|none|hy-AM: ԱԱՀ | en-US: VAT | ru-RU: НДС|
+|incomeAccount|string¦null|false|none|hy-AM: Հասույթի հաշիվ | en-US: Income account | ru-RU: Счет дохода|
+|expenseAccount|string¦null|false|none|hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов|
+|analytic1|string¦null|false|none|hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1|
+|analytic2|string¦null|false|none|hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|groupName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|specification|string¦null|false|none|hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика|
+|cpaClassifier|string¦null|false|none|none|
+|vat|boolean|false|none|none|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|baseDocumentDate|string(date)¦null|false|none|hy-AM: Հիմք փաստաթղթի Ա/Թ | en-US: Base document date | ru-RU: Дата документа основания|
+|baseDocumentNumber|string¦null|false|none|hy-AM: Հիմք փաստաթղթի համար | en-US: Base document number | ru-RU: Номер документа основания|
+|rowId|integer(int32)|false|none|hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии|
+|incomeDate|string(date)¦null|false|none|hy-AM: Մուտքի ա/թ | en-US: Income date | ru-RU: Дата прихода|
+|partySupplierId|integer(int32)|false|none|none|
+|partySupplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|partySupplierName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|partyDocumentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|partyDocumentType|integer(int32)|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|partyDocumentTypeName|string¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|partyPurchasingPrice|number(double)|false|none|hy-AM: Ձեռքբերման գին | en-US: Purchasing price | ru-RU: Цена покупки|
+|partyPurchasingPriceWithoutVAT|number(double)|false|none|hy-AM: Ձեռքբերման գին | en-US: Purchasing price | ru-RU: Цена покупки|
+
+<h2 id="tocS_SalesJournalDataRowApiResponse">SalesJournalDataRowApiResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemasalesjournaldatarowapiresponse"></a>
+<a id="schema_SalesJournalDataRowApiResponse"></a>
+<a id="tocSsalesjournaldatarowapiresponse"></a>
+<a id="tocssalesjournaldatarowapiresponse"></a>
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+      "date": "2019-08-24",
+      "documentNumber": "string",
+      "documentType": 0,
+      "operationType": "string",
+      "operationName": "string",
+      "itemType": "string",
+      "itemId": 0,
+      "itemCode": "string",
+      "itemName": "string",
+      "storage": "string",
+      "storageName": "string",
+      "unitMeasure": "string",
+      "unitMeasureAbbreviation": "string",
+      "partnerGroup": "string",
+      "customer": "string",
+      "customerAccount": "string",
+      "customerBusinessAddress": "string",
+      "quantity": 0.1,
+      "cost": 0.1,
+      "costAmount": 0.1,
+      "initialPrice": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "profit": 0.1,
+      "profitPercentBySale": 0.1,
+      "profitPercentByCost": 0.1,
+      "unitVAT": 0.1,
+      "costVATAmount": 0.1,
+      "saleVATPrice": 0.1,
+      "saleVATAmount": 0.1,
+      "vatDifference": 0.1,
+      "currency": "string",
+      "salePriceCurrency": 0.1,
+      "saleAmountCurrency": 0.1,
+      "discountPercent": 0.1,
+      "itemVAT": true,
+      "incomeAccount": "string",
+      "expenseAccount": "string",
+      "analytic1": "string",
+      "analytic2": "string",
+      "comment": "string",
+      "group": "string",
+      "groupName": "string",
+      "specification": "string",
+      "cpaClassifier": "string",
+      "vat": true,
+      "fullName": "string",
+      "baseDocumentDate": "2019-08-24",
+      "baseDocumentNumber": "string",
+      "rowId": 0,
+      "incomeDate": "2019-08-24",
+      "partySupplierId": 0,
+      "partySupplierCode": "string",
+      "partySupplierName": "string",
+      "partyDocumentNumber": "string",
+      "partyDocumentType": 0,
+      "partyDocumentTypeName": "string",
+      "partyPurchasingPrice": 0.1,
+      "partyPurchasingPriceWithoutVAT": 0.1
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|string(uuid)|false|none|none|
+|hasMore|boolean|false|none|none|
+|data|[[SalesJournalDataRow](#schemasalesjournaldatarow)]¦null|false|none|none|
+
+<h2 id="tocS_SalesJournalParam">SalesJournalParam</h2>
+<!-- backwards compatibility -->
+<a id="schemasalesjournalparam"></a>
+<a id="schema_SalesJournalParam"></a>
+<a id="tocSsalesjournalparam"></a>
+<a id="tocssalesjournalparam"></a>
+
+```json
+{
+  "pageSize": 0,
+  "startDate": "2019-08-24",
+  "endDate": "2019-08-24",
+  "storage": "string",
+  "materialGroup": "string",
+  "material": "string",
+  "service": "string",
+  "fixedAsset": "string",
+  "incomeAccount": "string",
+  "expenseAccount": "string",
+  "partnerGroup": "string",
+  "customer": "string",
+  "operationTypes": "string",
+  "showByDifferentParties": true,
+  "currency": "string",
+  "showCurrencies": true,
+  "showVATAmounts": true,
+  "showMTAdditionalColumns": true
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|startDate|string(date)|false|none|hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода|
+|endDate|string(date)|false|none|hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|materialGroup|string¦null|false|none|hy-AM: Նյութական արժեքների խումբ | en-US: Materials group | ru-RU: Группа ТМЦ|
+|material|string¦null|false|none|hy-AM: Նյութական արժեք | en-US: Material | ru-RU: Товарно-материальная ценность|
+|service|string¦null|false|none|hy-AM: Ծառայություն | en-US: Service | ru-RU: Услуга|
+|fixedAsset|string¦null|false|none|hy-AM: Հիմնական միջոցներ | en-US: Fixed assets | ru-RU: Основные средства|
+|incomeAccount|string¦null|false|none|hy-AM: Հասույթի հաշիվ | en-US: Income account | ru-RU: Счет дохода|
+|expenseAccount|string¦null|false|none|hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов|
+|partnerGroup|string¦null|false|none|hy-AM: Գործընկերոջ խումբ | en-US: Partner's group | ru-RU: Группа партнера|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|operationTypes|string¦null|false|none|hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции|
+|showByDifferentParties|boolean|false|none|hy-AM: Ըստ տարբեր խմբաքանակների | en-US: By different batches | ru-RU: Детализировать по партиям|
+|currency|string¦null|false|none|hy-AM: Արտարժույթ | en-US: Currency | ru-RU: Валюта|
+|showCurrencies|boolean|false|none|hy-AM: Ցույց տալ արտարժույթները | en-US: Show currencies | ru-RU: Показать валюты|
+|showVATAmounts|boolean|false|none|hy-AM: Ցույց տալ ԱԱՀ-ի գումարները | en-US: Show VAT amounts | ru-RU: Показать суммы НДС|
+|showMTAdditionalColumns|boolean|false|none|hy-AM: Ցույց տալ ՆԱ լրացուցիչ սյուները | en-US: Show  MT additional columns | ru-RU: Показать доп. колонки ТМЦ|
 
 <h2 id="tocS_Service">Service</h2>
 <!-- backwards compatibility -->
@@ -33701,7 +39452,7 @@ This operation does not require authentication
 |purchaseDocumentNumber|string¦null|false|none|hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения|
 |purchaseDocumentDate|string(date)¦null|false|none|hy-AM: ա/թ. | en-US: Date | ru-RU: Дата|
 |comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
-|purchasingType|string¦null|false|none|hy-AM: ՆԱ-ի ձեռք բերման տեսակ | en-US: Materials purchasing type | ru-RU: Вид поступления ТМЦ|
+|purchasingType|string¦null|false|none|hy-AM: ՆԱ-ի ձեռքբերման տեսակ | en-US: Materials purchasing type | ru-RU: Вид поступления ТМЦ|
 |vatCalculationType|string¦null|false|none|none|
 |includeVATInCost|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость|
 |vatInclusionMethod|string¦null|false|none|none|
