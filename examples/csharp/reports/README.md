@@ -13,6 +13,7 @@
 - [`materialsoperationsjournal.cs`](materialsoperationsjournal.cs) / [`materialsoperationsjournal-nextpage.cs`](materialsoperationsjournal-nextpage.cs) — Materials Operations Journal
 - [`storageinputordersandreceivedservices.cs`](storageinputordersandreceivedservices.cs) / [`storageinputordersandreceivedservices-nextpage.cs`](storageinputordersandreceivedservices-nextpage.cs) — Storage Input Orders and Received Services
 - [`calculateddata.cs`](calculateddata.cs) / [`calculateddata-nextpage.cs`](calculateddata-nextpage.cs) — Calculated Data
+- [`salesjournal.cs`](salesjournal.cs) / [`salesjournal-nextpage.cs`](salesjournal-nextpage.cs) — Sales Journal
 
 `QueryAllAsync` walks the pages for you; `QueryAsync` / `NextPageAsync` give you manual control.
 

@@ -11,10 +11,11 @@ Directory endpoints expose the master data of the ArmSoft SME Accountant system.
 - [Services](services/README.md)
 - [Employees](employees/README.md)
 - [Storages](storages/README.md)
+- [Materials Groups](materialsgroups/README.md)
 
 ## Common shape
 
-Every directory except Storages exposes the same six operations:
+Every directory except Storages and Materials Groups exposes the same six operations:
 
 | Method | Route | Description |
 |--------|-------|-------------|
@@ -25,8 +26,8 @@ Every directory except Storages exposes the same six operations:
 | PUT | `/directories/{directory}/{code}` | Update a record |
 | DELETE | `/directories/{directory}/{code}` | Delete a record |
 
-Storages returns its full list from `GET /directories/storages` instead, and therefore has no
-`/list` or `/nextpage` calls.
+Storages and Materials Groups return their full list from `GET /directories/storages` and
+`GET /directories/materialsgroups` instead, and therefore have no `/list` or `/nextpage` calls.
 
 ## Base Path
 

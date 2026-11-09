@@ -9,10 +9,11 @@ Client wrappers:
 - [`ServicesClient.cs`](ServicesClient.cs)
 - [`EmployeesClient.cs`](EmployeesClient.cs)
 - [`StoragesClient.cs`](StoragesClient.cs)
+- [`MaterialsGroupsClient.cs`](MaterialsGroupsClient.cs)
 
 Per-operation examples live in the sub-folders:
 [`partners/`](partners/), [`materials/`](materials/), [`services/`](services/),
-[`employees/`](employees/), [`storages/`](storages/).
+[`employees/`](employees/), [`storages/`](storages/), [`materialsgroups/`](materialsgroups/).
 
 All four paginated directories share the same shape, so the same code works for each of them —
 only the client class and the filter object change.

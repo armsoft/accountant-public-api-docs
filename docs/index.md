@@ -24,10 +24,10 @@ Official documentation for the **ArmSoft Accountant Public API** — programmati
 
 | Category | Operations |
 |---|---|
-| **Directories** | Manage partners, materials, services, employees and storages |
-| **Documents** | Create and maintain invoices, retail sales, transfer invoices, memorial orders, payment orders, storage input/output orders, materials movement, materials kitting, overhead expense allocation, received services, fixed asset acquisition and disposal, and cash input/output orders |
+| **Directories** | Manage partners, materials, services, employees, storages and materials groups |
+| **Documents** | Create and maintain invoices, retail sales, transfer invoices, memorial orders, payment orders, storage input/output orders, materials movement, materials kitting, overhead expense allocation, received services, fixed asset acquisition and disposal, cash input/output orders, non-cash prepayments, returns from customers and returns to suppliers |
 | **Journals** | Query the all-documents, invoices and ECR checks journals |
-| **Reports** | Accounts balances and turnover, transactions, partners balances and transactions, materials balances, materials operations, storage input orders and received services, wages calculated data |
+| **Reports** | Accounts balances and turnover, transactions, partners balances and transactions, materials balances, materials operations, storage input orders and received services, wages calculated data, sales journal |
 
 ## Base URL
 

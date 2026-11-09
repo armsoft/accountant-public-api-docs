@@ -1,0 +1,72 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода"
+    format: date
+  endDate:
+    type: string
+    description: "hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода"
+    format: date
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  materialGroup:
+    type: string
+    description: "hy-AM: Նյութական արժեքների խումբ | en-US: Materials group | ru-RU: Группа ТМЦ"
+    nullable: true
+  material:
+    type: string
+    description: "hy-AM: Նյութական արժեք | en-US: Material | ru-RU: Товарно-материальная ценность"
+    nullable: true
+  service:
+    type: string
+    description: "hy-AM: Ծառայություն | en-US: Service | ru-RU: Услуга"
+    nullable: true
+  fixedAsset:
+    type: string
+    description: "hy-AM: Հիմնական միջոցներ | en-US: Fixed assets | ru-RU: Основные средства"
+    nullable: true
+  incomeAccount:
+    type: string
+    description: "hy-AM: Հասույթի հաշիվ | en-US: Income account | ru-RU: Счет дохода"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов"
+    nullable: true
+  partnerGroup:
+    type: string
+    description: "hy-AM: Գործընկերոջ խումբ | en-US: Partner's group | ru-RU: Группа партнера"
+    nullable: true
+  customer:
+    type: string
+    description: "hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель"
+    nullable: true
+  operationTypes:
+    type: string
+    description: "hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции"
+    nullable: true
+  showByDifferentParties:
+    type: boolean
+    description: "hy-AM: Ըստ տարբեր խմբաքանակների | en-US: By different batches | ru-RU: Детализировать по партиям"
+  currency:
+    type: string
+    description: "hy-AM: Արտարժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  showCurrencies:
+    type: boolean
+    description: "hy-AM: Ցույց տալ արտարժույթները | en-US: Show currencies | ru-RU: Показать валюты"
+  showVATAmounts:
+    type: boolean
+    description: "hy-AM: Ցույց տալ ԱԱՀ-ի գումարները | en-US: Show VAT amounts | ru-RU: Показать суммы НДС"
+  showMTAdditionalColumns:
+    type: boolean
+    description: "hy-AM: Ցույց տալ ՆԱ լրացուցիչ սյուները | en-US: Show  MT additional columns | ru-RU: Показать доп. колонки ТМЦ"
+additionalProperties: false

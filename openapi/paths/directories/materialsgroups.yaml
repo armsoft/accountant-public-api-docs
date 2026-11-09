@@ -1,0 +1,31 @@
+/directories/materialsgroups:
+  get:
+    tags: [MaterialsGroups]
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../components/schemas/directories/MaterialsGroup.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"
+  post:
+    tags: [MaterialsGroups]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/directories/MaterialsGroup.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/directories/MaterialsGroup.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

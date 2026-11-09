@@ -84,7 +84,8 @@ To stop paginating early:
 { "id": "uuid-from-previous-response", "close": true }
 ```
 
-`GET /directories/storages` returns its full array and is not paginated.
+`GET /directories/storages` and `GET /directories/materialsgroups` return their full array and
+are not paginated.
 
 ---
 
@@ -166,16 +167,25 @@ Storages are the exception — the full list comes from a plain GET:
 - `PUT /accountant/v1/directories/storages/{code}`
 - `DELETE /accountant/v1/directories/storages/{code}`
 
+### Materials Groups
+
+Materials groups also come back as a full list from a plain GET:
+
+- `GET /accountant/v1/directories/materialsgroups` → array of `MaterialsGroup`
+- `GET /accountant/v1/directories/materialsgroups/{code}`
+- `POST /accountant/v1/directories/materialsgroups`
+- `PUT /accountant/v1/directories/materialsgroups/{code}`
+- `DELETE /accountant/v1/directories/materialsgroups/{code}`
+
 ---
 
 ## Documents
 
 Each document type exposes four calls. `{document}` is one of `invoice`, `retailsale`,
 `transferinvoice`, `memorialorder`, `paymentorder`, `storageinputorder`, `storageoutputorder`,
-`materialsmovement`, `materialskitting`, `overheadexpenseallocation`. Five more —
-`receivedservice`, `fixedassetacquisition`, `fixedassetdisposalact`, `cashinputorder` and
-`cashoutputorder` — are implemented in the service but are not in the published `swagger.json`
-yet; they will appear there after the next service release.
+`materialsmovement`, `materialskitting`, `overheadexpenseallocation`, `receivedservice`,
+`fixedassetacquisition`, `fixedassetdisposalact`, `cashinputorder`, `cashoutputorder`,
+`noncashprepayment`, `returnfromcustomer`, `returntosupplier`.
 
 - `POST /accountant/v1/documents/{document}` — create, returns `201 Created` with the `isn`
 - `GET /accountant/v1/documents/{document}/{isn}` — read
@@ -183,11 +193,12 @@ yet; they will appear there after the next service release.
 - `DELETE /accountant/v1/documents/{document}/{isn}` — delete
 
 `isn` is the internal serial number (UUID) assigned on create. Rows live in a list property whose
-name depends on the document: `itemList` (invoice, retail sale, transfer invoice),
-`materialsList` (storage input/output order, materials movement, overhead expense allocation),
+name depends on the document: `itemList` (invoice, retail sale, transfer invoice, return from customer),
+`materialsList` (storage input/output order, materials movement, overhead expense allocation,
+return to supplier),
 `kitComponents` (materials kitting), `transactionsList` (memorial order),
 `servicesList` (received service), `inventoriesList` (fixed asset disposal act). Payment orders,
-cash input/output orders and fixed asset acquisition have no row list.
+cash input/output orders, non-cash prepayments and fixed asset acquisition have no row list.
 
 Create example (memorial order):
 
@@ -235,6 +246,7 @@ Every report is a POST with a parameter object, and every report has a `/nextpag
 | Materials Operations Journal | `/reports/materialsoperationsjournal` | `startDate`, `endDate` |
 | Storage Input Orders and Received Services | `/reports/storageinputordersandreceivedservices` | `startDate`, `endDate` |
 | Calculated Data | `/reports/calculateddata` | `startDate`, `endDate` |
+| Sales Journal | `/reports/salesjournal` | `startDate`, `endDate` |
 
 ---
 

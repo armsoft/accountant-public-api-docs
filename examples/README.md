@@ -25,6 +25,7 @@ Client wrappers are in [`csharp/directories/`](csharp/directories/),
 - [`ServicesClient.cs`](csharp/directories/ServicesClient.cs) — wrapper for Services endpoints
 - [`EmployeesClient.cs`](csharp/directories/EmployeesClient.cs) — wrapper for Employees endpoints
 - [`StoragesClient.cs`](csharp/directories/StoragesClient.cs) — wrapper for Storages endpoints
+- [`MaterialsGroupsClient.cs`](csharp/directories/MaterialsGroupsClient.cs) — wrapper for Materials Groups endpoints
 - [`DocumentsClient.cs`](csharp/documents/DocumentsClient.cs) — wrapper for every document type
 - [`JournalsClient.cs`](csharp/journals/JournalsClient.cs) — wrapper for Journals endpoints
 - [`ReportsClient.cs`](csharp/reports/ReportsClient.cs) — wrapper for Reports endpoints

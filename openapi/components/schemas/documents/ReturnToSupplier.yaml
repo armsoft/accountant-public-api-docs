@@ -1,0 +1,170 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  state:
+    type: integer
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    format: int32
+  baseDocumentISN:
+    type: string
+    description: "hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания"
+    format: uuid
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  currencyExchangeRate:
+    type: number
+    description: "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты"
+    format: double
+  currencyExchangeBase:
+    type: number
+    description: "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты"
+    format: double
+  previousDayExchangeRate:
+    type: boolean
+    description: "hy-AM: Նախորդ օրվա փոխարժեքը | en-US: Previous day exchange rate | ru-RU: Курс валюты предыдущего дня"
+  supplierCode:
+    type: string
+    description: "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик"
+    nullable: true
+  supplierAccount:
+    type: string
+    description: "hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика"
+    nullable: true
+  transitAccount:
+    type: string
+    description: "hy-AM: Տարանցիկ հաշիվ | en-US: Transit account | ru-RU: Транзитный счет"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 1 | en-US: Analytical dimension 1 | ru-RU: Аналитическая группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Անալիտիկ խումբ 2 | en-US: Analytical dimension 2 | ru-RU: Аналитическая группа 2"
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  baseTaxInvoiceSeries:
+    type: string
+    description: "hy-AM: Հիմք սերիա | en-US: Base serial | ru-RU: Основание серия"
+    nullable: true
+  baseTaxInvoiceNumber:
+    type: string
+    description: "hy-AM: Հիմք սերիա և համար | en-US: Base serial number | ru-RU: Основание серия-номер"
+    nullable: true
+  baseSubmissionDate:
+    type: string
+    description: "hy-AM: Հիմք դուրս գրման ա/թ | en-US: Base submission date | ru-RU: Основание дата выписки"
+    format: date
+    nullable: true
+  vatCalculationType:
+    type: string
+    nullable: true
+  vatIncludedInCost:
+    type: boolean
+    nullable: true
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    description: "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма"
+    format: double
+  supplierName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  supplierLegalAddress:
+    type: string
+    description: "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес"
+    nullable: true
+  supplierBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  supplierSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  supplierTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  supplierManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  supplierManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  supplierAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  supplierAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  customerName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  customerLegalAddress:
+    type: string
+    description: "hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес"
+    nullable: true
+  customerBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  customerSettlementAccount:
+    type: string
+    description: "hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет"
+    nullable: true
+  customerTaxCode:
+    type: string
+    description: "hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код "
+    nullable: true
+  customerManagerPosition:
+    type: string
+    description: "hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя"
+    nullable: true
+  customerManagerName:
+    type: string
+    description: "hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя"
+    nullable: true
+  customerAccountantPosition:
+    type: string
+    description: "hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера"
+    nullable: true
+  customerAccountantName:
+    type: string
+    description: "hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера"
+    nullable: true
+  materialsList:
+    type: array
+    items:
+      $ref: "#/components/schemas/ReturnToSupplierSpecificationRow"
+    description: "hy-AM: Նյութական արժեքների ցուցակ | en-US: Materials list | ru-RU: Список ТМЦ"
+    nullable: true
+additionalProperties: false

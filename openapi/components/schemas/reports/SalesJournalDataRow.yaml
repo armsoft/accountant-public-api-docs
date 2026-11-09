@@ -1,0 +1,245 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  documentType:
+    type: integer
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    format: int32
+  operationType:
+    type: string
+    description: "hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции"
+    nullable: true
+  operationName:
+    type: string
+    description: "hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции"
+    nullable: true
+  itemType:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  itemId:
+    type: integer
+    format: int32
+  itemCode:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  itemName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  storage:
+    type: string
+    description: "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад"
+    nullable: true
+  storageName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  unitMeasure:
+    type: string
+    description: "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица"
+    nullable: true
+  unitMeasureAbbreviation:
+    type: string
+    description: "hy-AM: Չափման միավոր | en-US: Unit of measure | ru-RU: Единица измерения"
+    nullable: true
+  partnerGroup:
+    type: string
+    description: "hy-AM: Գործընկերոջ խումբ | en-US: Partner's group | ru-RU: Группа партнера"
+    nullable: true
+  customer:
+    type: string
+    description: "hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель"
+    nullable: true
+  customerAccount:
+    type: string
+    description: "hy-AM: Գնորդի հաշիվ | en-US: Customer account | ru-RU: Счет покупателя"
+    nullable: true
+  customerBusinessAddress:
+    type: string
+    description: "hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес "
+    nullable: true
+  quantity:
+    type: number
+    description: "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество"
+    format: double
+  cost:
+    type: number
+    description: "hy-AM: Գին դրամով | en-US: Price in drams | ru-RU: Цена в драмах"
+    format: double
+  costAmount:
+    type: number
+    description: "hy-AM: Ինքնարժեքի գումար | en-US: Prime cost amount | ru-RU: Сумма себестоимости"
+    format: double
+  initialPrice:
+    type: number
+    description: "hy-AM: Սկզբնական գին | en-US: Initial price | ru-RU: Начальная цена"
+    format: double
+  salePrice:
+    type: number
+    description: "hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи"
+    format: double
+  saleAmount:
+    type: number
+    description: "hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи"
+    format: double
+  environmentalFeePercent:
+    type: number
+    description: "hy-AM: Այդ թվում բն. հրկ. (%) | en-US: Env. fee (%) | ru-RU: Включая % эко. налога"
+    format: double
+  environmentalFeeAmount:
+    type: number
+    description: "hy-AM: Այդ թվում բն. հրկ. գումար | en-US: Env. fee amount | ru-RU: Включая сумму эко. налога"
+    format: double
+  profit:
+    type: number
+    description: "hy-AM: Շահույթ | en-US: Profit | ru-RU: Прибыль"
+    format: double
+  profitPercentBySale:
+    type: number
+    description: "hy-AM: Վաճառքի շահութաբերություն (%) | en-US: Profit percent by sale | ru-RU: Прибыль от продажи (%)"
+    format: double
+  profitPercentByCost:
+    type: number
+    description: "hy-AM: Վաճառքի արդյունավետություն (%) | en-US: Profit percent by cost | ru-RU: Прибыль от стоимости (%)"
+    format: double
+  unitVAT:
+    type: number
+    description: "hy-AM: Միավորի ԱԱՀ | en-US: Unit VAT | ru-RU: НДС единицы"
+    format: double
+  costVATAmount:
+    type: number
+    description: "hy-AM: Ինքնարժեքի գումարի ԱԱՀ | en-US: VAT of cost’s amount | ru-RU: НДС себестоимости"
+    format: double
+  saleVATPrice:
+    type: number
+    description: "hy-AM: Վաճառքի գնի ԱԱՀ | en-US: Sales price VAT | ru-RU: НДС продажной цены "
+    format: double
+  saleVATAmount:
+    type: number
+    description: "hy-AM: Վաճառքի գումարի ԱԱՀ | en-US: VAT of sale’s amount | ru-RU: Сумма НДС при продаже"
+    format: double
+  vatDifference:
+    type: number
+    format: double
+  currency:
+    type: string
+    description: "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта"
+    nullable: true
+  salePriceCurrency:
+    type: number
+    description: "hy-AM: Վաճառքի գին արժ. | en-US: Sale price in curr. | ru-RU: Цена продажи вал."
+    format: double
+  saleAmountCurrency:
+    type: number
+    description: "hy-AM: Վաճառքի գումար արժ. | en-US: Sale amount in curr. | ru-RU: Сумма продажи вал."
+    format: double
+  discountPercent:
+    type: number
+    description: "hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки"
+    format: double
+  itemVAT:
+    type: boolean
+    description: "hy-AM: ԱԱՀ | en-US: VAT | ru-RU: НДС"
+  incomeAccount:
+    type: string
+    description: "hy-AM: Հասույթի հաշիվ | en-US: Income account | ru-RU: Счет дохода"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов"
+    nullable: true
+  analytic1:
+    type: string
+    description: "hy-AM: Ան.խումբ 1 | en-US: An. dimension 1 | ru-RU: Ан.группа 1"
+    nullable: true
+  analytic2:
+    type: string
+    description: "hy-AM: Ան.խումբ 2 | en-US: An. dimension 2 | ru-RU: Ан.группа 2"
+    nullable: true
+  comment:
+    type: string
+    description: "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий"
+    nullable: true
+  group:
+    type: string
+    description: "hy-AM: Խումբ | en-US: Group | ru-RU: Группа"
+    nullable: true
+  groupName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  specification:
+    type: string
+    description: "hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика"
+    nullable: true
+  cpaClassifier:
+    type: string
+    nullable: true
+  vat:
+    type: boolean
+  fullName:
+    type: string
+    description: "hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование"
+    nullable: true
+  baseDocumentDate:
+    type: string
+    description: "hy-AM: Հիմք փաստաթղթի Ա/Թ | en-US: Base document date | ru-RU: Дата документа основания"
+    format: date
+    nullable: true
+  baseDocumentNumber:
+    type: string
+    description: "hy-AM: Հիմք փաստաթղթի համար | en-US: Base document number | ru-RU: Номер документа основания"
+    nullable: true
+  rowId:
+    type: integer
+    description: "hy-AM: Տողի ID | en-US: Line ID | ru-RU: ID линии"
+    format: int32
+  incomeDate:
+    type: string
+    description: "hy-AM: Մուտքի ա/թ | en-US: Income date | ru-RU: Дата прихода"
+    format: date
+    nullable: true
+  partySupplierId:
+    type: integer
+    format: int32
+  partySupplierCode:
+    type: string
+    description: "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик"
+    nullable: true
+  partySupplierName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  partyDocumentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  partyDocumentType:
+    type: integer
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    format: int32
+  partyDocumentTypeName:
+    type: string
+    description: "hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа"
+    nullable: true
+  partyPurchasingPrice:
+    type: number
+    description: "hy-AM: Ձեռքբերման գին | en-US: Purchasing price | ru-RU: Цена покупки"
+    format: double
+  partyPurchasingPriceWithoutVAT:
+    type: number
+    description: "hy-AM: Ձեռքբերման գին | en-US: Purchasing price | ru-RU: Цена покупки"
+    format: double
+additionalProperties: false

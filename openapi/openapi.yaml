@@ -26,6 +26,8 @@ tags:
     description: Service directory endpoints
   - name: Storages
     description: Storage directory endpoints
+  - name: MaterialsGroups
+    description: Materials group directory endpoints
   - name: Invoice
     description: Invoice document endpoints
   - name: RetailSale
@@ -56,6 +58,12 @@ tags:
     description: Cash input order document endpoints
   - name: CashOutputOrder
     description: Cash output order document endpoints
+  - name: NonCashPrepayment
+    description: Non-cash prepayment document endpoints
+  - name: ReturnFromCustomer
+    description: Return from customer document endpoints
+  - name: ReturnToSupplier
+    description: Return to supplier document endpoints
   - name: Journals
     description: Document journal endpoints
   - name: Reports
@@ -105,6 +113,11 @@ paths:
     $ref: ./paths/directories/storages.yaml#/~1directories~1storages
   /directories/storages/{code}:
     $ref: ./paths/directories/storages_{code}.yaml#/~1directories~1storages~1{code}
+  # Directories - Materials Groups
+  /directories/materialsgroups:
+    $ref: ./paths/directories/materialsgroups.yaml#/~1directories~1materialsgroups
+  /directories/materialsgroups/{code}:
+    $ref: ./paths/directories/materialsgroups_{code}.yaml#/~1directories~1materialsgroups~1{code}
   # Documents - Invoice
   /documents/invoice:
     $ref: ./paths/documents/invoice.yaml#/~1documents~1invoice
@@ -180,6 +193,21 @@ paths:
     $ref: ./paths/documents/cashoutputorder.yaml#/~1documents~1cashoutputorder
   /documents/cashoutputorder/{isn}:
     $ref: ./paths/documents/cashoutputorder_{isn}.yaml#/~1documents~1cashoutputorder~1{isn}
+  # Documents - Non-cash Prepayment
+  /documents/noncashprepayment:
+    $ref: ./paths/documents/noncashprepayment.yaml#/~1documents~1noncashprepayment
+  /documents/noncashprepayment/{isn}:
+    $ref: ./paths/documents/noncashprepayment_{isn}.yaml#/~1documents~1noncashprepayment~1{isn}
+  # Documents - Return From Customer
+  /documents/returnfromcustomer:
+    $ref: ./paths/documents/returnfromcustomer.yaml#/~1documents~1returnfromcustomer
+  /documents/returnfromcustomer/{isn}:
+    $ref: ./paths/documents/returnfromcustomer_{isn}.yaml#/~1documents~1returnfromcustomer~1{isn}
+  # Documents - Return To Supplier
+  /documents/returntosupplier:
+    $ref: ./paths/documents/returntosupplier.yaml#/~1documents~1returntosupplier
+  /documents/returntosupplier/{isn}:
+    $ref: ./paths/documents/returntosupplier_{isn}.yaml#/~1documents~1returntosupplier~1{isn}
   # Journals
   /journals/alldocuments:
     $ref: ./paths/journals/alldocuments.yaml#/~1journals~1alldocuments
@@ -231,6 +259,11 @@ paths:
     $ref: ./paths/reports/calculateddata.yaml#/~1reports~1calculateddata
   /reports/calculateddata/nextpage:
     $ref: ./paths/reports/calculateddata.yaml#/~1reports~1calculateddata~1nextpage
+  # Reports - Sales Journal
+  /reports/salesjournal:
+    $ref: ./paths/reports/salesjournal.yaml#/~1reports~1salesjournal
+  /reports/salesjournal/nextpage:
+    $ref: ./paths/reports/salesjournal.yaml#/~1reports~1salesjournal~1nextpage
   # System
   /api/Version:
     $ref: ./paths/version.yaml#/~1api~1Version
@@ -293,6 +326,9 @@ components:
     # Directories - Storages
     Storage:
       $ref: ./components/schemas/directories/Storage.yaml
+    # Directories - Materials Groups
+    MaterialsGroup:
+      $ref: ./components/schemas/directories/MaterialsGroup.yaml
     # Documents
     Invoice:
       $ref: ./components/schemas/documents/Invoice.yaml
@@ -346,6 +382,16 @@ components:
       $ref: ./components/schemas/documents/CashInputOrder.yaml
     CashOutputOrder:
       $ref: ./components/schemas/documents/CashOutputOrder.yaml
+    NonCashPrepayment:
+      $ref: ./components/schemas/documents/NonCashPrepayment.yaml
+    ReturnFromCustomer:
+      $ref: ./components/schemas/documents/ReturnFromCustomer.yaml
+    ReturnFromCustomerSpecificationRow:
+      $ref: ./components/schemas/documents/ReturnFromCustomerSpecificationRow.yaml
+    ReturnToSupplier:
+      $ref: ./components/schemas/documents/ReturnToSupplier.yaml
+    ReturnToSupplierSpecificationRow:
+      $ref: ./components/schemas/documents/ReturnToSupplierSpecificationRow.yaml
     # Journals
     AllDocumentsJournalParam:
       $ref: ./components/schemas/journals/AllDocumentsJournalParam.yaml
@@ -421,6 +467,13 @@ components:
       $ref: ./components/schemas/reports/CalculatedDataRow.yaml
     CalculatedDataRowApiResponse:
       $ref: ./components/schemas/reports/CalculatedDataRowApiResponse.yaml
+    # Reports - Sales Journal
+    SalesJournalParam:
+      $ref: ./components/schemas/reports/SalesJournalParam.yaml
+    SalesJournalDataRow:
+      $ref: ./components/schemas/reports/SalesJournalDataRow.yaml
+    SalesJournalDataRowApiResponse:
+      $ref: ./components/schemas/reports/SalesJournalDataRowApiResponse.yaml
 
   responses:
     BadRequest:

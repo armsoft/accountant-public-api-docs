@@ -74,7 +74,7 @@ properties:
     nullable: true
   purchasingType:
     type: string
-    description: "hy-AM: Ծառայության ձեռք բերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги"
+    description: "hy-AM: Ծառայության ձեռքբերման տեսակ | en-US: Service purchasing type | ru-RU: Вид приобретения услуги"
     nullable: true
   vatCalculationType:
     type: string

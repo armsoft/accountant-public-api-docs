@@ -75,7 +75,7 @@ properties:
     nullable: true
   purchasingType:
     type: string
-    description: "hy-AM: ՆԱ-ի ձեռք բերման տեսակ | en-US: Materials purchasing type | ru-RU: Вид поступления ТМЦ"
+    description: "hy-AM: ՆԱ-ի ձեռքբերման տեսակ | en-US: Materials purchasing type | ru-RU: Вид поступления ТМЦ"
     nullable: true
   vatCalculationType:
     type: string

@@ -1,0 +1,18 @@
+/documents/returntosupplier:
+  post:
+    tags: [ReturnToSupplier]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/ReturnToSupplier.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/ReturnToSupplier.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

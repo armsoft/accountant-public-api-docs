@@ -13,10 +13,10 @@ Official documentation for the ArmSoft Accountant Public API.
 
 The ArmSoft Accountant Public API provides programmatic access to:
 
-- **Directories**: Partners, materials, services, employees and storages
-- **Documents**: Invoices, retail sales, transfer invoices, memorial orders, payment orders, storage input/output orders, materials movement, materials kitting, overhead expense allocation, received services, fixed asset acquisition and disposal, cash input/output orders
+- **Directories**: Partners, materials, services, employees, storages and materials groups
+- **Documents**: Invoices, retail sales, transfer invoices, memorial orders, payment orders, storage input/output orders, materials movement, materials kitting, overhead expense allocation, received services, fixed asset acquisition and disposal, cash input/output orders, non-cash prepayments, returns from customers and returns to suppliers
 - **Journals**: All documents, invoices, ECR checks
-- **Reports**: Accounts balances and turnover, transactions, partners balances and transactions, materials balances and operations, purchases
+- **Reports**: Accounts balances and turnover, transactions, partners balances and transactions, materials balances and operations, purchases, sales journal
 - **Multi-language Support**: Armenian (hy-AM), English (en-US), Russian (ru-RU)
 
 ### Key Features
@@ -135,6 +135,16 @@ Current version: **v1**
 | PUT | `/directories/storages/{code}` | Update storage |
 | DELETE | `/directories/storages/{code}` | Delete storage |
 
+### Materials Groups Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/directories/materialsgroups` | Get all materials groups |
+| GET | `/directories/materialsgroups/{code}` | Get materials group by code |
+| POST | `/directories/materialsgroups` | Create new materials group |
+| PUT | `/directories/materialsgroups/{code}` | Update materials group |
+| DELETE | `/directories/materialsgroups/{code}` | Delete materials group |
+
 ### Documents Endpoints
 
 Every document type supports the same four calls.
@@ -163,6 +173,9 @@ Every document type supports the same four calls.
 | Fixed Asset Disposal Act | `fixedassetdisposalact` | [fixedassetdisposalact.md](docs/api/documents/fixedassetdisposalact.md) |
 | Cash Input Order | `cashinputorder` | [cashinputorder.md](docs/api/documents/cashinputorder.md) |
 | Cash Output Order | `cashoutputorder` | [cashoutputorder.md](docs/api/documents/cashoutputorder.md) |
+| Non-cash Prepayment | `noncashprepayment` | [noncashprepayment.md](docs/api/documents/noncashprepayment.md) |
+| Return From Customer | `returnfromcustomer` | [returnfromcustomer.md](docs/api/documents/returnfromcustomer.md) |
+| Return To Supplier | `returntosupplier` | [returntosupplier.md](docs/api/documents/returntosupplier.md) |
 
 ### Journals Endpoints
 
@@ -197,6 +210,8 @@ Every document type supports the same four calls.
 | POST | `/reports/storageinputordersandreceivedservices/nextpage` | Storage input orders and received services next page |
 | POST | `/reports/calculateddata` | Calculated data (wages) report |
 | POST | `/reports/calculateddata/nextpage` | Calculated data next page |
+| POST | `/reports/salesjournal` | Sales journal report |
+| POST | `/reports/salesjournal/nextpage` | Sales journal next page |
 
 ### System
 
@@ -213,7 +228,7 @@ Every document type supports the same four calls.
 | [Getting Started](docs/getting-started.md) | Installation and setup guide |
 | [Authentication](docs/authentication.md) | API key authentication details |
 | [API Reference](docs/api/README.md) | Complete endpoint documentation |
-| [Directories API](docs/api/directories/README.md) | Partners, materials, services, employees, storages |
+| [Directories API](docs/api/directories/README.md) | Partners, materials, services, employees, storages, materials groups |
 | [Documents API](docs/api/documents/README.md) | Accounting document endpoints |
 | [Journals API](docs/api/journals/README.md) | Journal endpoints |
 | [Reports API](docs/api/reports/README.md) | Report endpoints |

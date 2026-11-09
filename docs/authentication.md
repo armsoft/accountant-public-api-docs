@@ -84,6 +84,8 @@ API keys with restricted permissions are limited to the following endpoints:
 | GET | `/directories/employees/{code}` | Get employee by code |
 | GET | `/directories/storages` | Get all storages |
 | GET | `/directories/storages/{code}` | Get storage by code |
+| GET | `/directories/materialsgroups` | Get all materials groups |
+| GET | `/directories/materialsgroups/{code}` | Get materials group by code |
 
 #### Documents (Read Only)
 
@@ -99,6 +101,9 @@ API keys with restricted permissions are limited to the following endpoints:
 | GET | `/documents/materialsmovement/{isn}` | Get materials movement by ISN |
 | GET | `/documents/materialskitting/{isn}` | Get materials kitting by ISN |
 | GET | `/documents/overheadexpenseallocation/{isn}` | Get overhead expense allocation by ISN |
+| GET | `/documents/noncashprepayment/{isn}` | Get non-cash prepayment by ISN |
+| GET | `/documents/returnfromcustomer/{isn}` | Get return from customer by ISN |
+| GET | `/documents/returntosupplier/{isn}` | Get return to supplier by ISN |
 
 #### Journals
 
@@ -124,6 +129,7 @@ API keys with restricted permissions are limited to the following endpoints:
 | POST | `/reports/materialsoperationsjournal` | Materials operations journal report |
 | POST | `/reports/storageinputordersandreceivedservices` | Storage input orders and received services report |
 | POST | `/reports/calculateddata` | Calculated data (wages) report |
+| POST | `/reports/salesjournal` | Sales journal report |
 
 Every report in the table above also allows its matching `/nextpage` call.
 

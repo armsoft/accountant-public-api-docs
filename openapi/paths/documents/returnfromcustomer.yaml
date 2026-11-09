@@ -1,0 +1,18 @@
+/documents/returnfromcustomer:
+  post:
+    tags: [ReturnFromCustomer]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/documents/ReturnFromCustomer.yaml"
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/documents/ReturnFromCustomer.yaml"
+      '401':
+        $ref: "../../components/responses/Unauthorized.yaml"

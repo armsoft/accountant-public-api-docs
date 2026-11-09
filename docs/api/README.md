@@ -11,6 +11,7 @@ This section contains endpoint-level documentation for the ArmSoft SME Accountan
 - [Services](directories/services/README.md)
 - [Employees](directories/employees/README.md)
 - [Storages](directories/storages/README.md)
+- [Materials Groups](directories/materialsgroups/README.md)
 
 ## Document types
 

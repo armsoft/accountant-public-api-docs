@@ -21,6 +21,9 @@ Document endpoints create and maintain accounting documents in the ArmSoft SME A
 - [Fixed Asset Disposal Act](https://online.armsoft.am/acc7/rest_api_fixedassetdisposalact.htm)
 - [Cash Input Order](https://online.armsoft.am/acc7/rest_api_cashinputorder.htm)
 - [Cash Output Order](https://online.armsoft.am/acc7/rest_api_cashoutputorder.htm)
+- [Non-cash Prepayment](https://online.armsoft.am/acc7/rest_api_noncashprepayment.htm)
+- [Return From Customer](https://online.armsoft.am/acc7/rest_api_returnfromcustomer.htm)
+- [Return To Supplier](https://online.armsoft.am/acc7/rest_api_returntosupplier.htm)
 
 ## Endpoints
 
@@ -39,6 +42,9 @@ Document endpoints create and maintain accounting documents in the ArmSoft SME A
 - [Fixed Asset Disposal Act](fixedassetdisposalact.md)
 - [Cash Input Order](cashinputorder.md)
 - [Cash Output Order](cashoutputorder.md)
+- [Non-cash Prepayment](noncashprepayment.md)
+- [Return From Customer](returnfromcustomer.md)
+- [Return To Supplier](returntosupplier.md)
 
 ## Overview
 
@@ -59,6 +65,9 @@ Document endpoints create and maintain accounting documents in the ArmSoft SME A
 | [Fixed Asset Disposal Act](fixedassetdisposalact.md) | `/v1/documents/fixedassetdisposalact` | Writing fixed assets off the balance sheet | Published |
 | [Cash Input Order](cashinputorder.md) | `/v1/documents/cashinputorder` | Cash received into a cash desk | Published |
 | [Cash Output Order](cashoutputorder.md) | `/v1/documents/cashoutputorder` | Cash paid out of a cash desk | Published |
+| [Non-cash Prepayment](noncashprepayment.md) | `/v1/documents/noncashprepayment` | Non-cash (card) prepayments received from a customer | Published |
+| [Return From Customer](returnfromcustomer.md) | `/v1/documents/returnfromcustomer` | Goods, services or fixed assets returned by a customer | Published |
+| [Return To Supplier](returntosupplier.md) | `/v1/documents/returntosupplier` | Materials returned to a supplier | Published |
 
 ## Common shape
 

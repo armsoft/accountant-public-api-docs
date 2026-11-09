@@ -1,0 +1,18 @@
+type: object
+properties:
+  code:
+    type: string
+    description: "hy-AM: Կոդ | en-US: Code | ru-RU: Код"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  parent:
+    type: string
+    description: "hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель"
+    nullable: true
+  path:
+    type: string
+    nullable: true
+additionalProperties: false

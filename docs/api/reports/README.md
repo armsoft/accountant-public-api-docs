@@ -16,6 +16,7 @@ parameter object, returns paginated rows, and has a matching `/nextpage` call.
 - [Materials Operations Journal Online docs](https://online.armsoft.am/acc7/rest_api_materials_operations_journal.htm)
 - [Storage Input Orders and Received Services Online docs](https://online.armsoft.am/acc7/rest_api_storageinputorderandrecievedservices.htm)
 - [Calculated Data Online docs](https://online.armsoft.am/acc7/rest_api_reports_calculateddata.htm)
+- [Sales Journal Online docs](https://online.armsoft.am/acc7/rest_api_salesjournal.htm)
 
 ## Endpoints
 
@@ -28,6 +29,7 @@ parameter object, returns paginated rows, and has a matching `/nextpage` call.
 - [Materials Operations Journal](materialsoperationsjournal.md) / [Next Page](materialsoperationsjournal-nextpage.md)
 - [Storage Input Orders and Received Services](storageinputordersandreceivedservices.md) / [Next Page](storageinputordersandreceivedservices-nextpage.md)
 - [Calculated Data](calculateddata.md) / [Next Page](calculateddata-nextpage.md)
+- [Sales Journal](salesjournal.md) / [Next Page](salesjournal-nextpage.md)
 
 ## Overview
 
@@ -42,6 +44,7 @@ parameter object, returns paginated rows, and has a matching `/nextpage` call.
 | [Materials Operations Journal](materialsoperationsjournal.md) | `/v1/reports/materialsoperationsjournal` | Material movements (input, output, transfers) for a period |
 | [Storage Input Orders and Received Services](storageinputordersandreceivedservices.md) | `/v1/reports/storageinputordersandreceivedservices` | Purchases of materials and received services for a period |
 | [Calculated Data](calculateddata.md) | `/v1/reports/calculateddata` | Wages accruals and deductions calculated for a period |
+| [Sales Journal](salesjournal.md) | `/v1/reports/salesjournal` | Sales, retail sales and returns of materials, services and fixed assets for a period |
 
 ## Base Path
 

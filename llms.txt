@@ -74,6 +74,13 @@
 - PUT /accountant/v1/directories/storages/{code}
 - DELETE /accountant/v1/directories/storages/{code}
 
+### Materials Groups
+- GET /accountant/v1/directories/materialsgroups
+- GET /accountant/v1/directories/materialsgroups/{code}
+- POST /accountant/v1/directories/materialsgroups
+- PUT /accountant/v1/directories/materialsgroups/{code}
+- DELETE /accountant/v1/directories/materialsgroups/{code}
+
 ### Documents (POST create, GET/PUT/DELETE by {isn})
 - /accountant/v1/documents/invoice
 - /accountant/v1/documents/retailsale
@@ -90,6 +97,9 @@
 - /accountant/v1/documents/fixedassetdisposalact
 - /accountant/v1/documents/cashinputorder
 - /accountant/v1/documents/cashoutputorder
+- /accountant/v1/documents/noncashprepayment
+- /accountant/v1/documents/returnfromcustomer
+- /accountant/v1/documents/returntosupplier
 
 ### Journals (POST, each with a /nextpage call)
 - /accountant/v1/journals/alldocuments
@@ -106,6 +116,7 @@
 - /accountant/v1/reports/materialsoperationsjournal
 - /accountant/v1/reports/storageinputordersandreceivedservices
 - /accountant/v1/reports/calculateddata
+- /accountant/v1/reports/salesjournal
 
 ### System
 - GET /accountant/api/Version (no API key required)
@@ -116,11 +127,11 @@
 - Responses include `id` (UUID) and `hasMore` fields
 - Fetch next page: POST to `/nextpage` (directories use `/list/nextpage`) with `{ "id": "...", "close": false }`
 - Close context early: POST with `{ "id": "...", "close": true }`
-- `GET /directories/storages` is not paginated
+- `GET /directories/storages` and `GET /directories/materialsgroups` are not paginated
 
 ## Key Concepts
 - Directory records are identified by a string `code`; documents are identified by an `isn` (UUID) returned on create
-- Directory list calls are POST with a filter object; Storages is the only GET list
+- Directory list calls are POST with a filter object; Storages and Materials Groups are the only GET lists
 - Every schema property carries its hy-AM / en-US / ru-RU label in its OpenAPI `description`
 - Error responses: `{ "message": "...", "fieldName": "...", "errorCode": "..." }`
 - Swagger UI: https://api.armsoft.am/accountant/swagger/index.html

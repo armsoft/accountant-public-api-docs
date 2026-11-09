@@ -21,6 +21,9 @@ Create examples:
 - [`create-fixedassetdisposalact.cs`](create-fixedassetdisposalact.cs) — Fixed Asset Disposal Act
 - [`create-cashinputorder.cs`](create-cashinputorder.cs) — Cash Input Order
 - [`create-cashoutputorder.cs`](create-cashoutputorder.cs) — Cash Output Order
+- [`create-noncashprepayment.cs`](create-noncashprepayment.cs) — Non-cash Prepayment
+- [`create-returnfromcustomer.cs`](create-returnfromcustomer.cs) — Return From Customer
+- [`create-returntosupplier.cs`](create-returntosupplier.cs) — Return To Supplier
 
 Read / update / delete:
 

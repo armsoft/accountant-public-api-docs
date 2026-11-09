@@ -4,6 +4,55 @@
 
 All notable changes to the ArmSoft SME Accountant Public API are documented here.
 
+## [1.2.0] - 2026-11-09
+
+Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`
+— 83 paths and 92 schemas.
+
+### Added
+
+#### Directories API
+- Materials Groups (`/v1/directories/materialsgroups`) - `GET` list, plus Create, Get, Update
+  and Delete by `code`. Like Storages, the list is a plain `GET` that returns the full array and
+  does not paginate. New `MaterialsGroup` schema (`code`, `name`, `parent`, read-only `path`).
+  The list and Get calls are reachable with a limited-access API key.
+
+#### Documents API
+- Non-cash Prepayment (`/v1/documents/noncashprepayment`) - non-cash (card) prepayments received
+  from a customer through a cash desk's ECR. New `NonCashPrepayment` schema.
+- Return From Customer (`/v1/documents/returnfromcustomer`) - goods, services or fixed assets
+  returned by a customer, linked to the original sale through `baseDocumentISN`. New
+  `ReturnFromCustomer` and `ReturnFromCustomerSpecificationRow` schemas (rows in `itemList`).
+- Return To Supplier (`/v1/documents/returntosupplier`) - materials returned to a supplier,
+  linked to the input document through `baseDocumentISN`. New `ReturnToSupplier` and
+  `ReturnToSupplierSpecificationRow` schemas (rows in `materialsList`).
+- Each supports Create, Get, Update and Delete; Get is reachable with a limited-access API key.
+
+#### Reports API
+- Sales Journal (`POST /v1/reports/salesjournal`, with its `/nextpage` call) - sales, retail
+  sales and returns of materials, services and fixed assets for a period, with cost, sale
+  amounts, profit and VAT figures. New `SalesJournalParam`, `SalesJournalDataRow` and
+  `SalesJournalDataRowApiResponse` schemas. Reachable with a limited-access API key.
+
+#### Examples
+- C# `MaterialsGroupsClient.cs` with per-operation examples, `create-noncashprepayment.cs`,
+  `create-returnfromcustomer.cs`, `create-returntosupplier.cs`, `salesjournal.cs` and
+  `salesjournal-nextpage.cs`.
+
+### Changed
+- `purchasingType` on `ReceivedService` and `StorageInputOrder`: the Armenian caption is now
+  spelled `ձեռքբերման` (was `ձեռք բերման`). The field itself is unchanged.
+- `swagger.json` and the generated `docs/api-reference.md` re-synced from the live specification.
+- Directory, document and report indexes, the authentication guide's limited-access tables,
+  `docs/pagination.md`, `llms.txt` and `llms-full.txt` list the new endpoints.
+
+### Fixed
+- `llms-full.txt` still described Received Service, Fixed Asset Acquisition, Fixed Asset
+  Disposal Act and Cash Input/Output Order as not yet published; they have been served since
+  1.1.0.
+
+---
+
 ## [1.1.1] - 2026-10-20
 
 Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`

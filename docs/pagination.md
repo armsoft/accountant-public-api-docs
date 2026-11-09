@@ -150,6 +150,7 @@ Pagination is supported on these calls:
 - `POST /v1/journals/ecrchecks`
 - `POST /v1/reports/{reportName}` — every report endpoint
 
-`GET /v1/directories/storages` is not paginated; it always returns the full list.
+`GET /v1/directories/storages` and `GET /v1/directories/materialsgroups` are not paginated; they
+always return the full list.
 
 Consult the specific endpoint documentation for details on available filters and response properties.
