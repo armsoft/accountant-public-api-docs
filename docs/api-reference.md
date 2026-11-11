@@ -24607,6 +24607,532 @@ To perform this operation, you must be authenticated by means of one of the foll
 API Key
 </aside>
 
+## post__v1_reports_fixedassetscard
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/reports/fixedassetscard \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/reports/fixedassetscard HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "pageSize": 0,
+  "date": "2019-08-24",
+  "inventoryNumber": "string",
+  "registerTypes": [
+    "string"
+  ],
+  "fixedAssetType": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "states": [
+    "string"
+  ],
+  "extended": true,
+  "groupBy": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/reports/fixedassetscard',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/reports/fixedassetscard',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/reports/fixedassetscard', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/reports/fixedassetscard', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/reports/fixedassetscard");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/reports/fixedassetscard", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/reports/fixedassetscard`
+
+> Body parameter
+
+```json
+{
+  "pageSize": 0,
+  "date": "2019-08-24",
+  "inventoryNumber": "string",
+  "registerTypes": [
+    "string"
+  ],
+  "fixedAssetType": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "states": [
+    "string"
+  ],
+  "extended": true,
+  "groupBy": "string"
+}
+```
+
+<h3 id="post__v1_reports_fixedassetscard-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[FixedAssetsCardParam](#schemafixedassetscardparam)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"inventoryCard":"string","inventoryNumber":"string","name":"string","registerType":"string","registerTypeName":"string","grossCarryingValue":0.1,"accumulatedDepreciation":0.1,"carryingValue":0.1,"disposalValue":0.1,"fixedAssetType":"string","location":"string","responsiblePerson":"string","responsiblePersonName":"string","grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string","state":"string","stateName":"string","dateOfCommissioning":"2019-08-24","usefulLife":0,"remainingUsefulLife":0,"inputDate":"2019-08-24","profitTaxLawGroup":"string","supplierCode":"string","supplierName":"string","supplierAccount":"string","documentNumber":"string","producer":"string","commissionDate":0,"serialNumber":"string","technicalCertificate":"string","brand":"string","briefDescription":"string","taxExportType":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24"}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "id": 0,
+      "inventoryCard": "string",
+      "inventoryNumber": "string",
+      "name": "string",
+      "registerType": "string",
+      "registerTypeName": "string",
+      "grossCarryingValue": 0.1,
+      "accumulatedDepreciation": 0.1,
+      "carryingValue": 0.1,
+      "disposalValue": 0.1,
+      "fixedAssetType": "string",
+      "location": "string",
+      "responsiblePerson": "string",
+      "responsiblePersonName": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string",
+      "state": "string",
+      "stateName": "string",
+      "dateOfCommissioning": "2019-08-24",
+      "usefulLife": 0,
+      "remainingUsefulLife": 0,
+      "inputDate": "2019-08-24",
+      "profitTaxLawGroup": "string",
+      "supplierCode": "string",
+      "supplierName": "string",
+      "supplierAccount": "string",
+      "documentNumber": "string",
+      "producer": "string",
+      "commissionDate": 0,
+      "serialNumber": "string",
+      "technicalCertificate": "string",
+      "brand": "string",
+      "briefDescription": "string",
+      "taxExportType": "string",
+      "purchaseDocumentNumber": "string",
+      "purchaseDocumentDate": "2019-08-24"
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_reports_fixedassetscard-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[FixedAssetsCardDataRowApiResponse](#schemafixedassetscarddatarowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_reports_fixedassetscard_nextpage
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /accountant/v1/reports/fixedassetscard/nextpage \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /accountant/v1/reports/fixedassetscard/nextpage HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/accountant/v1/reports/fixedassetscard/nextpage',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/accountant/v1/reports/fixedassetscard/nextpage',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/accountant/v1/reports/fixedassetscard/nextpage', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/accountant/v1/reports/fixedassetscard/nextpage', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/accountant/v1/reports/fixedassetscard/nextpage");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/accountant/v1/reports/fixedassetscard/nextpage", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/reports/fixedassetscard/nextpage`
+
+> Body parameter
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}
+```
+
+<h3 id="post__v1_reports_fixedassetscard_nextpage-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NextPageRequest](#schemanextpagerequest)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"inventoryCard":"string","inventoryNumber":"string","name":"string","registerType":"string","registerTypeName":"string","grossCarryingValue":0.1,"accumulatedDepreciation":0.1,"carryingValue":0.1,"disposalValue":0.1,"fixedAssetType":"string","location":"string","responsiblePerson":"string","responsiblePersonName":"string","grossCarryingAmountAccount":"string","depreciationAccount":"string","expenseAccount":"string","deferredIncomeAccount":"string","deferredIncomeCurrentAccount":"string","incomeAccount":"string","state":"string","stateName":"string","dateOfCommissioning":"2019-08-24","usefulLife":0,"remainingUsefulLife":0,"inputDate":"2019-08-24","profitTaxLawGroup":"string","supplierCode":"string","supplierName":"string","supplierAccount":"string","documentNumber":"string","producer":"string","commissionDate":0,"serialNumber":"string","technicalCertificate":"string","brand":"string","briefDescription":"string","taxExportType":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24"}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "id": 0,
+      "inventoryCard": "string",
+      "inventoryNumber": "string",
+      "name": "string",
+      "registerType": "string",
+      "registerTypeName": "string",
+      "grossCarryingValue": 0.1,
+      "accumulatedDepreciation": 0.1,
+      "carryingValue": 0.1,
+      "disposalValue": 0.1,
+      "fixedAssetType": "string",
+      "location": "string",
+      "responsiblePerson": "string",
+      "responsiblePersonName": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string",
+      "state": "string",
+      "stateName": "string",
+      "dateOfCommissioning": "2019-08-24",
+      "usefulLife": 0,
+      "remainingUsefulLife": 0,
+      "inputDate": "2019-08-24",
+      "profitTaxLawGroup": "string",
+      "supplierCode": "string",
+      "supplierName": "string",
+      "supplierAccount": "string",
+      "documentNumber": "string",
+      "producer": "string",
+      "commissionDate": 0,
+      "serialNumber": "string",
+      "technicalCertificate": "string",
+      "brand": "string",
+      "briefDescription": "string",
+      "taxExportType": "string",
+      "purchaseDocumentNumber": "string",
+      "purchaseDocumentDate": "2019-08-24"
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_reports_fixedassetscard_nextpage-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[FixedAssetsCardDataRowApiResponse](#schemafixedassetscarddatarowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 <h1 id="accountant-public-api-retailsale">RetailSale</h1>
 
 ## get__v1_documents_retailsale_{isn}
@@ -35811,6 +36337,213 @@ This operation does not require authentication
 |deferredIncomeAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода|
 |deferredIncomeCurrentAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов|
 |incomeAccount|string¦null|false|none|hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов|
+
+<h2 id="tocS_FixedAssetsCardDataRow">FixedAssetsCardDataRow</h2>
+<!-- backwards compatibility -->
+<a id="schemafixedassetscarddatarow"></a>
+<a id="schema_FixedAssetsCardDataRow"></a>
+<a id="tocSfixedassetscarddatarow"></a>
+<a id="tocsfixedassetscarddatarow"></a>
+
+```json
+{
+  "id": 0,
+  "inventoryCard": "string",
+  "inventoryNumber": "string",
+  "name": "string",
+  "registerType": "string",
+  "registerTypeName": "string",
+  "grossCarryingValue": 0.1,
+  "accumulatedDepreciation": 0.1,
+  "carryingValue": 0.1,
+  "disposalValue": 0.1,
+  "fixedAssetType": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "responsiblePersonName": "string",
+  "grossCarryingAmountAccount": "string",
+  "depreciationAccount": "string",
+  "expenseAccount": "string",
+  "deferredIncomeAccount": "string",
+  "deferredIncomeCurrentAccount": "string",
+  "incomeAccount": "string",
+  "state": "string",
+  "stateName": "string",
+  "dateOfCommissioning": "2019-08-24",
+  "usefulLife": 0,
+  "remainingUsefulLife": 0,
+  "inputDate": "2019-08-24",
+  "profitTaxLawGroup": "string",
+  "supplierCode": "string",
+  "supplierName": "string",
+  "supplierAccount": "string",
+  "documentNumber": "string",
+  "producer": "string",
+  "commissionDate": 0,
+  "serialNumber": "string",
+  "technicalCertificate": "string",
+  "brand": "string",
+  "briefDescription": "string",
+  "taxExportType": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|inventoryCard|string¦null|false|none|hy-AM: Գույքային քարտ | en-US: Inventory card | ru-RU: Инвентарная карточка|
+|inventoryNumber|string¦null|false|none|hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|registerType|string¦null|false|none|hy-AM: Հաշվառում | en-US: Register type | ru-RU: Учет|
+|registerTypeName|string¦null|false|none|hy-AM: Հաշվառում | en-US: Register type | ru-RU: Учет|
+|grossCarryingValue|number(double)|false|none|hy-AM: Համախառն հաշվեկշռային արժեք | en-US: Gross carrying value | ru-RU: Балансовая стоимость|
+|accumulatedDepreciation|number(double)|false|none|hy-AM: Կուտակված մաշվածություն | en-US: Accumulated depreciation | ru-RU: Начисленный износ|
+|carryingValue|number(double)|false|none|hy-AM: Հաշվեկշռային արժեք | en-US: Carrying value | ru-RU: Балансовая стоимость|
+|disposalValue|number(double)|false|none|hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость|
+|fixedAssetType|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|location|string¦null|false|none|hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение|
+|responsiblePerson|string¦null|false|none|hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ|
+|responsiblePersonName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|grossCarryingAmountAccount|string¦null|false|none|hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС|
+|depreciationAccount|string¦null|false|none|hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа|
+|expenseAccount|string¦null|false|none|hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов|
+|deferredIncomeAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода|
+|deferredIncomeCurrentAccount|string¦null|false|none|hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов|
+|incomeAccount|string¦null|false|none|hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов|
+|state|string¦null|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|stateName|string¦null|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|dateOfCommissioning|string(date)¦null|false|none|hy-AM: Շահագործման հանձնման ամսաթիվ | en-US: Date of putting into commission | ru-RU: Дата ввода в эксплуатацию|
+|usefulLife|integer(int32)|false|none|hy-AM: Օգ.ծառ. ժամկետ(ամիս) | en-US: Useful life(month) | ru-RU: Срок полез.исполь.(месяц)|
+|remainingUsefulLife|integer(int32)|false|none|hy-AM: Մն.օգ.ծառ. ժամկետ(ամիս) | en-US: Rem. useful life(month) | ru-RU: Ост.срок полез.исполь.(месяц)|
+|inputDate|string(date)|false|none|hy-AM: Մուտքի ամսաթիվ | en-US: Input date | ru-RU: Дата поступления|
+|profitTaxLawGroup|string¦null|false|none|hy-AM: ՀՄ խումբ շահութահարկի օրենքով | en-US: FA group by Profit tax law | ru-RU: Группа ОС по закону о налоге на прибыль|
+|supplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|supplierName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|supplierAccount|string¦null|false|none|hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|commissionDate|integer(int32)|false|none|hy-AM: Թողարկման տարեթիվ | en-US: Date of commission | ru-RU: Дата выпуска|
+|serialNumber|string¦null|false|none|hy-AM: Գործարանային համար | en-US: Serial number | ru-RU: Заводской номер|
+|technicalCertificate|string¦null|false|none|hy-AM: Տեխնիկական անձնագիր | en-US: Technical certificate | ru-RU: Тех. паспорт|
+|brand|string¦null|false|none|hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка|
+|briefDescription|string¦null|false|none|hy-AM: Համառոտ բնութագիր | en-US: Brief description | ru-RU: Краткое описание|
+|taxExportType|string¦null|false|none|hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки|
+|purchaseDocumentNumber|string¦null|false|none|hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения|
+|purchaseDocumentDate|string(date)¦null|false|none|hy-AM: Ձեռքբերման փաստաթղթի ա/թ | en-US: Purchase document date | ru-RU: Дата документа приобретения|
+
+<h2 id="tocS_FixedAssetsCardDataRowApiResponse">FixedAssetsCardDataRowApiResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemafixedassetscarddatarowapiresponse"></a>
+<a id="schema_FixedAssetsCardDataRowApiResponse"></a>
+<a id="tocSfixedassetscarddatarowapiresponse"></a>
+<a id="tocsfixedassetscarddatarowapiresponse"></a>
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "id": 0,
+      "inventoryCard": "string",
+      "inventoryNumber": "string",
+      "name": "string",
+      "registerType": "string",
+      "registerTypeName": "string",
+      "grossCarryingValue": 0.1,
+      "accumulatedDepreciation": 0.1,
+      "carryingValue": 0.1,
+      "disposalValue": 0.1,
+      "fixedAssetType": "string",
+      "location": "string",
+      "responsiblePerson": "string",
+      "responsiblePersonName": "string",
+      "grossCarryingAmountAccount": "string",
+      "depreciationAccount": "string",
+      "expenseAccount": "string",
+      "deferredIncomeAccount": "string",
+      "deferredIncomeCurrentAccount": "string",
+      "incomeAccount": "string",
+      "state": "string",
+      "stateName": "string",
+      "dateOfCommissioning": "2019-08-24",
+      "usefulLife": 0,
+      "remainingUsefulLife": 0,
+      "inputDate": "2019-08-24",
+      "profitTaxLawGroup": "string",
+      "supplierCode": "string",
+      "supplierName": "string",
+      "supplierAccount": "string",
+      "documentNumber": "string",
+      "producer": "string",
+      "commissionDate": 0,
+      "serialNumber": "string",
+      "technicalCertificate": "string",
+      "brand": "string",
+      "briefDescription": "string",
+      "taxExportType": "string",
+      "purchaseDocumentNumber": "string",
+      "purchaseDocumentDate": "2019-08-24"
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|string(uuid)|false|none|none|
+|hasMore|boolean|false|none|none|
+|data|[[FixedAssetsCardDataRow](#schemafixedassetscarddatarow)]¦null|false|none|none|
+
+<h2 id="tocS_FixedAssetsCardParam">FixedAssetsCardParam</h2>
+<!-- backwards compatibility -->
+<a id="schemafixedassetscardparam"></a>
+<a id="schema_FixedAssetsCardParam"></a>
+<a id="tocSfixedassetscardparam"></a>
+<a id="tocsfixedassetscardparam"></a>
+
+```json
+{
+  "pageSize": 0,
+  "date": "2019-08-24",
+  "inventoryNumber": "string",
+  "registerTypes": [
+    "string"
+  ],
+  "fixedAssetType": "string",
+  "location": "string",
+  "responsiblePerson": "string",
+  "states": [
+    "string"
+  ],
+  "extended": true,
+  "groupBy": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|inventoryNumber|string¦null|false|none|hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер|
+|registerTypes|[string]¦null|false|none|hy-AM: Հաշվառում | en-US: Register type | ru-RU: Учет|
+|fixedAssetType|string¦null|false|none|hy-AM: ՀՄ տեսակ | en-US: Type of fixed asset | ru-RU: Вид ОС|
+|location|string¦null|false|none|hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение|
+|responsiblePerson|string¦null|false|none|hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ|
+|states|[string]¦null|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|extended|boolean|false|none|hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный|
+|groupBy|string¦null|false|none|hy-AM: Խմբավորել ըստ | en-US: Group by | ru-RU: Сгруппировать по|
 
 <h2 id="tocS_Invoice">Invoice</h2>
 <!-- backwards compatibility -->
