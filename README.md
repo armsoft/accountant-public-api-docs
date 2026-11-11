@@ -16,7 +16,7 @@ The ArmSoft Accountant Public API provides programmatic access to:
 - **Directories**: Partners, materials, services, employees, storages and materials groups
 - **Documents**: Invoices, retail sales, transfer invoices, memorial orders, payment orders, storage input/output orders, materials movement, materials kitting, overhead expense allocation, received services, fixed asset acquisition and disposal, cash input/output orders, non-cash prepayments, returns from customers and returns to suppliers
 - **Journals**: All documents, invoices, ECR checks
-- **Reports**: Accounts balances and turnover, transactions, partners balances and transactions, materials balances and operations, purchases, sales journal
+- **Reports**: Accounts balances and turnover, transactions, partners balances and transactions, materials balances and operations, purchases, sales journal, fixed assets card
 - **Multi-language Support**: Armenian (hy-AM), English (en-US), Russian (ru-RU)
 
 ### Key Features
@@ -212,6 +212,8 @@ Every document type supports the same four calls.
 | POST | `/reports/calculateddata/nextpage` | Calculated data next page |
 | POST | `/reports/salesjournal` | Sales journal report |
 | POST | `/reports/salesjournal/nextpage` | Sales journal next page |
+| POST | `/reports/fixedassetscard` | Fixed assets card report |
+| POST | `/reports/fixedassetscard/nextpage` | Fixed assets card next page |
 
 ### System
 

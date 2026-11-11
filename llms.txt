@@ -117,6 +117,7 @@
 - /accountant/v1/reports/storageinputordersandreceivedservices
 - /accountant/v1/reports/calculateddata
 - /accountant/v1/reports/salesjournal
+- /accountant/v1/reports/fixedassetscard
 
 ### System
 - GET /accountant/api/Version (no API key required)

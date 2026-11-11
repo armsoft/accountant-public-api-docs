@@ -14,6 +14,7 @@
 - [`storageinputordersandreceivedservices.cs`](storageinputordersandreceivedservices.cs) / [`storageinputordersandreceivedservices-nextpage.cs`](storageinputordersandreceivedservices-nextpage.cs) — Storage Input Orders and Received Services
 - [`calculateddata.cs`](calculateddata.cs) / [`calculateddata-nextpage.cs`](calculateddata-nextpage.cs) — Calculated Data
 - [`salesjournal.cs`](salesjournal.cs) / [`salesjournal-nextpage.cs`](salesjournal-nextpage.cs) — Sales Journal
+- [`fixedassetscard.cs`](fixedassetscard.cs) / [`fixedassetscard-nextpage.cs`](fixedassetscard-nextpage.cs) — Fixed Assets Card
 
 `QueryAllAsync` walks the pages for you; `QueryAsync` / `NextPageAsync` give you manual control.
 

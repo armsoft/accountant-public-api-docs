@@ -264,6 +264,11 @@ paths:
     $ref: ./paths/reports/salesjournal.yaml#/~1reports~1salesjournal
   /reports/salesjournal/nextpage:
     $ref: ./paths/reports/salesjournal.yaml#/~1reports~1salesjournal~1nextpage
+  # Reports - Fixed Assets Card
+  /reports/fixedassetscard:
+    $ref: ./paths/reports/fixedassetscard.yaml#/~1reports~1fixedassetscard
+  /reports/fixedassetscard/nextpage:
+    $ref: ./paths/reports/fixedassetscard.yaml#/~1reports~1fixedassetscard~1nextpage
   # System
   /api/Version:
     $ref: ./paths/version.yaml#/~1api~1Version
@@ -474,6 +479,13 @@ components:
       $ref: ./components/schemas/reports/SalesJournalDataRow.yaml
     SalesJournalDataRowApiResponse:
       $ref: ./components/schemas/reports/SalesJournalDataRowApiResponse.yaml
+    # Reports - Fixed Assets Card
+    FixedAssetsCardParam:
+      $ref: ./components/schemas/reports/FixedAssetsCardParam.yaml
+    FixedAssetsCardDataRow:
+      $ref: ./components/schemas/reports/FixedAssetsCardDataRow.yaml
+    FixedAssetsCardDataRowApiResponse:
+      $ref: ./components/schemas/reports/FixedAssetsCardDataRowApiResponse.yaml
 
   responses:
     BadRequest:

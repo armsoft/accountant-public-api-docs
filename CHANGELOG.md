@@ -4,6 +4,31 @@
 
 All notable changes to the ArmSoft SME Accountant Public API are documented here.
 
+## [1.3.0] - 2026-11-11
+
+Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`
+— 85 paths and 95 schemas.
+
+### Added
+
+#### Reports API
+- Fixed Assets Card (`POST /v1/reports/fixedassetscard`, with its `/nextpage` call) - the fixed
+  assets register as of a date, one row per inventory number and register type, with gross
+  carrying value, accumulated depreciation, carrying value, location, responsible person, state
+  and useful life. `extended` adds the acquisition and passport details; `groupBy` returns totals
+  by fixed asset type and/or state instead. New `FixedAssetsCardParam`, `FixedAssetsCardDataRow`
+  and `FixedAssetsCardDataRowApiResponse` schemas. Requires a full-access API key.
+
+#### Examples
+- C# `fixedassetscard.cs` and `fixedassetscard-nextpage.cs`.
+
+### Changed
+- `swagger.json` and the generated `docs/api-reference.md` re-synced from the live specification.
+- The report index, `README.md`, `docs/index.md`, `llms.txt` and `llms-full.txt` list the new
+  report.
+
+---
+
 ## [1.2.0] - 2026-11-09
 
 Matches the specification served at `https://api.armsoft.am/accountant/swagger/v1/swagger.json`

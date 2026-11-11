@@ -68,3 +68,4 @@ public class ReportsClient
 // reports/storageinputordersandreceivedservices
 // reports/calculateddata
 // reports/salesjournal
+// reports/fixedassetscard

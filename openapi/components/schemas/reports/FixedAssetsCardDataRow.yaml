@@ -1,0 +1,165 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер"
+    format: int32
+  inventoryCard:
+    type: string
+    description: "hy-AM: Գույքային քարտ | en-US: Inventory card | ru-RU: Инвентарная карточка"
+    nullable: true
+  inventoryNumber:
+    type: string
+    description: "hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер"
+    nullable: true
+  name:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  registerType:
+    type: string
+    description: "hy-AM: Հաշվառում | en-US: Register type | ru-RU: Учет"
+    nullable: true
+  registerTypeName:
+    type: string
+    description: "hy-AM: Հաշվառում | en-US: Register type | ru-RU: Учет"
+    nullable: true
+  grossCarryingValue:
+    type: number
+    description: "hy-AM: Համախառն հաշվեկշռային արժեք | en-US: Gross carrying value | ru-RU: Балансовая стоимость"
+    format: double
+  accumulatedDepreciation:
+    type: number
+    description: "hy-AM: Կուտակված մաշվածություն | en-US: Accumulated depreciation | ru-RU: Начисленный износ"
+    format: double
+  carryingValue:
+    type: number
+    description: "hy-AM: Հաշվեկշռային արժեք | en-US: Carrying value | ru-RU: Балансовая стоимость"
+    format: double
+  disposalValue:
+    type: number
+    description: "hy-AM: Մնացորդային (չմաշվող) արժեք | en-US: Disposal (non-depr.) value | ru-RU: Остаточная (неамортизируемая) стоимость"
+    format: double
+  fixedAssetType:
+    type: string
+    description: "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид"
+    nullable: true
+  location:
+    type: string
+    description: "hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение "
+    nullable: true
+  responsiblePerson:
+    type: string
+    description: "hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ"
+    nullable: true
+  responsiblePersonName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  grossCarryingAmountAccount:
+    type: string
+    description: "hy-AM: Սկզբնական արժեքի հաշիվ | en-US: Gross carrying amount account | ru-RU: Счет учета ОС"
+    nullable: true
+  depreciationAccount:
+    type: string
+    description: "hy-AM: Մաշվածության հաշիվ | en-US: Depreciation account | ru-RU: Счет износа"
+    nullable: true
+  expenseAccount:
+    type: string
+    description: "hy-AM: Ծախսի հաշիվ | en-US: Expense account | ru-RU: Счет расходов"
+    nullable: true
+  deferredIncomeAccount:
+    type: string
+    description: "hy-AM: Հետաձգված հասույթների հաշիվ | en-US: Deferred income account | ru-RU: Счет отложенного дохода"
+    nullable: true
+  deferredIncomeCurrentAccount:
+    type: string
+    description: "hy-AM: Հետաձգված հասույթների ընթացիկ մասի հաշիվ | en-US: Deferred Income current account | ru-RU: Счет текущей части отложенных доходов "
+    nullable: true
+  incomeAccount:
+    type: string
+    description: "hy-AM: Հասույթների հաշիվ | en-US: Income account | ru-RU: Счет доходов"
+    nullable: true
+  state:
+    type: string
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    nullable: true
+  stateName:
+    type: string
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    nullable: true
+  dateOfCommissioning:
+    type: string
+    description: "hy-AM: Շահագործման հանձնման ամսաթիվ | en-US: Date of putting into commission | ru-RU: Дата ввода в эксплуатацию"
+    format: date
+    nullable: true
+  usefulLife:
+    type: integer
+    description: "hy-AM: Օգ.ծառ. ժամկետ(ամիս) | en-US: Useful life(month) | ru-RU: Срок полез.исполь.(месяц)"
+    format: int32
+  remainingUsefulLife:
+    type: integer
+    description: "hy-AM: Մն.օգ.ծառ. ժամկետ(ամիս) | en-US: Rem. useful life(month) | ru-RU: Ост.срок полез.исполь.(месяц)"
+    format: int32
+  inputDate:
+    type: string
+    description: "hy-AM: Մուտքի ամսաթիվ | en-US: Input date | ru-RU: Дата поступления"
+    format: date
+  profitTaxLawGroup:
+    type: string
+    description: "hy-AM: ՀՄ խումբ շահութահարկի օրենքով | en-US: FA group by Profit tax law | ru-RU: Группа ОС по закону о налоге на прибыль"
+    nullable: true
+  supplierCode:
+    type: string
+    description: "hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик"
+    nullable: true
+  supplierName:
+    type: string
+    description: "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование"
+    nullable: true
+  supplierAccount:
+    type: string
+    description: "hy-AM: Մատակարարի հաշիվ | en-US: Supplier account | ru-RU: Счет поставщика"
+    nullable: true
+  documentNumber:
+    type: string
+    description: "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док."
+    nullable: true
+  producer:
+    type: string
+    description: "hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель"
+    nullable: true
+  commissionDate:
+    type: integer
+    description: "hy-AM: Թողարկման տարեթիվ | en-US: Date of commission | ru-RU: Дата выпуска"
+    format: int32
+  serialNumber:
+    type: string
+    description: "hy-AM: Գործարանային համար | en-US: Serial number | ru-RU: Заводской номер"
+    nullable: true
+  technicalCertificate:
+    type: string
+    description: "hy-AM: Տեխնիկական անձնագիր | en-US: Technical certificate | ru-RU: Тех. паспорт"
+    nullable: true
+  brand:
+    type: string
+    description: "hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка"
+    nullable: true
+  briefDescription:
+    type: string
+    description: "hy-AM: Համառոտ բնութագիր | en-US: Brief description | ru-RU: Краткое описание"
+    nullable: true
+  taxExportType:
+    type: string
+    description: "hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки"
+    nullable: true
+  purchaseDocumentNumber:
+    type: string
+    description: "hy-AM: Ձեռքբերման փաստաթղթի N | en-US: Purchase document N | ru-RU: Номер документа приобретения"
+    nullable: true
+  purchaseDocumentDate:
+    type: string
+    description: "hy-AM: Ձեռքբերման փաստաթղթի ա/թ | en-US: Purchase document date | ru-RU: Дата документа приобретения"
+    format: date
+    nullable: true
+additionalProperties: false

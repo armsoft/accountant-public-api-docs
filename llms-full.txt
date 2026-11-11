@@ -247,6 +247,7 @@ Every report is a POST with a parameter object, and every report has a `/nextpag
 | Storage Input Orders and Received Services | `/reports/storageinputordersandreceivedservices` | `startDate`, `endDate` |
 | Calculated Data | `/reports/calculateddata` | `startDate`, `endDate` |
 | Sales Journal | `/reports/salesjournal` | `startDate`, `endDate` |
+| Fixed Assets Card | `/reports/fixedassetscard` | `date` |
 
 ---
 

@@ -1,0 +1,47 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: "hy-AM:  էջ  | en-US:  page | ru-RU: страница"
+    format: int32
+    nullable: true
+  date:
+    type: string
+    description: "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата"
+    format: date
+  inventoryNumber:
+    type: string
+    description: "hy-AM: Գույքային համար | en-US: Inventory number | ru-RU: Инвентарный номер"
+    nullable: true
+  registerTypes:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Հաշվառում | en-US: Register type | ru-RU: Учет"
+    nullable: true
+  fixedAssetType:
+    type: string
+    description: "hy-AM: ՀՄ տեսակ | en-US: Type of fixed asset | ru-RU: Вид ОС"
+    nullable: true
+  location:
+    type: string
+    description: "hy-AM: Գտնվելու վայր | en-US: Location | ru-RU: Местонахождение "
+    nullable: true
+  responsiblePerson:
+    type: string
+    description: "hy-AM: Նյութ. պատասխ. անձ | en-US: Material responsible person | ru-RU: МОЛ"
+    nullable: true
+  states:
+    type: array
+    items:
+      type: string
+    description: "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние"
+    nullable: true
+  extended:
+    type: boolean
+    description: "hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный"
+  groupBy:
+    type: string
+    description: "hy-AM: Խմբավորել ըստ | en-US: Group by | ru-RU: Сгруппировать по"
+    nullable: true
+additionalProperties: false
